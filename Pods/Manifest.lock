@@ -1,0 +1,312 @@
+PODS:
+  - A2StoryboardSegueContext (1.0.1)
+  - ACReuseQueue (0.0.1)
+  - AFBlurSegue (1.2.1)
+  - AFDynamicTableHelper (0.1.0)
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking-RACExtensions (0.1.8):
+    - AFNetworking (~> 2.5.3)
+    - ReactiveCocoa (~> 2.0)
+  - AFNetworking-RACRetryExtensions (0.1.2):
+    - AFNetworking (~> 2.0)
+    - ReactiveCocoa (~> 2.0)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Archimedes (1.1)
+  - ASIHTTPRequest (1.8.2):
+    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.2)
+    - ASIHTTPRequest/CloudFiles (= 1.8.2)
+    - ASIHTTPRequest/Core (= 1.8.2)
+    - ASIHTTPRequest/S3 (= 1.8.2)
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/CloudFiles (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.2):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.2):
+    - ASIHTTPRequest/Core
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BTInfiniteScrollView (1.0.1)
+  - Canvas (0.1.2)
+  - CLLocationManager-blocks (1.3.2)
+  - CSNNotificationObserver (0.9.2)
+  - DOPDropDownMenu (0.0.1)
+  - Expecta (0.3.2)
+  - FastAnimationWithPOP (0.0.2):
+    - pop (~> 1.0.5)
+  - FCUUID (1.1.4):
+    - UICKeyChainStore (~> 1.0.5)
+  - ICViewPager (1.5.1)
+  - INTUAnimationEngine (1.2.0)
+  - IQKeyboardManager (3.2.1.2)
+  - JKCountDownButton (0.0.1)
+  - JSONModel (1.0.2)
+  - Kiwi (2.3.1)
+  - LASIImageView (1.0):
+    - ASIHTTPRequest
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - libextobjc/NSInvocation+EXT (= 0.4.1)
+    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - LMGeocoder (1.0.1)
+  - MagicalRecord (2.3.0)
+  - MarkupLabel (0.0.1)
+  - Masonry (0.5.3)
+  - MAThemeKit (1.0)
+  - MJRefresh (0.0.1)
+  - MZAppearance (1.1.5)
+  - NSObject+AssociatedDictionary (1.0)
+  - NSObject+AutoDescription (0.1)
+  - NSObject-NSCoding (1.0)
+  - NSObject-Tap (1.0.1)
+  - NSString-HTML (0.0.1)
+  - OCHamcrest (4.1.1)
+  - OCMockito (1.3.1):
+    - OCHamcrest (~> 4.0)
+  - pop (1.0.7)
+  - RatingBar (0.0.2)
+  - Reachability (3.2)
+  - ReactiveCocoa (2.4.7):
+    - ReactiveCocoa/UI (= 2.4.7)
+  - ReactiveCocoa/Core (2.4.7):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.7)
+  - ReactiveCocoa/UI (2.4.7):
+    - ReactiveCocoa/Core
+  - ReactiveCocoaLayout (0.4):
+    - Archimedes
+    - ReactiveCocoa (~> 2.0)
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
+  - RESideMenu (4.0.7)
+  - RXCollections (1.0)
+  - SVProgressHUD (1.1.3)
+  - UICKeyChainStore (1.0.5)
+  - UIFolderTableView (1.0.0)
+  - UITextView+Placeholder (1.0.9)
+  - UIView+MGBadgeView (0.0.1)
+  - XPKit (1.0.0)
+  - XPToast (1.0.2)
+  - XXNibBridge (2.1)
+
+DEPENDENCIES:
+  - A2StoryboardSegueContext (~> 1.0.1)
+  - ACReuseQueue (~> 0.0.1)
+  - AFBlurSegue (~> 1.2)
+  - AFDynamicTableHelper (= 0.1.0)
+  - AFNetworking-RACExtensions (~> 0.1.6)
+  - AFNetworking-RACRetryExtensions (~> 0.1.1)
+  - BlocksKit (~> 2.2.5)
+  - BTInfiniteScrollView (~> 1.0.0)
+  - Canvas (~> 0.1.2)
+  - CLLocationManager-blocks (~> 1.3.2)
+  - CSNNotificationObserver (~> 0.9.2)
+  - DOPDropDownMenu (from `https://coding.net/huangxinping/DOPDropDownMenu.git`, tag `0.0.1`)
+  - Expecta (~> 0.3.1)
+  - FastAnimationWithPOP (~> 0.0.2)
+  - FCUUID (~> 1.1.4)
+  - ICViewPager (~> 1.5.1)
+  - INTUAnimationEngine (~> 1.2.0)
+  - IQKeyboardManager (~> 3.2.1.0)
+  - JKCountDownButton (from `https://coding.net/huangxinping/JKCountDownButton.git`, tag `0.0.1`)
+  - JSONModel (~> 1.0.1)
+  - Kiwi (~> 2.3.1)
+  - LASIImageView (from `https://github.com/lukagabric/LASIImageView.git`, commit `b8a6187b4bb205a01da0497c5bf414f6c163379e`)
+  - libextobjc (~> 0.4.1)
+  - LMGeocoder (~> 1.0.1)
+  - MagicalRecord (~> 2.2)
+  - MarkupLabel (~> 0.0.1)
+  - Masonry (~> 0.5.3)
+  - MAThemeKit (~> 1.0)
+  - MJRefresh (~> 0.0.1)
+  - MZAppearance (~> 1.1.3)
+  - NSObject+AssociatedDictionary (~> 1.0)
+  - NSObject+AutoDescription (~> 0.1)
+  - NSObject-NSCoding (~> 1.0)
+  - NSObject-Tap (~> 1.0.1)
+  - NSString-HTML (~> 0.0.1)
+  - OCHamcrest (~> 4.1.1)
+  - OCMockito (~> 1.3.1)
+  - RatingBar (from `https://coding.net/huangxinping/RatingBar.git`, tag `0.0.2`)
+  - ReactiveCocoa (~> 2.4.2)
+  - ReactiveCocoaLayout (~> 0.4)
+  - ReactiveViewModel (~> 0.3)
+  - RESideMenu (~> 4.0.7)
+  - RXCollections (~> 1.0)
+  - SVProgressHUD (~> 1.1.2)
+  - UIFolderTableView (from `https://coding.net/huangxinping/UIFolderTableView.git`, tag `v1.0.0`)
+  - UITextView+Placeholder (~> 1.0.9)
+  - UIView+MGBadgeView (~> 0.0.1)
+  - XPKit (from `https://coding.net/huangxinping/XPKit.git`, tag `v1.0.0`)
+  - XPToast (from `https://coding.net/huangxinping/XPToast.git`, tag `v1.0.2`)
+  - XXNibBridge (~> 2.0)
+
+EXTERNAL SOURCES:
+  DOPDropDownMenu:
+    :git: https://coding.net/huangxinping/DOPDropDownMenu.git
+    :tag: 0.0.1
+  JKCountDownButton:
+    :git: https://coding.net/huangxinping/JKCountDownButton.git
+    :tag: 0.0.1
+  LASIImageView:
+    :commit: b8a6187b4bb205a01da0497c5bf414f6c163379e
+    :git: https://github.com/lukagabric/LASIImageView.git
+  RatingBar:
+    :git: https://coding.net/huangxinping/RatingBar.git
+    :tag: 0.0.2
+  UIFolderTableView:
+    :git: https://coding.net/huangxinping/UIFolderTableView.git
+    :tag: v1.0.0
+  XPKit:
+    :git: https://coding.net/huangxinping/XPKit.git
+    :tag: v1.0.0
+  XPToast:
+    :git: https://coding.net/huangxinping/XPToast.git
+    :tag: v1.0.2
+
+CHECKOUT OPTIONS:
+  DOPDropDownMenu:
+    :git: https://coding.net/huangxinping/DOPDropDownMenu.git
+    :tag: 0.0.1
+  JKCountDownButton:
+    :git: https://coding.net/huangxinping/JKCountDownButton.git
+    :tag: 0.0.1
+  LASIImageView:
+    :commit: b8a6187b4bb205a01da0497c5bf414f6c163379e
+    :git: https://github.com/lukagabric/LASIImageView.git
+  RatingBar:
+    :git: https://coding.net/huangxinping/RatingBar.git
+    :tag: 0.0.2
+  UIFolderTableView:
+    :git: https://coding.net/huangxinping/UIFolderTableView.git
+    :tag: v1.0.0
+  XPKit:
+    :git: https://coding.net/huangxinping/XPKit.git
+    :tag: v1.0.0
+  XPToast:
+    :git: https://coding.net/huangxinping/XPToast.git
+    :tag: v1.0.2
+
+SPEC CHECKSUMS:
+  A2StoryboardSegueContext: f7c59a413b4c4fe5920f8dbf06b0c970025ea57a
+  ACReuseQueue: 88d3845f193b9a71b5b0a230cd70821f33ed7b37
+  AFBlurSegue: 27e55f015360f4e11117d2c3a959dbb5316eef78
+  AFDynamicTableHelper: cf4a4c8f478dbc06a2572e870e30c7ebb9f8121c
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AFNetworking-RACExtensions: a043c6b492fa892395ceb9d20bc4c94e96e08a57
+  AFNetworking-RACRetryExtensions: bb3f8b09aab7ea4c4eee7099d57aeb44a2924113
+  Archimedes: a181c40a4de8d6bb8ee21bb0f89e9cd758fbb3ce
+  ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  BTInfiniteScrollView: 51b72612ff9e1b81f07040e0c26f479b14876d01
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  CLLocationManager-blocks: 3b0af033092491fcd3cd24ffddfeb13f65e52144
+  CSNNotificationObserver: bf3a8781aba027abb16c2f5a63f1a7b1de044d49
+  DOPDropDownMenu: 4c016dcad7151db38b395a58986123e00c3b4f4e
+  Expecta: 8c507baf13211207b1e9d0a741480600e6b4ed15
+  FastAnimationWithPOP: a6ec4b6707c3dc4f0b21287337e328c56d16edda
+  FCUUID: 178c3d7907b1399137f1093f9c04ce4825755292
+  ICViewPager: 032dc71a50fe898e185fae6112ded4bed0e0523c
+  INTUAnimationEngine: df23efaa0244dbccc1aaad122ccd8196af6881ca
+  IQKeyboardManager: 4adcd7cc9c17440a7cb74755f6f6c8389919c6bf
+  JKCountDownButton: 6a7a1355fcb39ed215ea1adb04733a2dab739e9f
+  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  LASIImageView: a53dc1afa2bd70da0922c8e85e11017fa8a2d6a9
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  LMGeocoder: c81e081869805cae12d667c85b61e6304d5cebe5
+  MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
+  MarkupLabel: 216c79cf86f3e8b26b502e89dc97c7841ae00cc9
+  Masonry: 9f515466afe48632562342a40a1c224071a1a022
+  MAThemeKit: 559acc98ceadc051cccb1b6bb0c4ca28475eb021
+  MJRefresh: 3ca90d4639e787c7b61432d84905f16de05d81b2
+  MZAppearance: 6e9dc64e42074c0a19812a327f590746c3283bab
+  NSObject+AssociatedDictionary: 030a9b38decf60a5b8825ff958f8b2720b49938c
+  NSObject+AutoDescription: 604fc7d2174e9ce46209769602958a85e680bf66
+  NSObject-NSCoding: d05f937cc1ea1560294be261ee41d5438ddc7b1b
+  NSObject-Tap: 07b174cf61d27b1b56384300d4ca2220853ab43b
+  NSString-HTML: 0dc0ae9d430d20a96dda961a346fa842fffa8c1f
+  OCHamcrest: 6f03ffa81d12feab872638490a44ab0a6d3aca10
+  OCMockito: 958f33ee8ad03eeb62e1397ef6b60f5121214ca4
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  RatingBar: 929994f5426e84c2d775f2c7369849bfb2399f0f
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
+  ReactiveCocoaLayout: d4bf94128119e5c56ba7425a296d58e1e9a4d7da
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  RXCollections: ef46a1c3b1f25711117ece94c48d9beae9f143a6
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  UICKeyChainStore: e81dc3b58d56ffaed61ab6669eb97071e53fc377
+  UIFolderTableView: 7d80e4f88b791173b5606189ddc020d1d5b894e2
+  UITextView+Placeholder: 83895056749372c96febfb43f536c9b1aae3e08e
+  UIView+MGBadgeView: 49caf22454d35f042c798dc8ce27ca38fb6e7d2a
+  XPKit: f36a12cfde3deffbafb5d27fca904acc08d74490
+  XPToast: 161bb38e73f63866946ad3dc8808544ca2065194
+  XXNibBridge: 04ce6b4f8a2e33857396f1c369581436c390cb7d
+
+COCOAPODS: 0.36.0

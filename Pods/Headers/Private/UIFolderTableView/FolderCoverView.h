@@ -1,0 +1,1 @@
+../../../UIFolderTableView/Source/FolderCoverView.h

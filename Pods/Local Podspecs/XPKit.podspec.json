@@ -1,0 +1,29 @@
+{
+  "name": "XPKit",
+  "version": "1.0.0",
+  "summary": "XPKit is a collection of useful classes to develop Apps faster",
+  "description": "                   What does it do?\n                   ================\n                   XPKit adds some useful method to some classes.\n\n                   ###Foundation:\n                   - NSArray\n\t\t\t\t   - NSDate\n\t\t\t\t   - NSCalendar\n\t\t\t\t   - NSData\n\t\t\t\t   - NSDate\n\t\t\t\t   - NSDictionary\n\t\t\t\t   - NSMutableString\n\t\t\t\t   - NSObject\n\t\t\t\t   - NSTimer\n\t\t\t\t   - NSURLRequest\n\t\t\t\t   - NSUserDefaults\n\t\t\t\t   - NSFileManager\n\t\t\t\t   - NSMutableArray\n\t\t\t\t   - NSMutableDictionary\n\t\t\t\t   - NSNumber\n\t\t\t\t   - NSProcessInfo\n\t\t\t\t   - NSString\n\n                   ###UIKit:\n\t\t\t\t   - UIActionSheet\n\t\t\t\t   - UIButton\n\t\t\t\t   - UIAlertView\n\t\t\t\t   - UIApplication\n\t\t\t\t   - UIControl\n\t\t\t\t   - UINavigationBar\n\t\t\t\t   - UINavigationController\n\t\t\t\t   - UIPickerView\n\t\t\t\t   - UIPopoverController\n\t\t\t\t   - UITableView\n\t\t\t\t   - UITableViewController\n\t\t\t\t   - UIToolbar\n\t\t\t\t   - UIColor\n\t\t\t\t   - UIDevice\n\t\t\t\t   - UIFont\n\t\t\t\t   - UIImage\n\t\t\t\t   - UIImageView\n\t\t\t\t   - UILabel\n\t\t\t\t   - UIScrollView\n\t\t\t\t   - UITableView\n\t\t\t\t   - UITextField\n\t\t\t\t   - UIView\n\t\t\t\t   - UIWebView\n\t\t\t\t   - UIWindow\n\n                   ###XPKit:\n                   - BFApp\n                   - BFLog\n                   - BFPassword\n                   - BFSystemSound\n\n",
+  "homepage": "https://github.com/huangxinping/XPKit",
+  "screenshots": "http://github.fabriziobrancati.com/XPKit/resources/screenshot.png",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Huang Xinping": "o0402@outlook.com"
+  },
+  "social_media_url": "https://weibo.com/o0402-monor",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "https://github.com/huangxinping/XPKit.git",
+    "tag": "v1.0.0"
+  },
+  "prefix_header_contents": "#import <XPKit.h>",
+  "source_files": "XPKit/**/*.{h,m}",
+  "public_header_files": "XPKit.h",
+  "resources": "XPKit/Languages/**",
+  "frameworks": "AudioToolbox",
+  "requires_arc": true
+}

@@ -1,0 +1,22 @@
+{
+  "name": "DOPDropDownMenu",
+  "version": "0.0.1",
+  "summary": "DOPDropDownMenu",
+  "homepage": "https://coding.net/u/huangxinping/p/DOPDropDownMenu/git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "huangxinping": "o0402@outlook.com"
+  },
+  "platforms": {
+    "ios": null
+  },
+  "source": {
+    "git": "https://coding.net/huangxinping/DOPDropDownMenu.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "DOPDropDownMenu/*.{h,m}",
+  "requires_arc": true
+}

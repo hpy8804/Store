@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F60CC85E-6CE0-4190-BD20-79355F6F8E2E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DecorationChain</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0994230330FE655C75CC45FF54663623F9B12CA3</key>
+		<string>https://coding.net/huangxinping/DecorationChain.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Source/iOS/DecorationChain.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0994230330FE655C75CC45FF54663623F9B12CA3</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://coding.net/huangxinping/DecorationChain.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0994230330FE655C75CC45FF54663623F9B12CA3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0994230330FE655C75CC45FF54663623F9B12CA3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DecorationChain</string>
+		</dict>
+	</array>
+</dict>
+</plist>

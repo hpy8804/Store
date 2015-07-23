@@ -1,0 +1,1 @@
+../../../BTInfiniteScrollView/Pod/Classes/BTInfiniteScrollView.h

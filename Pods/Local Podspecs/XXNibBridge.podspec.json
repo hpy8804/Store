@@ -1,0 +1,18 @@
+{
+  "name": "XXNibBridge",
+  "version": "1.0",
+  "license": "MIT",
+  "platforms": {
+    "ios": null
+  },
+  "summary": "Bridging interface builders, support nested nibs",
+  "homepage": "https://github.com/sunnyxx/XXNibBridge",
+  "authors": {
+    "sunnyxx": "sunnyxx.github.io"
+  },
+  "source": {
+    "git": "https://github.com/sunnyxx/XXNibBridge.git"
+  },
+  "source_files": "XXNibBridge/*.{h,m}",
+  "requires_arc": true
+}

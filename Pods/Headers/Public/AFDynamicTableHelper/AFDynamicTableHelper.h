@@ -1,0 +1,1 @@
+../../../AFDynamicTableHelper/Pod/Classes/AFDynamicTableHelper.h

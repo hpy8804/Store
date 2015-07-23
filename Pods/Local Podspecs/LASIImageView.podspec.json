@@ -1,0 +1,19 @@
+{
+  "name": "LASIImageView",
+  "version": "1.0",
+  "summary": "Async Image View",
+  "platforms": {
+    "ios": "5.0"
+  },
+  "homepage": "https://github.com/lukagabric/LASIImageView",
+  "source": {
+    "git": "https://github.com/lukagabric/LASIImageView"
+  },
+  "source_files": "LASIImageView/Classes/LASIImageView/*.{h,m}",
+  "dependencies": {
+    "ASIHTTPRequest": [
+
+    ]
+  },
+  "requires_arc": true
+}
