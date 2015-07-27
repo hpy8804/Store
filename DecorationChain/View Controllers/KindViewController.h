@@ -6,8 +6,9 @@
 //  Copyright (c) 2015年 ShareMerge. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ShowMoreProductController.h"
 
-@interface KindViewController : BaseViewController
+@interface KindViewController : ShowMoreProductController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -95,67 +95,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rowIndexProduct" rowHeight="140" id="x21-zE-W8o" customClass="ProductProfileTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x21-zE-W8o" id="2qV-BA-bog">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="氯压吧酸钾" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQM-cI-ZFK">
-                                                    <rect key="frame" x="15" y="10" width="297" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3E-it-lou">
-                                                    <rect key="frame" x="0.0" y="38" width="320" height="1"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="英文名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cE8-8K-vJ8">
-                                                    <rect key="frame" x="15" y="47" width="68" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CAS：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMI-Wv-1sl">
-                                                    <rect key="frame" x="15" y="76" width="68" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分子式：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKq-f0-qss">
-                                                    <rect key="frame" x="15" y="105" width="68" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Protassium chloropalladite" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogb-A4-8Yb">
-                                                    <rect key="frame" x="78" y="47" width="242" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10025-98-6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eef-vk-i8E">
-                                                    <rect key="frame" x="78" y="75" width="216" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CL4K2Pd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeX-fc-z2m">
-                                                    <rect key="frame" x="78" y="104" width="216" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="cas" destination="Eef-vk-i8E" id="eEH-NU-vh6"/>
-                                            <outlet property="en_name" destination="Ogb-A4-8Yb" id="keR-O6-52u"/>
-                                            <outlet property="formula" destination="oeX-fc-z2m" id="Up7-FI-2r8"/>
-                                            <outlet property="name" destination="AQM-cI-ZFK" id="I1u-Xh-Fkp"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="ZSV-k6-xl0"/>
@@ -224,75 +163,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxj-G3-23i">
-                                <rect key="frame" x="-90" y="0.0" width="410" height="455"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="C4d-iI-07A">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="455"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="rAb-Ov-hgG" style="IBUITableViewCellStyleDefault" id="EGx-1M-3pz">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EGx-1M-3pz" id="84n-HL-ToM">
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="常用分类" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rAb-Ov-hgG">
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.89411764705882357" green="0.22352941176470589" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="G6K-1p-EzI" id="HAH-HO-f5b"/>
-                                            <outlet property="delegate" destination="G6K-1p-EzI" id="j9S-In-BfV"/>
-                                        </connections>
-                                    </tableView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zf0-TA-Ef7">
-                                        <rect key="frame" x="90" y="0.0" width="320" height="455"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ukd-fP-rdd" customClass="XPADView">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
-                                                <subviews>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfw-QN-Ekd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
-                                                        <gestureRecognizers/>
-                                                    </scrollView>
-                                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4GW-eJ-7B3">
-                                                        <rect key="frame" x="140" y="123" width="39" height="37"/>
-                                                        <color key="pageIndicatorTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="currentPageIndicatorTintColor" red="0.76470588240000004" green="0.19215686269999999" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </pageControl>
-                                                </subviews>
-                                                <connections>
-                                                    <outlet property="adScrollView" destination="Gfw-QN-Ekd" id="oev-Vk-ebb"/>
-                                                    <outlet property="pageControl" destination="4GW-eJ-7B3" id="Chq-Y3-F95"/>
-                                                </connections>
-                                            </view>
-                                        </subviews>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="bGP-93-Oui" appends="YES" id="nus-c6-gNo"/>
-                                            <outletCollection property="gestureRecognizers" destination="z3u-iC-7bk" appends="YES" id="lH0-0V-owT"/>
-                                        </connections>
-                                    </scrollView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xpn-W1-6rF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="G6K-1p-EzI" id="sRF-y5-aP5"/>
+                                    <outlet property="delegate" destination="G6K-1p-EzI" id="rOA-oP-5M5"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="分类" id="52Y-vP-AMV"/>
                     <connections>
-                        <outlet property="adView" destination="Ukd-fP-rdd" id="bgC-af-fZU"/>
-                        <outlet property="contentScrollView" destination="Zf0-TA-Ef7" id="4tE-dw-YjK"/>
-                        <outlet property="contentView" destination="oxj-G3-23i" id="igJ-sh-Z5o"/>
-                        <outlet property="tableView" destination="C4d-iI-07A" id="tsL-Np-Y2L"/>
+                        <outlet property="tableView" destination="xpn-W1-6rF" id="sLc-eo-0NP"/>
                         <outlet property="viewModel" destination="PGe-Cc-PgZ" id="6Wm-UG-SsF"/>
                         <segue destination="Vll-6R-GtN" kind="push" identifier="embed_ad_info" id="vqe-1o-ys1"/>
                     </connections>
@@ -800,11 +685,11 @@
             </objects>
             <point key="canvasLocation" x="756" y="793.06999999999994"/>
         </scene>
-        <!--分类-->
+        <!--推荐-->
         <scene sceneID="IbX-Hm-7nV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cZU-rr-mUN" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="分类" image="tab_kind" id="U6l-bm-9pY"/>
+                    <tabBarItem key="tabBarItem" title="推荐" image="tab_kind" id="U6l-bm-9pY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7U4-0p-pGt" customClass="BaseNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -844,6 +729,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2FQ-q0-DGn"/>
+        <segue reference="vqe-1o-ys1"/>
     </inferredMetricsTieBreakers>
 </document>

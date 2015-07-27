@@ -375,6 +375,9 @@
 		264A75C81B628F8500A35697 /* RootTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75C71B628F8500A35697 /* RootTopTableViewCell.m */; };
 		264A75CB1B6294DC00A35697 /* ProductProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75CA1B6294DC00A35697 /* ProductProfileTableViewCell.m */; };
 		264A75CE1B62983E00A35697 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75CD1B62983E00A35697 /* ProductModel.m */; };
+		267B5DE61B662F04009F3964 /* ProductProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267B5DE51B662F04009F3964 /* ProductProfileTableViewCell.xib */; };
+		267B5DEF1B6652DA009F3964 /* ShowMoreProductController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B5DED1B6652DA009F3964 /* ShowMoreProductController.m */; };
+		267B5DF01B6652DA009F3964 /* ShowMoreProductController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267B5DEE1B6652DA009F3964 /* ShowMoreProductController.xib */; };
 		9787CB7DA7964666882CF3F2 /* libPods-DecorationChainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */; };
 /* End PBXBuildFile section */
 
@@ -803,6 +806,10 @@
 		264A75CA1B6294DC00A35697 /* ProductProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductProfileTableViewCell.m; sourceTree = "<group>"; };
 		264A75CC1B62983E00A35697 /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductModel.h; path = DecorationChain/ProductModel.h; sourceTree = SOURCE_ROOT; };
 		264A75CD1B62983E00A35697 /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductModel.m; path = DecorationChain/ProductModel.m; sourceTree = SOURCE_ROOT; };
+		267B5DE51B662F04009F3964 /* ProductProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductProfileTableViewCell.xib; sourceTree = "<group>"; };
+		267B5DEC1B6652DA009F3964 /* ShowMoreProductController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowMoreProductController.h; sourceTree = "<group>"; };
+		267B5DED1B6652DA009F3964 /* ShowMoreProductController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMoreProductController.m; sourceTree = "<group>"; };
+		267B5DEE1B6652DA009F3964 /* ShowMoreProductController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowMoreProductController.xib; sourceTree = "<group>"; };
 		3587A87CA8B6B760F6B2D8CC /* Pods-DecorationChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A659B62D0DE3663FF6CA552 /* Pods-DecorationChainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DecorationChainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1185,6 +1192,7 @@
 				264A75C71B628F8500A35697 /* RootTopTableViewCell.m */,
 				264A75C91B6294DC00A35697 /* ProductProfileTableViewCell.h */,
 				264A75CA1B6294DC00A35697 /* ProductProfileTableViewCell.m */,
+				267B5DE51B662F04009F3964 /* ProductProfileTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1271,6 +1279,9 @@
 				1EB39AF61A7FB87200E3F030 /* Kinds */,
 				1EC0A9641AB091BA000C4E97 /* Order */,
 				1E87B3781AB01B7C00D6F242 /* Profile */,
+				267B5DEC1B6652DA009F3964 /* ShowMoreProductController.h */,
+				267B5DED1B6652DA009F3964 /* ShowMoreProductController.m */,
+				267B5DEE1B6652DA009F3964 /* ShowMoreProductController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1784,6 +1795,7 @@
 				1EE16AF21ABD5E4700FE95B8 /* ProductOrder.storyboard in Resources */,
 				1ED8149C1AB2977B0066616A /* Main_sub.xib in Resources */,
 				1EE174481AB31161000BDD04 /* Rule.storyboard in Resources */,
+				267B5DE61B662F04009F3964 /* ProductProfileTableViewCell.xib in Resources */,
 				1E02B16A1ABB212E008369AC /* KindNavigationTitleView.xib in Resources */,
 				1EE174421AB31141000BDD04 /* MyAddress.storyboard in Resources */,
 				1EE174391AB3110A000BDD04 /* MyOrder.storyboard in Resources */,
@@ -1799,6 +1811,7 @@
 				1EE1744B1AB31178000BDD04 /* Setting.storyboard in Resources */,
 				1E19ACD21AB4204B0080C3EB /* OrderListTableViewCell.xib in Resources */,
 				1E404EE51A6600B100DDEF23 /* Main.storyboard in Resources */,
+				267B5DF01B6652DA009F3964 /* ShowMoreProductController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1966,6 +1979,7 @@
 				1E451E5E1AD4F9D2006BF1BC /* AlipayInfoModel.m in Sources */,
 				1E3F857D1ABC059700566CBB /* OrderModel.m in Sources */,
 				1EE174291AB2C8B9000BDD04 /* ChangePasswordViewController.m in Sources */,
+				267B5DEF1B6652DA009F3964 /* ShowMoreProductController.m in Sources */,
 				1EB1B4ED1B0330C7001976A3 /* ProductInfoAttributeTableViewCell.m in Sources */,
 				1ECF47C91ABA722A006E6B80 /* ProductInfoViewController.m in Sources */,
 				1EFC42411AFF7DE3005B21C8 /* openssl_wrapper.m in Sources */,

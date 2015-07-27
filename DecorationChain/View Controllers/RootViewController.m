@@ -18,6 +18,8 @@
 #import "RootTopTableViewCell.h"
 #include "ProductModel.h"
 #import "ProductProfileTableViewCell.h"
+#import <MJRefresh/MJRefresh.h>
+#import "ShowMoreProductController.h"
 
 #define TEST 0
 
@@ -53,6 +55,7 @@
         
         UIButton *phoneButton2 = [UIButton buttonWithType:UIButtonTypeCustom];
         [phoneButton2 setFrame:ccr(155, 7, 120, 30)];
+        phoneButton2.tag = 999;
         [phoneButton2 setTitle:@"400-699-0298" forState:UIControlStateNormal];
         [self.navigationController.navigationBar addSubview:phoneButton2];
         [[phoneButton2 rac_signalForControlEvents:UIControlEventTouchUpInside]
@@ -73,9 +76,13 @@
 #if TEST
 	self.startTime = [NSDate date];
 #endif
-//	[XPProgressHUD showWithStatus:@"正在初始化，请稍候..."];
-    
+    [XPProgressHUD showWithStatus:@"请稍候..."];
     [self obtainProducts];
+    
+    [self.listTableView addHeaderWithCallback:^{
+        [self obtainProducts];
+    }];
+    
 }
 
 - (void)obtainProducts
@@ -101,10 +108,15 @@
             model.name = carsList[i][@"name"];
             [self.mutArrProducts addObject:model];
         }
+        
+        [XPProgressHUD dismiss];
+        [self.listTableView headerEndRefreshing];
         [self.listTableView reloadData];
+        
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
+        [XPProgressHUD dismiss];
         // 4
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:[error localizedDescription]
@@ -113,7 +125,6 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -171,7 +182,7 @@
     if (indexPath.row == 0) {
         return 155.0f;
     }else{
-        return 140.0f;
+        return 129.0f;
     }
 }
 
@@ -188,15 +199,24 @@
         if (cell == nil) {
             cell = [[RootTopTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strIndentifier];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.showMoreProduct = ^{
+            ShowMoreProductController *vcShowMore = [[ShowMoreProductController alloc] initWithNibName:@"ShowMoreProductController" bundle:nil];
+            [self.navigationController pushViewController:vcShowMore animated:YES];
+        };
         
         return cell;
     }else{
-        static NSString *strIndentifier = @"rowIndexProduct";
-        ProductProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:strIndentifier];
-        if (cell == nil) {
-            cell = [[ProductProfileTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strIndentifier];
+        static NSString *CellIdentifier = @"rowIndexProduct";
+        BOOL nibsRegistered = NO;
+        if (!nibsRegistered) {
+            UINib *nib = [UINib nibWithNibName:@"ProductProfileTableViewCell" bundle:nil];
+            [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+            nibsRegistered = YES;
         }
+        ProductProfileTableViewCell *cell = (ProductProfileTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         cell.productModel = self.mutArrProducts[indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
     }

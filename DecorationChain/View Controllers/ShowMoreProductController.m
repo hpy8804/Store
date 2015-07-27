@@ -1,35 +1,23 @@
 //
-//  KindViewController.m
+//  ShowMoreProductController.m
 //  DecorationChain
 //
-//  Created by huangxinping on 15/2/2.
-//  Copyright (c) 2015年 ShareMerge. All rights reserved.
+//  Created by sven on 7/27/15.
+//  Copyright (c) 2015 ShareMerge. All rights reserved.
 //
 
-#import "KindViewController.h"
+#import "ShowMoreProductController.h"
 
-#import "KindNavigationTitleView.h"
-#import "KindViewModel.h"
-#import "kindModel.h"
-#import "KindSubModel.h"
-
-#import "KindSubView.h"
-#import "XPADView.h"
-
-#import <XPKit/XPKit.h>
-#import "XPProgressHUD.h"
-
-@interface KindViewController () <UITableViewDelegate, UITableViewDataSource>
-
+@interface ShowMoreProductController ()
 
 @end
 
-@implementation KindViewController
+@implementation ShowMoreProductController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"推荐";
+    self.title = @"特色产品";
     [self.tableView addHeaderWithCallback:^{
         [self obtainMoreProducts];
     }];
@@ -116,6 +104,5 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
-
 
 @end

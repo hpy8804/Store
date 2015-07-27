@@ -26,7 +26,9 @@
 }
 
 - (IBAction)handleShowMore:(id)sender {
-    NSLog(@"显示更多");
+    if (_showMoreProduct) {
+        _showMoreProduct();
+    }
 }
 
 @end

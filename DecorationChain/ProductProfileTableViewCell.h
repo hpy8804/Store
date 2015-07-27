@@ -10,9 +10,11 @@
 #import "ProductModel.h"
 
 @interface ProductProfileTableViewCell : UITableViewCell
-@property (strong, nonatomic) ProductModel *productModel;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *en_name;
 @property (weak, nonatomic) IBOutlet UILabel *cas;
 @property (weak, nonatomic) IBOutlet UILabel *formula;
+
+@property (strong, nonatomic) ProductModel *productModel;
+
 @end

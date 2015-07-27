@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (nonatomic, copy) void (^showMoreProduct)();
 
 @end
