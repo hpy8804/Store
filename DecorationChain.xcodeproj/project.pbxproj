@@ -372,6 +372,9 @@
 		1EFC42411AFF7DE3005B21C8 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC42321AFF7DE3005B21C8 /* openssl_wrapper.m */; };
 		1EFC42421AFF7DE3005B21C8 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC42341AFF7DE3005B21C8 /* RSADataSigner.m */; };
 		1EFC42431AFF7DE3005B21C8 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC42361AFF7DE3005B21C8 /* RSADataVerifier.m */; };
+		264A75C81B628F8500A35697 /* RootTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75C71B628F8500A35697 /* RootTopTableViewCell.m */; };
+		264A75CB1B6294DC00A35697 /* ProductProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75CA1B6294DC00A35697 /* ProductProfileTableViewCell.m */; };
+		264A75CE1B62983E00A35697 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75CD1B62983E00A35697 /* ProductModel.m */; };
 		9787CB7DA7964666882CF3F2 /* libPods-DecorationChainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */; };
 /* End PBXBuildFile section */
 
@@ -794,6 +797,12 @@
 		1EFC42341AFF7DE3005B21C8 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		1EFC42351AFF7DE3005B21C8 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		1EFC42361AFF7DE3005B21C8 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		264A75C61B628F8500A35697 /* RootTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTopTableViewCell.h; sourceTree = "<group>"; };
+		264A75C71B628F8500A35697 /* RootTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTopTableViewCell.m; sourceTree = "<group>"; };
+		264A75C91B6294DC00A35697 /* ProductProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductProfileTableViewCell.h; sourceTree = "<group>"; };
+		264A75CA1B6294DC00A35697 /* ProductProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductProfileTableViewCell.m; sourceTree = "<group>"; };
+		264A75CC1B62983E00A35697 /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductModel.h; path = DecorationChain/ProductModel.h; sourceTree = SOURCE_ROOT; };
+		264A75CD1B62983E00A35697 /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductModel.m; path = DecorationChain/ProductModel.m; sourceTree = SOURCE_ROOT; };
 		3587A87CA8B6B760F6B2D8CC /* Pods-DecorationChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A659B62D0DE3663FF6CA552 /* Pods-DecorationChainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DecorationChainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1115,6 +1124,8 @@
 		1E9356AB1A78BFC4005864AD /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				264A75CC1B62983E00A35697 /* ProductModel.h */,
+				264A75CD1B62983E00A35697 /* ProductModel.m */,
 				1ED8149B1AB2977B0066616A /* Main_sub.xib */,
 				1EB2A6F81A7D0491002481BC /* RootViewModel.h */,
 				1EB2A6F91A7D0491002481BC /* RootViewModel.m */,
@@ -1170,6 +1181,10 @@
 				1E3F85831ABC0B0400566CBB /* OrderList */,
 				1E663B0E1ABA8CAD00243AFE /* ProductInfo */,
 				1E02B1541ABB0943008369AC /* ProfileCenter */,
+				264A75C61B628F8500A35697 /* RootTopTableViewCell.h */,
+				264A75C71B628F8500A35697 /* RootTopTableViewCell.m */,
+				264A75C91B6294DC00A35697 /* ProductProfileTableViewCell.h */,
+				264A75CA1B6294DC00A35697 /* ProductProfileTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1721,7 +1736,7 @@
 				TargetAttributes = {
 					1E404ED21A6600B000DDEF23 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = X524MQ3K5T;
+						DevelopmentTeam = 3PJNKG3435;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1733,7 +1748,7 @@
 						TestTargetID = 1E404ED21A6600B000DDEF23;
 					};
 					1E55A6551AFF922700B11B55 = {
-						DevelopmentTeam = CGB6LN9BH6;
+						DevelopmentTeam = 6UNE9HMS62;
 					};
 				};
 			};
@@ -1935,6 +1950,7 @@
 				1EFC42431AFF7DE3005B21C8 /* RSADataVerifier.m in Sources */,
 				1EF86DD31B173C0C00986CDF /* ReportStoreViewController.m in Sources */,
 				1E663B0C1ABA8CA700243AFE /* ProductInfoNumberTableViewCell.m in Sources */,
+				264A75C81B628F8500A35697 /* RootTopTableViewCell.m in Sources */,
 				1E02B14E1ABB092C008369AC /* NickTableViewCell.m in Sources */,
 				1E02B15B1ABB0C26008369AC /* PasswordTableViewCell.m in Sources */,
 				1E451E5B1AD4F7AC006BF1BC /* ProductOrderInfoViewModel.m in Sources */,
@@ -2000,6 +2016,7 @@
 				1E46D7AE1AD2BB7D00943D22 /* CartEditTableViewCell.m in Sources */,
 				1E2D76701A79110500710C0A /* BaseViewModel.m in Sources */,
 				1EE56A791B5F7E9200D428EE /* RepasswordViewController.m in Sources */,
+				264A75CB1B6294DC00A35697 /* ProductProfileTableViewCell.m in Sources */,
 				1E42686F1ABAC41E0069F954 /* RegisterModel.m in Sources */,
 				1EB5C2461A775BFE00EA291A /* DecorationChain.xcdatamodeld in Sources */,
 				1E19ACD01AB4204B0080C3EB /* OrderListTableViewCell.m in Sources */,
@@ -2037,6 +2054,7 @@
 				1EE174341AB310BC000BDD04 /* MyCollectionViewController.m in Sources */,
 				1E02B1761ABB27E6008369AC /* kindModel.m in Sources */,
 				1E7880431B171FED0052566B /* ReportViewModel.m in Sources */,
+				264A75CE1B62983E00A35697 /* ProductModel.m in Sources */,
 				1E87B3771AB00C4D00D6F242 /* BaseNavigationController.m in Sources */,
 				1EE1744E1AB31183000BDD04 /* SettingViewController.m in Sources */,
 				1E9E5B471ABAD50A0098CBD2 /* LoginModel.m in Sources */,
@@ -2356,8 +2374,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DecorationChain/alipay",
@@ -2432,7 +2450,7 @@
 					"$(PROJECT_DIR)/DecorationChain/alipay",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2563b38d-1c09-41be-a399-44b81985fdc6";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -2442,8 +2460,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DecorationChain/alipay",
@@ -2518,7 +2536,7 @@
 					"$(PROJECT_DIR)/DecorationChain/alipay",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2563b38d-1c09-41be-a399-44b81985fdc6";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -2566,7 +2584,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DecorationChain/alipay",
@@ -2651,7 +2669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DecorationChain/alipay",

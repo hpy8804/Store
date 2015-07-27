@@ -15,19 +15,20 @@
 #import "ProfileModel.h"
 #import "XPProgressHUD.h"
 #import "NSDate+XPKit.h"
+#import "RootTopTableViewCell.h"
+#include "ProductModel.h"
+#import "ProductProfileTableViewCell.h"
 
 #define TEST 0
 
 @interface RootViewController ()
 
-@property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
-@property (weak, nonatomic) IBOutlet XPADView *adView;
-@property (strong, nonatomic) IBOutlet RootViewModel *viewModel;
-@property (weak, nonatomic) IBOutlet UIButton *specialButton;
-@property (weak, nonatomic) IBOutlet UIButton *recommendButton;
-@property (weak, nonatomic) IBOutlet UIButton *hotButton;
-@property (weak, nonatomic) IBOutlet UIButton *freeButton;
-@property (weak, nonatomic) IBOutlet UIButton *tuanButton;
+@property (weak, nonatomic) IBOutlet UITableView *listTableView;
+@property (strong, nonatomic) IBOutlet ProductModel *productModel;
+@property (strong, nonatomic) NSMutableArray *mutArrProducts;
+
+
+
 #if TEST
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) UIAlertView *alertView;
@@ -47,90 +48,72 @@
 		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:phoneButton];
 		[[phoneButton rac_signalForControlEvents:UIControlEventTouchUpInside]
 		 subscribeNext: ^(id x) {
-		    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://037153315676"]];
+		    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://4006990298"]];
 		}];
-
-		UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		[searchButton setFrame:ccr(230, 10, 25, 25)];
-		[searchButton setBackgroundImage:[UIImage imageNamed:@"search_button"] forState:UIControlStateNormal];
-		searchButton.tag = 999;
-		[self.navigationController.navigationBar addSubview:searchButton];
-		@weakify(self);
-		[[searchButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-		 subscribeNext: ^(id x) {
-		    @strongify(self);
-		    UIViewController *viewController = [self instantiateInitialViewControllerWithStoryboardName:@"Search"];
-		    [self presentViewController:viewController animated:YES completion:nil];
-		}];
+        
+        UIButton *phoneButton2 = [UIButton buttonWithType:UIButtonTypeCustom];
+        [phoneButton2 setFrame:ccr(155, 7, 120, 30)];
+        [phoneButton2 setTitle:@"400-699-0298" forState:UIControlStateNormal];
+        [self.navigationController.navigationBar addSubview:phoneButton2];
+        [[phoneButton2 rac_signalForControlEvents:UIControlEventTouchUpInside]
+         subscribeNext: ^(id x) {
+             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://4006990298"]];
+         }];
 	}
 
 	{ // 导航栏左边
-		UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
-		[logoImageView setFrame:ccr(0, 0, 100, 30)];
-		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:logoImageView];
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:ccr(0, 7, 120, 30)];
+        nameLabel.backgroundColor = [UIColor clearColor];
+        nameLabel.textColor = [UIColor whiteColor];
+        nameLabel.text = @"华威锐科";
+        nameLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nameLabel];
 	}
-
-	@weakify(self);
-	[[self.specialButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-	    viewController.model =  [BaseObject new];
-	    viewController.model.baseTransfer = @"0";
-	    [self.navigationController pushViewController:viewController animated:YES];
-	}];
-	[[self.recommendButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-	    viewController.model =  [BaseObject new];
-	    viewController.model.baseTransfer = @"3";
-	    [self.navigationController pushViewController:viewController animated:YES];
-	}];
-	[[self.hotButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-	    viewController.model =  [BaseObject new];
-	    viewController.model.baseTransfer = @"2";
-	    [self.navigationController pushViewController:viewController animated:YES];
-	}];
-	[[self.tuanButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-	    viewController.model =  [BaseObject new];
-	    viewController.model.baseTransfer = @"1";
-	    [self.navigationController pushViewController:viewController animated:YES];
-	}];
-	[[self.freeButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-	    viewController.model =  [BaseObject new];
-	    viewController.model.baseTransfer = @"4";
-	    [self.navigationController pushViewController:viewController animated:YES];
-	}];
 
 #if TEST
 	self.startTime = [NSDate date];
 #endif
-	[XPProgressHUD showWithStatus:@"正在初始化，请稍候..."];
-	[[self.viewModel ads]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    [self.adView uploadUI:x];
-	}];
+//	[XPProgressHUD showWithStatus:@"正在初始化，请稍候..."];
+    
+    [self obtainProducts];
+}
 
-	[[self.viewModel initialIndex]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    [self reloadBottom:x];
+- (void)obtainProducts
+{
+    self.mutArrProducts = [NSMutableArray array];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager GET:@"http://122.114.61.234/app/api/home" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 3
+        //[self.view setAnimatingWithStateOfOperation:operation];
+        
+        NSArray *carsList = responseObject[@"data"];
+        for (int i = 0; i < carsList.count; i++) {
+            ProductModel *model = [[ProductModel alloc] init];
+            model.proId = carsList[i][@"id"];
+            model.en_name = carsList[i][@"en_name"];
+            model.cas = carsList[i][@"cas"];
+            model.formula = carsList[i][@"formula"];
+            model.name = carsList[i][@"name"];
+            [self.mutArrProducts addObject:model];
+        }
+        [self.listTableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // 4
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
 
-	    {  // 自动登陆
-	        [self autoLogin];
-		}
-	}];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -145,101 +128,6 @@
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
-}
-
-- (void)reloadBottom:(NSArray *)sender {
-	CGSize specialsSize = CGSizeZero;
-	CGSize tuansSize = CGSizeZero;
-	CGSize hotsSize = CGSizeZero;
-	CGSize recommendsSize = CGSizeZero;
-	{ // 加载今日特价
-		NSArray *specials = sender[0];
-		MainSubView *specialView = [[NSBundle mainBundle] loadNibNamed:@"Main_sub" owner:self options:nil][0];
-		specialView.frame = ccr(0, 418, self.view.width, 0);
-		specialView.titleLabel.text = @"今日特价";
-		[self.contentScrollView addSubview:specialView];
-		specialsSize = [specialView updateUIWithData:specials];
-
-		@weakify(self);
-		[[specialView.moreButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-		 subscribeNext: ^(id x) {
-		    @strongify(self);
-		    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-		    viewController.model =  [BaseObject new];
-		    viewController.model.baseTransfer = @"0";
-		    [self.navigationController pushViewController:viewController animated:YES];
-		}];
-	}
-	{ // 加载团购
-		NSArray *tuans = sender[1];
-		MainSubView *tuanView = [[NSBundle mainBundle] loadNibNamed:@"Main_sub" owner:self options:nil][0];
-		tuanView.frame = ccr(0, 418 + specialsSize.height + 10, self.view.width, 0);
-		tuanView.titleLabel.text = @"团购专区";
-		[self.contentScrollView addSubview:tuanView];
-		tuansSize = [tuanView updateUIWithData:tuans];
-
-		@weakify(self);
-		[[tuanView.moreButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-		 subscribeNext: ^(id x) {
-		    @strongify(self);
-		    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-		    viewController.model =  [BaseObject new];
-		    viewController.model.baseTransfer = @"1";
-		    [self.navigationController pushViewController:viewController animated:YES];
-		}];
-	}
-	{ // 加载热卖产品
-		NSArray *hots = sender[2];
-		MainSubView *hotView = [[NSBundle mainBundle] loadNibNamed:@"Main_sub" owner:self options:nil][0];
-		hotView.frame = ccr(0, 418 + specialsSize.height + 10 + tuansSize.height + 10, self.view.width, 0);
-		hotView.titleLabel.text = @"热卖商品";
-		[self.contentScrollView addSubview:hotView];
-		hotsSize = [hotView updateUIWithData:hots];
-
-		@weakify(self);
-		[[hotView.moreButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-		 subscribeNext: ^(id x) {
-		    @strongify(self);
-		    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-		    viewController.model =  [BaseObject new];
-		    viewController.model.baseTransfer = @"2";
-		    [self.navigationController pushViewController:viewController animated:YES];
-		}];
-	}
-	{ // 加载推荐产品
-		NSArray *recommends = sender[3];
-		MainSubView *recommendView = [[NSBundle mainBundle] loadNibNamed:@"Main_sub" owner:self options:nil][0];
-		recommendView.frame = ccr(0, 418 + specialsSize.height + 10 + tuansSize.height + hotsSize.height + 10, self.view.width, 0);
-		recommendView.titleLabel.text = @"精品推荐";
-		[self.contentScrollView addSubview:recommendView];
-		recommendsSize = [recommendView updateUIWithData:recommends];
-
-		@weakify(self);
-		[[recommendView.moreButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-		 subscribeNext: ^(id x) {
-		    @strongify(self);
-		    BaseViewController *viewController = (BaseViewController *)[self instantiateViewControllerWithStoryboardName:@"MainGroup" identifier:@"group"];
-		    viewController.model =  [BaseObject new];
-		    viewController.model.baseTransfer = @"3";
-		    [self.navigationController pushViewController:viewController animated:YES];
-		}];
-	}
-	[self.contentScrollView setContentSize:ccs(self.view.width, 418 + specialsSize.height + tuansSize.height + hotsSize.height + recommendsSize.height + 20)];
-
-	[XPProgressHUD dismiss];
-#if TEST
-	NSDate *endTime = [NSDate date];
-	double intervalTime = [endTime timeIntervalSinceReferenceDate] - [self.startTime timeIntervalSinceReferenceDate];
-	long lTime = (long)intervalTime;
-	NSInteger iSeconds = lTime % 60;
-	NSInteger iMinutes = (lTime / 60) % 60;
-	NSInteger iHours = (lTime / 3600);
-	NSInteger iDays = lTime / 60 / 60 / 24;
-	NSInteger iMonth = lTime / 60 / 60 / 24 / 12;
-	NSInteger iYears = lTime / 60 / 60 / 24 / 384;
-	NSString *offset = [NSString stringWithFormat:@"测试：主页初始化接口请求花时%ld分%ld秒（正在自动登陆中，请稍候）", (long)iMinutes, (long)iSeconds];
-	self.alertView = [[UIAlertView alloc] initWithTitle:nil message:offset delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-#endif
 }
 
 #pragma mark - title
@@ -274,6 +162,51 @@
 		[self.alertView dismissWithClickedButtonIndex:0 animated:YES];
 	}
 #endif
+}
+
+#pragma mark - tableView delegate methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 155.0f;
+    }else{
+        return 140.0f;
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.mutArrProducts.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        static NSString *strIndentifier = @"rowIndexZero";
+        RootTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:strIndentifier];
+        if (cell == nil) {
+            cell = [[RootTopTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strIndentifier];
+        }
+        
+        return cell;
+    }else{
+        static NSString *strIndentifier = @"rowIndexProduct";
+        ProductProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:strIndentifier];
+        if (cell == nil) {
+            cell = [[ProductProfileTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strIndentifier];
+        }
+        cell.productModel = self.mutArrProducts[indexPath.row];
+        
+        return cell;
+    }
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 @end
