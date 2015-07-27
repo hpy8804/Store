@@ -378,6 +378,8 @@
 		267B5DE61B662F04009F3964 /* ProductProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267B5DE51B662F04009F3964 /* ProductProfileTableViewCell.xib */; };
 		267B5DEF1B6652DA009F3964 /* ShowMoreProductController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B5DED1B6652DA009F3964 /* ShowMoreProductController.m */; };
 		267B5DF01B6652DA009F3964 /* ShowMoreProductController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267B5DEE1B6652DA009F3964 /* ShowMoreProductController.xib */; };
+		267B5DF41B66657E009F3964 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B5DF21B66657E009F3964 /* ResultViewController.m */; };
+		267B5DF51B66657E009F3964 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267B5DF31B66657E009F3964 /* ResultViewController.xib */; };
 		9787CB7DA7964666882CF3F2 /* libPods-DecorationChainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */; };
 /* End PBXBuildFile section */
 
@@ -810,6 +812,9 @@
 		267B5DEC1B6652DA009F3964 /* ShowMoreProductController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowMoreProductController.h; sourceTree = "<group>"; };
 		267B5DED1B6652DA009F3964 /* ShowMoreProductController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMoreProductController.m; sourceTree = "<group>"; };
 		267B5DEE1B6652DA009F3964 /* ShowMoreProductController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowMoreProductController.xib; sourceTree = "<group>"; };
+		267B5DF11B66657E009F3964 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		267B5DF21B66657E009F3964 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		267B5DF31B66657E009F3964 /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		3587A87CA8B6B760F6B2D8CC /* Pods-DecorationChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A659B62D0DE3663FF6CA552 /* Pods-DecorationChainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DecorationChainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1282,6 +1287,9 @@
 				267B5DEC1B6652DA009F3964 /* ShowMoreProductController.h */,
 				267B5DED1B6652DA009F3964 /* ShowMoreProductController.m */,
 				267B5DEE1B6652DA009F3964 /* ShowMoreProductController.xib */,
+				267B5DF11B66657E009F3964 /* ResultViewController.h */,
+				267B5DF21B66657E009F3964 /* ResultViewController.m */,
+				267B5DF31B66657E009F3964 /* ResultViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1811,6 +1819,7 @@
 				1EE1744B1AB31178000BDD04 /* Setting.storyboard in Resources */,
 				1E19ACD21AB4204B0080C3EB /* OrderListTableViewCell.xib in Resources */,
 				1E404EE51A6600B100DDEF23 /* Main.storyboard in Resources */,
+				267B5DF51B66657E009F3964 /* ResultViewController.xib in Resources */,
 				267B5DF01B6652DA009F3964 /* ShowMoreProductController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1975,6 +1984,7 @@
 				1E7435C11AD40D6B00666D0B /* RuntimeCacheModel.m in Sources */,
 				1E87B37E1AB01C3A00D6F242 /* ProfileViewModel.m in Sources */,
 				1EFC423E1AFF7DE3005B21C8 /* DataVerifier.m in Sources */,
+				267B5DF41B66657E009F3964 /* ResultViewController.m in Sources */,
 				1E3F85861ABC0B2C00566CBB /* CartTableViewCell.m in Sources */,
 				1E451E5E1AD4F9D2006BF1BC /* AlipayInfoModel.m in Sources */,
 				1E3F857D1ABC059700566CBB /* OrderModel.m in Sources */,

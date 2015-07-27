@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootTopTableViewCell : UITableViewCell
+@interface RootTopTableViewCell : UITableViewCell<UIActionSheetDelegate>
+
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
-@property (weak, nonatomic) IBOutlet UIButton *searchButton;
-@property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (weak, nonatomic) IBOutlet UITextField *keyWordTextField;
 @property (nonatomic, copy) void (^showMoreProduct)();
+@property (nonatomic, copy) void (^showSearchResult)(NSString *category, NSString *keyWord);
 
 @end

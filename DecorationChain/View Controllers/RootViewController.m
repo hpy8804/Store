@@ -20,6 +20,7 @@
 #import "ProductProfileTableViewCell.h"
 #import <MJRefresh/MJRefresh.h>
 #import "ShowMoreProductController.h"
+#import "ResultViewController.h"
 
 #define TEST 0
 
@@ -202,7 +203,13 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.showMoreProduct = ^{
             ShowMoreProductController *vcShowMore = [[ShowMoreProductController alloc] initWithNibName:@"ShowMoreProductController" bundle:nil];
+            vcShowMore.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vcShowMore animated:YES];
+        };
+        cell.showSearchResult = ^(NSString *category, NSString *keyWord){
+            ResultViewController *vcResult = [[ResultViewController alloc] initWithCategory:category keyWord:keyWord];
+            vcResult.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vcResult animated:YES];
         };
         
         return cell;
