@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "XPADView.h"
+#import "ProductInfoModel.h"
 
 @interface ProductInfoHeadTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *labelName;
+@property (weak, nonatomic) IBOutlet UILabel *labelCAS;
+@property (weak, nonatomic) IBOutlet UILabel *labelName2;
+@property (weak, nonatomic) IBOutlet UILabel *labelEnName;
+@property (weak, nonatomic) IBOutlet UILabel *labelFormula;
+@property (weak, nonatomic) IBOutlet UILabel *labelMolecular;
+@property (weak, nonatomic) IBOutlet UILabel *labelBoil;
+@property (weak, nonatomic) IBOutlet UILabel *labelFlash;
+@property (weak, nonatomic) IBOutlet UILabel *labelPhysical;
 
-@property (weak, nonatomic) IBOutlet XPADView *adView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+- (void)updateUIWithModel:(ProductInfoModel*)infoModel;
 
 @end

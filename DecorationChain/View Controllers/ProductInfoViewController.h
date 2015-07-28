@@ -9,6 +9,6 @@
 #import "BaseViewController.h"
 
 @interface ProductInfoViewController : BaseViewController
-
+//@property (strong, nonatomic) NSString *productID;
 
 @end

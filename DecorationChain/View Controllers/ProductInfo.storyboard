@@ -20,73 +20,127 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_head" rowHeight="428" id="yjU-s8-Ghd" customClass="ProductInfoHeadTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_head" rowHeight="210" id="yjU-s8-Ghd" customClass="ProductInfoHeadTableViewCell">
                                         <rect key="frame" x="0.0" y="86" width="320" height="257"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yjU-s8-Ghd" id="Czc-3h-6Ne">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6I-Ct-ecc" customClass="XPADView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                                    <subviews>
-                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJK-Jt-Mxs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                                        </scrollView>
-                                                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="6YQ-5q-oq6">
-                                                            <rect key="frame" x="140" y="281" width="39" height="37"/>
-                                                            <color key="pageIndicatorTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="currentPageIndicatorTintColor" red="0.76470588240000004" green="0.19215686269999999" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </pageControl>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="320" id="0jH-Ak-Yef"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <outlet property="adScrollView" destination="sJK-Jt-Mxs" id="MAY-Dj-Hsb"/>
-                                                        <outlet property="pageControl" destination="6YQ-5q-oq6" id="wYC-Fy-5rg"/>
-                                                    </connections>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="几乎是看见对方和会计师的回复将开始的恢复金士顿很费劲的时刻" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="fIb-SU-Yd7">
-                                                    <rect key="frame" x="8" y="364" width="304" height="36"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="￥128" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RI1-2C-8wh">
-                                                    <rect key="frame" x="8" y="398" width="162" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.85882352941176465" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="几乎是看见对方和会计师的回复将开始的恢复金士顿很费劲的时刻" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="RqT-hB-gRo">
-                                                    <rect key="frame" x="8" y="318" width="304" height="36"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="氯亚吧酸钾" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="RqT-hB-gRo">
+                                                    <rect key="frame" x="8" y="0.0" width="304" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中文：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4P-yn-6tB">
+                                                    <rect key="frame" x="9" y="61" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="英文：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVt-EL-J2w">
+                                                    <rect key="frame" x="9" y="88" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分子式：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Td-9X-1Fh">
+                                                    <rect key="frame" x="8" y="127" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CAS号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfJ-mb-JkJ">
+                                                    <rect key="frame" x="8" y="37" width="61" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分子量：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JP-L2-CXK">
+                                                    <rect key="frame" x="9" y="151" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="326.43" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oD-sh-cNb">
+                                                    <rect key="frame" x="69" y="151" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="沸点：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-U5-HMu">
+                                                    <rect key="frame" x="138" y="150" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="无" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vlk-IL-dwF">
+                                                    <rect key="frame" x="184" y="150" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="闪点：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOO-eX-FkL">
+                                                    <rect key="frame" x="9" y="175" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="无" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUF-0N-tQp">
+                                                    <rect key="frame" x="53" y="180" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="物性：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNh-N4-YEq">
+                                                    <rect key="frame" x="138" y="177" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10025-98-6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-cK-Xvc">
+                                                    <rect key="frame" x="68" y="37" width="244" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="氯亚吧酸钾" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nc-eU-X8P">
+                                                    <rect key="frame" x="53" y="61" width="244" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Potassium chloropalladite" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deF-Oh-KTj">
+                                                    <rect key="frame" x="53" y="84" width="244" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cl4k2Pd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mL-pB-VUn">
+                                                    <rect key="frame" x="63" y="127" width="244" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="红棕色晶体，刺激眼部" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg0-LT-cBk">
+                                                    <rect key="frame" x="184" y="156" width="130" height="60"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="fIb-SU-Yd7" secondAttribute="trailing" constant="8" id="1vM-xt-ukE"/>
-                                                <constraint firstItem="RqT-hB-gRo" firstAttribute="leading" secondItem="Czc-3h-6Ne" secondAttribute="leading" constant="8" id="7F3-M5-JnS"/>
-                                                <constraint firstAttribute="trailing" secondItem="RqT-hB-gRo" secondAttribute="trailing" constant="8" id="Ghy-4A-fFF"/>
-                                                <constraint firstItem="RI1-2C-8wh" firstAttribute="leading" secondItem="Czc-3h-6Ne" secondAttribute="leading" constant="8" id="Jc1-eq-aJL"/>
-                                                <constraint firstAttribute="bottom" secondItem="RI1-2C-8wh" secondAttribute="bottom" id="NXX-6L-SC7"/>
-                                                <constraint firstItem="RI1-2C-8wh" firstAttribute="top" secondItem="fIb-SU-Yd7" secondAttribute="bottom" id="P9U-2s-eXI"/>
-                                                <constraint firstItem="fIb-SU-Yd7" firstAttribute="leading" secondItem="Czc-3h-6Ne" secondAttribute="leading" constant="8" id="PKs-Fo-iiQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="x6I-Ct-ecc" secondAttribute="trailing" id="bFZ-Pi-6Te"/>
-                                                <constraint firstItem="x6I-Ct-ecc" firstAttribute="top" secondItem="Czc-3h-6Ne" secondAttribute="top" id="dID-h7-oSS"/>
-                                                <constraint firstItem="fIb-SU-Yd7" firstAttribute="top" secondItem="RqT-hB-gRo" secondAttribute="bottom" constant="1" id="pwb-it-Yej"/>
-                                                <constraint firstItem="RqT-hB-gRo" firstAttribute="top" secondItem="x6I-Ct-ecc" secondAttribute="bottom" constant="2" id="tya-BQ-yOK"/>
-                                                <constraint firstItem="fIb-SU-Yd7" firstAttribute="top" secondItem="RqT-hB-gRo" secondAttribute="bottom" constant="1" id="wC5-OS-jg1"/>
-                                                <constraint firstItem="x6I-Ct-ecc" firstAttribute="leading" secondItem="Czc-3h-6Ne" secondAttribute="leading" id="yMI-dm-Pgv"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="adView" destination="x6I-Ct-ecc" id="y9F-nX-zfZ"/>
-                                            <outlet property="descriptionLabel" destination="fIb-SU-Yd7" id="mMK-t7-R12"/>
-                                            <outlet property="priceLabel" destination="RI1-2C-8wh" id="7Um-qG-9Ac"/>
-                                            <outlet property="titleLabel" destination="RqT-hB-gRo" id="FRA-SW-WzX"/>
+                                            <outlet property="labelBoil" destination="Vlk-IL-dwF" id="nqd-gb-CKO"/>
+                                            <outlet property="labelCAS" destination="Cjb-cK-Xvc" id="3dZ-CN-VZP"/>
+                                            <outlet property="labelEnName" destination="deF-Oh-KTj" id="YyX-Ze-o9k"/>
+                                            <outlet property="labelFlash" destination="AUF-0N-tQp" id="Q72-Wn-9yu"/>
+                                            <outlet property="labelFormula" destination="7mL-pB-VUn" id="zmh-3X-Hc2"/>
+                                            <outlet property="labelMolecular" destination="8oD-sh-cNb" id="1Id-Po-MQ1"/>
+                                            <outlet property="labelName" destination="RqT-hB-gRo" id="p2s-LQ-FkC"/>
+                                            <outlet property="labelName2" destination="6nc-eU-X8P" id="U9H-AA-22A"/>
+                                            <outlet property="labelPhysical" destination="lg0-LT-cBk" id="BfF-SZ-vi9"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_attr" rowHeight="51" id="kB0-xU-XkK" customClass="ProductInfoAttributeTableViewCell">
@@ -107,49 +161,121 @@
                                             <outlet property="nameLabel" destination="FOS-8x-170" id="i5b-rP-XWz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_1_0" rowHeight="35" id="Bhq-3E-FLm" customClass="ProductInfoNumberTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_1_0" rowHeight="106" id="Bhq-3E-FLm" customClass="ProductInfoNumberTableViewCell">
                                         <rect key="frame" x="0.0" y="343" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bhq-3E-FLm" id="Lre-oH-Wh4">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="规格" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQD-hb-UsK">
-                                                    <rect key="frame" x="8" y="6" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="货号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQD-hb-UsK">
+                                                    <rect key="frame" x="8" y="6" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ios_77" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-2j-A0x">
-                                                    <rect key="frame" x="229" y="6" width="22" height="22"/>
+                                                    <rect key="frame" x="145" y="72" width="22" height="22"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ios_77" translatesAutoresizingMaskIntoConstraints="NO" id="Q50-OX-oAB">
-                                                    <rect key="frame" x="283" y="6" width="22" height="22"/>
+                                                    <rect key="frame" x="199" y="72" width="22" height="22"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkb-dn-ann">
-                                                    <rect key="frame" x="277" y="0.0" width="35" height="35"/>
+                                                    <rect key="frame" x="193" y="66" width="35" height="35"/>
                                                     <state key="normal" image="ic_btn_148">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1件" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPo-qp-SIS">
-                                                    <rect key="frame" x="253" y="8" width="30" height="17"/>
+                                                    <rect key="frame" x="169" y="74" width="30" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdf-m3-bd9">
-                                                    <rect key="frame" x="223" y="0.0" width="35" height="35"/>
+                                                    <rect key="frame" x="139" y="66" width="35" height="35"/>
                                                     <state key="normal" image="ic_btn_145">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HWG15257-10G" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-F0-D5O">
+                                                    <rect key="frame" x="50" y="6" width="158" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="纯度：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rh-Bw-cnp">
+                                                    <rect key="frame" x="8" y="28" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="产地：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUB-0J-Ji9">
+                                                    <rect key="frame" x="8" y="49" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="库存：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBs-F0-UvL">
+                                                    <rect key="frame" x="9" y="69" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="规格：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRz-LJ-Aaj">
+                                                    <rect key="frame" x="145" y="28" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="价格：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL5-qr-7ly">
+                                                    <rect key="frame" x="145" y="49" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="98%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THe-Ae-Tpk">
+                                                    <rect key="frame" x="50" y="28" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="国产" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0B0-5r-EE0">
+                                                    <rect key="frame" x="50" y="49" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="现货" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLa-EN-tWE">
+                                                    <rect key="frame" x="50" y="69" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10G" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE0-et-R4b">
+                                                    <rect key="frame" x="187" y="28" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥2600.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-D2-7lw">
+                                                    <rect key="frame" x="187" y="49" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="increaseButton" destination="vkb-dn-ann" id="mVy-td-lN9"/>
-                                            <outlet property="numberLabel" destination="oPo-qp-SIS" id="HBF-tb-bs7"/>
-                                            <outlet property="reduceButton" destination="Zdf-m3-bd9" id="kWO-TE-c4P"/>
+                                            <outlet property="increaseButton" destination="vkb-dn-ann" id="MYo-Jz-ZNE"/>
+                                            <outlet property="labelCount" destination="oPo-qp-SIS" id="aS8-fe-o0D"/>
+                                            <outlet property="labelInventory" destination="oLa-EN-tWE" id="HRj-q4-MZP"/>
+                                            <outlet property="labelOrigin" destination="0B0-5r-EE0" id="GON-I8-49b"/>
+                                            <outlet property="labelPrice" destination="hBt-D2-7lw" id="z3Y-bb-xjI"/>
+                                            <outlet property="labelProductNO" destination="AcS-F0-D5O" id="Wgn-tE-HJO"/>
+                                            <outlet property="labelPurity" destination="THe-Ae-Tpk" id="mZ2-Uu-i5G"/>
+                                            <outlet property="labelSpecifications" destination="FE0-et-R4b" id="dOu-WR-RF0"/>
+                                            <outlet property="reduceButton" destination="Zdf-m3-bd9" id="pPf-z6-4TN"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_1_1" rowHeight="35" id="xVf-AU-f2t" customClass="ProductInfoSendTableViewCell">
@@ -356,8 +482,10 @@
                             <constraint firstItem="0Rd-zX-qJn" firstAttribute="top" secondItem="vMI-6r-nkn" secondAttribute="bottom" id="AT7-j6-79E"/>
                             <constraint firstAttribute="trailing" secondItem="vMI-6r-nkn" secondAttribute="trailing" id="BSL-XT-joI"/>
                             <constraint firstItem="0Rd-zX-qJn" firstAttribute="leading" secondItem="UdV-ex-kRq" secondAttribute="leading" id="DTu-u0-CSr"/>
+                            <constraint firstItem="vMI-6r-nkn" firstAttribute="top" secondItem="UdV-ex-kRq" secondAttribute="top" id="I4a-4q-a4d"/>
                             <constraint firstAttribute="trailing" secondItem="0Rd-zX-qJn" secondAttribute="trailing" id="J75-ks-2hZ"/>
                             <constraint firstItem="vMI-6r-nkn" firstAttribute="leading" secondItem="UdV-ex-kRq" secondAttribute="leading" id="OD0-cb-XH4"/>
+                            <constraint firstAttribute="bottom" secondItem="vMI-6r-nkn" secondAttribute="bottom" constant="50" id="OFO-oS-Qj3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="商品详情" id="B8e-85-pU8">

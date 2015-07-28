@@ -37,8 +37,8 @@
 
 @interface ProductInfoViewController () <UITableViewDelegate, UITableViewDataSource, AFDynamicTableHelperDelegate>
 
-@property (nonatomic, strong) AFDynamicTableHelper *tableHeadHelper;
-@property (nonatomic, strong) AFDynamicTableHelper *tableMoreHelper;
+//@property (nonatomic, strong) AFDynamicTableHelper *tableHeadHelper;
+//@property (nonatomic, strong) AFDynamicTableHelper *tableMoreHelper;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet ProductInfoViewModel *viewModel;
 @property (strong, nonatomic) ProductInfoModel *infoModel;
@@ -58,14 +58,14 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.tableHeadHelper = [[AFDynamicTableHelper alloc] init];
-	self.tableHeadHelper.delegate = self;
-	self.tableHeadHelper.reusableCellIdentifier = @"Cell_head";
-	self.tableMoreHelper = [[AFDynamicTableHelper alloc] init];
-	self.tableMoreHelper.delegate = self;
-	self.tableMoreHelper.reusableCellIdentifier = @"Cell_more";
+//	self.tableHeadHelper = [[AFDynamicTableHelper alloc] init];
+//	self.tableHeadHelper.delegate = self;
+//	self.tableHeadHelper.reusableCellIdentifier = @"Cell_head";
+//	self.tableMoreHelper = [[AFDynamicTableHelper alloc] init];
+//	self.tableMoreHelper.delegate = self;
+//	self.tableMoreHelper.reusableCellIdentifier = @"Cell_more";
 
-	[self.tableView hideEmptySeparators];
+//	[self.tableView hideEmptySeparators];
 	@weakify(self);
 	[self.tableView addHeaderWithCallback: ^{
 	    @strongify(self);
@@ -82,7 +82,7 @@
 	    return [RACSignal return :value];
 	}] subscribeNext: ^(id value) {
 	    @strongify(self);
-	    NSInteger productAttrCount = self.infoModel.productAttrs.count;
+	    NSInteger productAttrCount = self.infoModel.product_attrs.count;
 	    ProductOrderViewController *viewController = (ProductOrderViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductOrder"];
 	    ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1 + productAttrCount]];
 	    ProductInfoModel *infoModel = [self.infoModel copy];
@@ -192,119 +192,136 @@
 
 - (void)viewDidLayoutSubviews {
 	[super viewDidLayoutSubviews];
-	[self.tableHeadHelper invalidateAllCellHeights];
-	[self.tableMoreHelper invalidateAllCellHeights];
+//	[self.tableHeadHelper invalidateAllCellHeights];
+//	[self.tableMoreHelper invalidateAllCellHeights];
 }
 
 #pragma mark - tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 4 + self.infoModel.productAttrs.count;
+//	return 4 + self.infoModel.productAttrs.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSInteger productAttrCount = self.infoModel.productAttrs.count;
-	if (section <= productAttrCount) {
-		return 1;
-	}
-	else if (section == (1 + productAttrCount)) {
-		return 2;
-	}
-	else if (section == (2 + productAttrCount)) {
-		return self.infoModel.productComments.count + 1;
-	}
-	else if (section == (3 + productAttrCount)) {
-		return 1;
-	}
-	return 0;
+//	NSInteger productAttrCount = self.infoModel.productAttrs.count;
+//	if (section <= productAttrCount) {
+//		return 1;
+//	}
+//	else if (section == (1 + productAttrCount)) {
+//		return 2;
+//	}
+//	else if (section == (2 + productAttrCount)) {
+//		return self.infoModel.productComments.count + 1;
+//	}
+//	else if (section == (3 + productAttrCount)) {
+//		return 1;
+//	}
+//	return 0;
+    
+    return self.infoModel.product_items.count + 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	if (section == 0) {
-		return 0;
-	}
-	return 15;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//	if (section == 0) {
+//		return 0;
+//	}
+//	return 15;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSInteger productAttrCount = self.infoModel.productAttrs.count;
-	if (indexPath.section == 0) {
-		return [self.tableHeadHelper tableView:tableView cellForRowAtIndexPath:indexPath];
-	}
-	else if (indexPath.section <= productAttrCount) {
-		ProductInfoAttributeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell_attr" forIndexPath:indexPath];
-		[cell configWithModel:self.infoModel.productAttrs[indexPath.section - 1]];
-		return cell;
-	}
-	else if (indexPath.section == (1 + productAttrCount)) {
-		if (indexPath.row == 0) {
-			ProductInfoNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 1, 0] forIndexPath:indexPath];
-			return cell;
-		}
-		else if (indexPath.row == 1) {
-			ProductInfoSendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 1, 1] forIndexPath:indexPath];
-			return cell;
-		}
-		else if (indexPath.row == 2) {
-			ProductInfoPromptTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 1, 2] forIndexPath:indexPath];
-			return cell;
-		}
-	}
-	else if (indexPath.section == (2 + productAttrCount)) {
-		if (indexPath.row == 0) {
-			ProductInfoEvaluationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 2, 0] forIndexPath:indexPath];
-			cell.evaluationLabel.text = [NSString stringWithFormat:@"评价晒单(%ld人评价)", (long)self.infoModel.totalComments];
-			cell.evaluationPercentLabel.text = [NSString stringWithFormat:@"%ld%%", (long)self.infoModel.goodCommentNums];
-			return cell;
-		}
-		else {
-			ProductInfoRatingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 2, 1] forIndexPath:indexPath];
-			[cell updateWithModel:self.infoModel.productComments[indexPath.row - 1]];
-			return cell;
-		}
-	}
-	else if (indexPath.section == (3 + productAttrCount)) {
-		ProductInfoMoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell_more" forIndexPath:indexPath];
-		if (self.watchMore) {
-			[cell expandUI];
-		}
-		else {
-			[cell updateUIWithContent:self.infoModel.self_description];
-		}
-		self.moreTableViewCell = cell;
-		return cell;
-	}
+//	NSInteger productAttrCount = self.infoModel.productAttrs.count;
+//	if (indexPath.section == 0) {
+//		return [self.tableHeadHelper tableView:tableView cellForRowAtIndexPath:indexPath];
+//	}
+//	else if (indexPath.section <= productAttrCount) {
+//		ProductInfoAttributeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell_attr" forIndexPath:indexPath];
+//		[cell configWithModel:self.infoModel.productAttrs[indexPath.section - 1]];
+//		return cell;
+//	}
+//	else if (indexPath.section == (1 + productAttrCount)) {
+//		if (indexPath.row == 0) {
+//			ProductInfoNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 1, 0] forIndexPath:indexPath];
+//			return cell;
+//		}
+//		else if (indexPath.row == 1) {
+//			ProductInfoSendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 1, 1] forIndexPath:indexPath];
+//			return cell;
+//		}
+//		else if (indexPath.row == 2) {
+//			ProductInfoPromptTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 1, 2] forIndexPath:indexPath];
+//			return cell;
+//		}
+//	}
+//	else if (indexPath.section == (2 + productAttrCount)) {
+//		if (indexPath.row == 0) {
+//			ProductInfoEvaluationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 2, 0] forIndexPath:indexPath];
+//			cell.evaluationLabel.text = [NSString stringWithFormat:@"评价晒单(%ld人评价)", (long)self.infoModel.totalComments];
+//			cell.evaluationPercentLabel.text = [NSString stringWithFormat:@"%ld%%", (long)self.infoModel.goodCommentNums];
+//			return cell;
+//		}
+//		else {
+//			ProductInfoRatingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%d_%d", 2, 1] forIndexPath:indexPath];
+//			[cell updateWithModel:self.infoModel.productComments[indexPath.row - 1]];
+//			return cell;
+//		}
+//	}
+//	else if (indexPath.section == (3 + productAttrCount)) {
+//		ProductInfoMoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell_more" forIndexPath:indexPath];
+//		if (self.watchMore) {
+//			[cell expandUI];
+//		}
+//		else {
+//			[cell updateUIWithContent:self.infoModel.self_description];
+//		}
+//		self.moreTableViewCell = cell;
+//		return cell;
+//	}
+    
+    if (indexPath.row == 0) {
+        ProductInfoHeadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell_head"];
+        [cell updateUIWithModel:self.infoModel];
+        return cell;
+    }else{
+        ProductInfoNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell_1_0"];
+        [cell updateUIWithModel:self.infoModel.product_items[indexPath.row-1]];
+        return cell;
+    }
 	return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSInteger productAttrCount = self.infoModel.productAttrs.count;
-	if (indexPath.section == 0) {
-		return [self.tableHeadHelper tableView:tableView heightForRowAtIndexPath:indexPath];
-	}
-	else if (indexPath.section <= productAttrCount) {
-		return 51;
-	}
-	else if (indexPath.section == (1 + productAttrCount)) {
-		return 30;
-	}
-	else if (indexPath.section == (2 + productAttrCount)) {
-		if (indexPath.row == 0) {
-			return 50;
-		}
-		return 76;
-	}
-	else if (indexPath.section == (3 + productAttrCount)) {
-		if (!self.watchMore) {
-			return 40;
-		}
-		return [(ProductInfoMoreTableViewCell *)self.moreTableViewCell height];
-	}
-	return 50;
+//	NSInteger productAttrCount = self.infoModel.productAttrs.count;
+//	if (indexPath.section == 0) {
+//		return [self.tableHeadHelper tableView:tableView heightForRowAtIndexPath:indexPath];
+//	}
+//	else if (indexPath.section <= productAttrCount) {
+//		return 51;
+//	}
+//	else if (indexPath.section == (1 + productAttrCount)) {
+//		return 30;
+//	}
+//	else if (indexPath.section == (2 + productAttrCount)) {
+//		if (indexPath.row == 0) {
+//			return 50;
+//		}
+//		return 76;
+//	}
+//	else if (indexPath.section == (3 + productAttrCount)) {
+//		if (!self.watchMore) {
+//			return 40;
+//		}
+//		return [(ProductInfoMoreTableViewCell *)self.moreTableViewCell height];
+//	}
+    if (indexPath.row == 0) {
+        return 210;
+    }else{
+        return 106;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	NSInteger productAttrCount = self.infoModel.productAttrs.count;
+	NSInteger productAttrCount = self.infoModel.product_attrs.count;
 	if (indexPath.section == (3 + productAttrCount)) {
 		self.watchMore = YES;
 		[self.tableView reloadData];
@@ -313,23 +330,23 @@
 
 #pragma mark - AFDynamicTableHelper delegate
 - (void)dynamicTableHelper:(AFDynamicTableHelper *)tableHelper prepareCell:(UITableViewCell *)_cell atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView offscreen:(BOOL)offscreen {
-	if (tableHelper == self.tableHeadHelper) {
-		ProductInfoHeadTableViewCell *cell = (ProductInfoHeadTableViewCell *)_cell;
-		cell.titleLabel.text = self.infoModel.name;
-		[cell.descriptionLabel setMarkup:self.infoModel.excerpt];
-
-		NSMutableArray *array = [NSMutableArray array];
-		[self.infoModel.productPictures enumerateObjectsUsingBlock: ^(ProductInfoPictureModel *obj, NSUInteger idx, BOOL *stop) {
-		    AdsItemModel *adModel = [AdsItemModel new];
-		    adModel.id = obj.id;
-		    adModel.logo = obj.url;
-		    adModel.name = obj.name;
-		    [array addObject:adModel];
-		}];
-		[cell.adView uploadUI:array];
-
-		cell.priceLabel.text = [NSString stringWithFormat:@"￥%@", self.infoModel.saleprice ? self.infoModel.saleprice : @"0"];
-	}
+//	if (tableHelper == self.tableHeadHelper) {
+////		ProductInfoHeadTableViewCell *cell = (ProductInfoHeadTableViewCell *)_cell;
+////		cell.titleLabel.text = self.infoModel.name;
+////		[cell.descriptionLabel setMarkup:self.infoModel.excerpt];
+//
+//		NSMutableArray *array = [NSMutableArray array];
+//		[self.infoModel.product_pictures enumerateObjectsUsingBlock: ^(ProductInfoPictureModel *obj, NSUInteger idx, BOOL *stop) {
+//		    AdsItemModel *adModel = [AdsItemModel new];
+//		    adModel.id = obj.id;
+//		    adModel.logo = obj.url;
+//		    adModel.name = obj.name;
+//		    [array addObject:adModel];
+//		}];
+//		[cell.adView uploadUI:array];
+//
+//		cell.priceLabel.text = [NSString stringWithFormat:@"￥%@", self.infoModel.saleprice ? self.infoModel.saleprice : @"0"];
+//	}
 //	else if (tableHelper == self.tableMoreHelper) {
 //		ProductInfoMoreTableViewCell *cell = (ProductInfoMoreTableViewCell *)_cell;
 //		if (self.watchMore) {
@@ -357,15 +374,17 @@
 	[[self.viewModel productDetailWithID:[ProfileModel singleton].model.id productID:self.model.identifier]
 	 subscribeNext: ^(id x) {
 	    @strongify(self);
+         NSLog(@"hello x:%@", x);
 	    self.infoModel = x;
 	    [self.tableView reloadData];
 	    [XPProgressHUD dismiss];
 	    [self.tableView headerEndRefreshing];
 	}];
+    
 }
 
 - (void)addToCart {
-	NSInteger productAttrCount = self.infoModel.productAttrs.count;
+    NSInteger productAttrCount = self.infoModel.product_attrs.count;
 
 	NSMutableArray *attribute = [NSMutableArray array];
 

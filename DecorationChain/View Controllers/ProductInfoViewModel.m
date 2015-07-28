@@ -18,7 +18,7 @@
 	if (identifier) {
 		[parameters setObject:identifier forKey:@"account_id"];
 	}
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/product_detail"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/pro_detail"
 	            parameters  :[parameters fillDeviceInfo]]
 	         map: ^id (id value) {
 	    return [self analysisRequest:value];
