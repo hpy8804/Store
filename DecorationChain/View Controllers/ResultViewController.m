@@ -17,6 +17,7 @@
 
 @property (nonatomic, copy) NSString *strCategory;
 @property (nonatomic, copy) NSString *strKeyWord;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 
 @end
 
@@ -46,6 +47,7 @@
 - (void)obtainMoreProducts
 {
     [XPProgressHUD showWithStatus:@"加载中"];
+    self.searchListTableView.hidden = YES;
     self.mutList = [NSMutableArray array];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -89,7 +91,13 @@
         }
         
         [XPProgressHUD dismiss];
-        [self.searchListTableView reloadData];
+        if (self.mutList.count == 0) {
+            self.tipLabel.hidden = NO;
+        }else{
+            self.searchListTableView.hidden = NO;
+            [self.searchListTableView reloadData];
+        }
+        
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
