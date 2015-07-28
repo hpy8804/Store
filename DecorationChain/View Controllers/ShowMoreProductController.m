@@ -103,6 +103,13 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    BaseViewController *viewController = (BaseViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductInfo"];
+    viewController.model = [BaseObject new];
+    
+    ProductModel *model = self.mutListMore[indexPath.row];
+    viewController.model.identifier = model.proId;
+    [self.navigationController pushViewController:viewController animated:YES];
+    
 }
 
 @end

@@ -61,7 +61,7 @@
 		}];
 	}
 
-	return [[[self rac_POST:@"http://27.54.252.32/zjb/api/add_to_cart"
+	return [[[self rac_POST:@"http://122.114.61.234/app/api/add_to_cartlist"
 	             parameters :[parameters fillDeviceInfo]] map: ^id (id value) {
 	    return [self analysisRequest:value];
 	}] map: ^id (id value) {
