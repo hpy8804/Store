@@ -31,10 +31,10 @@
 	@weakify(self);
 	[[self.viewModel welcome]
 	 subscribeNext: ^(id x) {
-	    dispatch_async(dispatch_get_main_queue(), ^{
-			NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[x fullImageURL]]];
-			[data writeToFile:localPath atomically:YES];
-		});
+         dispatch_async(dispatch_get_global_queue(0, 0), ^{
+             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[x fullImageURL]]];
+             [data writeToFile:localPath atomically:YES];
+         });
 	}];
 
 	[NSTimer scheduledTimerWithTimeInterval:1 block: ^{

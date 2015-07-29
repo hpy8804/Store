@@ -13,7 +13,7 @@
 @implementation SplashViewModel
 
 - (RACSignal *)welcome {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/welcome"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/welcome"
 	            parameters  :[@{
 							  } fillDeviceInfo]]
 	         map: ^id (id value) {

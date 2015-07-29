@@ -11,7 +11,7 @@
 @implementation NSString (imageurl)
 
 - (NSString *)fullImageURL {
-	return [NSString stringWithFormat:@"http://27.54.252.32/zjb/%@", self];
+	return [NSString stringWithFormat:@"http://122.114.61.234/app/%@", self];
 }
 
 @end

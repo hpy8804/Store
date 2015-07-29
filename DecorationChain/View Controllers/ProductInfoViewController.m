@@ -374,7 +374,6 @@
 	[[self.viewModel productDetailWithID:[ProfileModel singleton].model.id productID:self.model.identifier]
 	 subscribeNext: ^(id x) {
 	    @strongify(self);
-         NSLog(@"hello x:%@", x);
 	    self.infoModel = x;
 	    [self.tableView reloadData];
 	    [XPProgressHUD dismiss];
