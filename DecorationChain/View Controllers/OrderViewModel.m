@@ -14,7 +14,7 @@
 @implementation OrderViewModel
 
 - (RACSignal *)cartListWithID:(NSString *)identifier page:(NSInteger)page {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/cart_lists"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/cart_lists"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"page":@(page)
@@ -29,7 +29,7 @@
 }
 
 - (RACSignal *)deledateCartListWithID:(NSString *)identifier productID:(NSString *)productID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/cart_product_delete"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/cart_product_delete"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"id":productID

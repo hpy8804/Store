@@ -1755,7 +1755,6 @@
 				TargetAttributes = {
 					1E404ED21A6600B000DDEF23 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 3PJNKG3435;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1765,9 +1764,6 @@
 					1E404EEE1A6600B100DDEF23 = {
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = 1E404ED21A6600B000DDEF23;
-					};
-					1E55A6551AFF922700B11B55 = {
-						DevelopmentTeam = 6UNE9HMS62;
 					};
 				};
 			};
@@ -2398,8 +2394,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Above Link Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Above Link Co., Ltd.";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DecorationChain/alipay",
@@ -2474,7 +2470,7 @@
 					"$(PROJECT_DIR)/DecorationChain/alipay",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5285ecdb-2e0d-40df-82c1-f03f7bc2416e";
 			};
 			name = Debug;
 		};
@@ -2484,8 +2480,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Above Link Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Above Link Co., Ltd.";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DecorationChain/alipay",
@@ -2560,7 +2556,7 @@
 					"$(PROJECT_DIR)/DecorationChain/alipay",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5285ecdb-2e0d-40df-82c1-f03f7bc2416e";
 			};
 			name = Release;
 		};
@@ -2683,7 +2679,7 @@
 					"$(PROJECT_DIR)/DecorationChain/alipay",
 				);
 				PRODUCT_NAME = "DecorationChain-sm";
-				PROVISIONING_PROFILE = "9f172f0d-e47d-4c87-aba5-95523cce292e";
+				PROVISIONING_PROFILE = "5285ecdb-2e0d-40df-82c1-f03f7bc2416e";
 			};
 			name = Debug;
 		};
@@ -2768,7 +2764,7 @@
 					"$(PROJECT_DIR)/DecorationChain/alipay",
 				);
 				PRODUCT_NAME = "DecorationChain-sm";
-				PROVISIONING_PROFILE = "9f172f0d-e47d-4c87-aba5-95523cce292e";
+				PROVISIONING_PROFILE = "5285ecdb-2e0d-40df-82c1-f03f7bc2416e";
 			};
 			name = Release;
 		};

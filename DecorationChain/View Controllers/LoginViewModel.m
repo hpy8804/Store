@@ -66,7 +66,7 @@
 }
 
 - (RACSignal *)signInSignal:(NSString *)userName password:(NSString *)password {
-	return [[[[self rac_GET:@"http://27.54.252.32/zjb/api/login"
+	return [[[[self rac_GET:@"http://122.114.61.234/app/api/login"
 	             parameters  :[@{
 	                               @"username":userName,
 	                               @"password":password

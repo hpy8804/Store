@@ -13,7 +13,7 @@
 @implementation ProductOrderInfoViewModel
 
 - (RACSignal *)alipayInfoWithOrderID:(NSString *)orderID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/getpayinfo"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/getpayinfo"
 	            parameters  :[@{
 	                              @"o_id":orderID
 							  } fillDeviceInfo]] map: ^id (id value) {

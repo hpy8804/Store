@@ -61,7 +61,7 @@
 		}];
 	}
 
-	return [[[self rac_POST:@"http://122.114.61.234/app/api/add_to_cartlist"
+	return [[[self rac_POST:@"http://122.114.61.234/app/api/add_to_cart"
 	             parameters :[parameters fillDeviceInfo]] map: ^id (id value) {
 	    return [self analysisRequest:value];
 	}] map: ^id (id value) {
@@ -70,7 +70,7 @@
 }
 
 - (RACSignal *)addCollectionProductWithID:(NSString *)identifier productID:(NSString *)productID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/collect_product_get"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/collect_product"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"product_id":productID
@@ -82,7 +82,7 @@
 }
 
 - (RACSignal *)deleteCollectionProductWithID:(NSString *)identifier productID:(NSString *)productID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/delete_collect"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/delete_collection"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"product_id":productID

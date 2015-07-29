@@ -12,7 +12,7 @@
 @implementation ChangePasswordViewModel
 
 - (RACSignal *)updatePasswordWithPhone:(NSString *)phone oldPassword:(NSString *)oldPassword newPassword:(NSString *)newPassword {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/change_password"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/change_password"
 	            parameters  :[@{
 	                              @"username":phone,
 	                              @"old_password":oldPassword,

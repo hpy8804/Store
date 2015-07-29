@@ -66,7 +66,7 @@
 	[parameters setObject:@"1" forKey:@"bill_type"];
 	[parameters setObject:@"" forKey:@"more"];
 	[parameters setObject:@(orderStyle) forKey:@"order_style"];
-	return [[[self rac_POST:@"http://27.54.252.32/zjb/api/place_order"
+	return [[[self rac_POST:@"http://122.114.61.234/app/api/place_order"
 	             parameters :[parameters fillDeviceInfo]] map: ^id (id value) {
 	    return [self analysisRequest:value];
 	}] map: ^id (id value) {

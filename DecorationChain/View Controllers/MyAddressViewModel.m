@@ -13,7 +13,7 @@
 @implementation MyAddressViewModel
 
 - (RACSignal *)addressListWithID:(NSString *)identifier page:(NSInteger)page {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/account_address"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/account_address"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"page":@(page)
@@ -28,7 +28,7 @@
 }
 
 - (RACSignal *)setDefaultAddressWithID:(NSString *)identifier addressID:(NSString *)addressID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/set_default_address"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/set_default_address"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"address_id":addressID
@@ -41,7 +41,7 @@
 }
 
 - (RACSignal *)deleteAddressWithID:(NSString *)identifier addressID:(NSString *)addressID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/delete_address"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/delete_address"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"id":addressID
@@ -79,7 +79,7 @@
 	if (signBuilding && ![signBuilding isEqualToString:@""]) {
 		[parameters setObject:signBuilding forKey:@"sign_building"];
 	}
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/edit_address"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/edit_address"
 	            parameters  :[parameters fillDeviceInfo]]
 	         map: ^id (id value) {
 	    return [self analysisRequest:value];
@@ -111,7 +111,7 @@
 	if (signBuilding && ![signBuilding isEqualToString:@""]) {
 		[parameters setObject:signBuilding forKey:@"sign_building"];
 	}
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/add_address"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/add_address"
 	            parameters  :[parameters fillDeviceInfo]]
 	         map: ^id (id value) {
 	    return [self analysisRequest:value];

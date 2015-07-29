@@ -29,7 +29,7 @@
 	if (avatarURL && ![avatarURL isEqualToString:@""]) {
 		[parameters setObject:avatarURL forKey:@"person_pic"];
 	}
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/account_edit"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/account_edit"
 	            parameters  :[parameters fillDeviceInfo]]
 	         map: ^id (id value) {
 	    return [self analysisRequest:value];
@@ -42,7 +42,7 @@
 	return [RACSignal createSignal: ^RACDisposable *(id < RACSubscriber > subscriber) {
 	    NSData *data = UIImageJPEGRepresentation(image, 0.5f);
 	    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-	    [manager POST:@"http://27.54.252.32/zjb/api/video_upload" parameters:nil constructingBodyWithBlock: ^(id formData) {
+	    [manager POST:@"http://122.114.61.234/app /api/video_upload" parameters:nil constructingBodyWithBlock: ^(id formData) {
 	        [formData appendPartWithFileData:data name:@"loadfile" fileName:@"1.jpg" mimeType:@"image/jpeg"];
 		} success: ^(AFHTTPRequestOperation *operation, id responseObject) {
 	        [ProfileModel singleton].model.personPic = responseObject[@"data"][@"filepath"];

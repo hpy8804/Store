@@ -18,7 +18,7 @@
 
 
 - (RACSignal *)provinces {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/provices"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/provices"
 	            parameters  :[@{} fillDeviceInfo]]
 	         map: ^id (id value) {
 	    return [self analysisRequest:value];
@@ -30,7 +30,7 @@
 }
 
 - (RACSignal *)citysWithProvinceID:(NSString *)provinceID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/city"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/city"
 	            parameters  :[@{
 	                              @"province_id":provinceID
 							  } fillDeviceInfo]]
@@ -44,7 +44,7 @@
 }
 
 - (RACSignal *)districtsWithCityID:(NSString *)cityID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/district"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/district"
 	            parameters  :[@{
 	                              @"cityid":cityID
 							  } fillDeviceInfo]]

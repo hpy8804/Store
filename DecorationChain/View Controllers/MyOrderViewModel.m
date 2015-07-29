@@ -14,7 +14,7 @@
 @implementation MyOrderViewModel
 
 - (RACSignal *)orderListWithID:(NSString *)identifier orderType:(NSInteger)orderType page:(NSInteger)page {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/my_order"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/my_order"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"order_type":@(orderType),
@@ -30,7 +30,7 @@
 }
 
 - (RACSignal *)orderInfoWithOrderID:(NSString *)orderID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/order_detail"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/order_detail"
 	            parameters  :[@{
 	                              @"order_id":orderID
 							  } fillDeviceInfo]]
@@ -42,7 +42,7 @@
 }
 
 - (RACSignal *)orderConfirmFinishWithOrderID:(NSString *)orderID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/confirm_goods"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/confirm_goods"
 	            parameters  :[@{
 	                              @"order_id":orderID,
 	                              @"status" : @"4"
@@ -55,7 +55,7 @@
 }
 
 - (RACSignal *)alipayInfoWithOrderID:(NSString *)orderID {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/getpayinfo"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/getpayinfo"
 	            parameters  :[@{
 	                              @"o_id":orderID
 							  } fillDeviceInfo]] map: ^id (id value) {

@@ -73,7 +73,7 @@
 }
 
 - (RACSignal *)validateCodeWithPhone:(NSString *)phone code:(NSString *)code {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/account_msg_validate"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/account_msg_validate"
                 parameters:[@{
                              @"telephone":phone,
                              @"code":code } fillDeviceInfo]] map: ^id (id value) {
@@ -88,7 +88,7 @@
 	if (email) {
 		[parameters setObject:email forKey:@"email"];
 	}
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/account_register"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/account_register"
                 parameters:[parameters fillDeviceInfo]]
              map: ^id (id value) {
 	    return [self analysisRequest:value];

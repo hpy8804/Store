@@ -13,7 +13,7 @@
 @implementation MyCollectionViewModel
 
 - (RACSignal *)collectionList:(NSString *)identifier page:(NSInteger)page {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/collection_list"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/collection_list"
                 parameters:[@{
                              @"account_id":identifier,
                              @"page":@(page) } fillDeviceInfo]]
@@ -21,13 +21,14 @@
 	    return [self analysisRequest:value];
 	}] map: ^id (NSArray *value) {
 	    return [[[value rac_sequence] map: ^id (id value) {
+            CollectionModel *model = [[CollectionModel alloc] initWithDictionary:value error:nil];
 	        return [[CollectionModel alloc] initWithDictionary:value error:nil];
 		}] array];
 	}];
 }
 
 - (RACSignal *)deleteCollection:(NSString *)identifier ids:(NSString *)ids {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/multi_delete_collection"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/multi_delete_collection"
                 parameters:[@{
                              @"account_id":identifier,
                              @"ids":ids } fillDeviceInfo]]
