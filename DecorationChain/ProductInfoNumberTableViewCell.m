@@ -52,7 +52,7 @@
     self.labelOrigin.text = infoDic[@"pro_address"];
     self.labelInventory.text = infoDic[@"stock"];
     self.labelSpecifications.text = infoDic[@"norms"];
-    self.labelPrice.text = infoDic[@"good_price"];
+    self.labelPrice.text = [NSString stringWithFormat:@"¥%@", infoDic[@"good_price"]];
 }
 
 @end
