@@ -36,7 +36,7 @@
 @property (nonatomic, strong) NSArray *products;
 @property (nonatomic, assign) NSInteger page;
 
-@property (nonatomic, strong) NSMutableSet *selectedSet;
+@property (nonatomic, strong) NSMutableArray *selectedSet;
 
 @property (nonatomic, strong) NSNumber *vipDiscount; // vip折扣
 
@@ -51,9 +51,8 @@
 	[super viewDidLoad];
 
 	[self.orderTabelView hideEmptySeparators];
-	self.selectedSet = [NSMutableSet set];
+	self.selectedSet = [NSMutableArray array];
 
-    NSLog(@"self.navigationItem:%@",self.navigationItem.rightBarButtonItem);
 	@weakify(self);
 	[[self.editButton rac_signalForControlEvents:UIControlEventTouchUpInside]
 	 subscribeNext: ^(UIButton *x) {
@@ -79,23 +78,23 @@
 		}
 	    return value;
 	}] ignore:@(0)] subscribeNext: ^(id x) {
-	    @strongify(self);
-	    __block NSMutableArray *orderList = [NSMutableArray array];
-	    [self.selectedSet enumerateObjectsUsingBlock: ^(NSNumber *obj, BOOL *stop) {
-	        @strongify(self);
-	        OrderModel *model = self.products[obj.integerValue];
-	        ProductInfoModel *infoModel = [[ProductInfoModel alloc] init];
-	        infoModel.id = model.productId;
-	        infoModel.quantity = model.quantity;
-	        infoModel.saleprice = model.detail.saleprice;
-//	        infoModel.images = model.detail.images;
-	        infoModel.name = model.detail.name;
-	        [orderList addObject:infoModel];
-		}];
+//	    @strongify(self);
+//	    __block NSMutableArray *orderList = [NSMutableArray array];
+//	    [self.selectedSet enumerateObjectsUsingBlock: ^(NSNumber *obj, BOOL *stop) {
+//	        @strongify(self);
+//	        OrderModel *model = self.products[obj.integerValue];
+//	        ProductInfoModel *infoModel = [[ProductInfoModel alloc] init];
+//	        infoModel.id = model.productId;
+//	        infoModel.quantity = model.quantity;
+//	        infoModel.saleprice = model.detail.saleprice;
+////	        infoModel.images = model.detail.images;
+//	        infoModel.name = model.detail.name;
+//	        [orderList addObject:infoModel];
+//		}];
 	    ProductOrderViewController *viewController = (ProductOrderViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductOrder"];
 	    //TODO: 未考虑购物车的属性，应该是对方没有考虑到这个点
-	    viewController.orderStyle = 2;
-	    [viewController updateUIWithOrders:orderList andAttribute:[NSArray array]];
+//	    viewController.orderStyle = 2;
+//	    [viewController updateUIWithOrders:orderList andAttribute:[NSArray array]];
 	    [self.navigationController pushViewController:viewController animated:YES];
 	}];
 
@@ -109,8 +108,8 @@
 	    @strongify(self);
 	    x.selected = !x.selected;
 	    if (x.selected) {
-	        for (NSInteger i = 0; i < self.products.count; i++) {
-	            [self.selectedSet addObject:@(i)];
+	        for (NSInteger i = 0; i < self.mutCarList.count; i++) {
+	            [self.selectedSet addObject:[NSString stringWithFormat:@"%d", i]];
 			}
 	        [self updateUIWithSelected];
 	        [self.orderTabelView reloadData];
@@ -178,6 +177,13 @@
     [btnSelected setFrame:CGRectMake(7, 7, 30, 30)];
     [btnSelected setImage:[UIImage imageNamed:@"common_checkbox_normal"] forState:UIControlStateNormal];
     [btnSelected setImage:[UIImage imageNamed:@"common_checkbox_checked"] forState:UIControlStateSelected];
+    [btnSelected addTarget:self action:@selector(handleSelectedAction:) forControlEvents:UIControlEventTouchUpInside];
+    if ([self.selectedSet containsObject:[NSString stringWithFormat:@"%d", section]]) {
+        btnSelected.selected = YES;
+    }else{
+        btnSelected.selected = NO;
+    }
+    btnSelected.tag = section;
     [backView addSubview:btnSelected];
     
     UILabel *labelName = [[UILabel alloc] initWithFrame:CGRectMake(44, 7, self.view.frame.size.width-44, 30)];
@@ -186,14 +192,29 @@
         labelName.text = model.name;
     }
     [backView addSubview:labelName];
+    backView.backgroundColor = [UIColor whiteColor];
     return backView;
+}
+
+- (void)handleSelectedAction:(UIButton *)btn
+{
+    btn.selected = !btn.selected;
+    if (btn.selected) {
+        [self.selectedSet addObject:[NSString stringWithFormat:@"%d", btn.tag]];
+    }else{
+        [self.selectedSet removeObject:[NSString stringWithFormat:@"%d", btn.tag]];
+    }
+    [self updateUIWithSelected];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GoodsCarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell_car_list"];
-    CarlistCellModel *model = self.mutCarList[indexPath.section];
-    subCarList *subCar = model.product_items[indexPath.row];
-    [cell updateUIWithModel:subCar];
+    if (self.mutCarList.count != 0) {
+        CarlistCellModel *model = self.mutCarList[indexPath.section];
+        subCarList *subCar = model.product_items[indexPath.row];
+        [cell updateUIWithModel:subCar];
+    }
+    
     
     return cell;
 }
@@ -277,24 +298,27 @@
             NSDictionary *dicInfo = carsList[i];
             CarlistCellModel *model = [[CarlistCellModel alloc] init];
             model.account_id = dicInfo[@"account_id"];
-            model.name = dicInfo[@"detail"][@"name"];
-            NSArray *arrItems = dicInfo[@"detail"][@"product_items"];
-            NSMutableArray *mutItemsArr = [NSMutableArray array];
-            for (int i = 0; i < arrItems.count; i++) {
-                NSDictionary *subDicInfo = arrItems[i];
-                subCarList *sub = [[subCarList alloc] init];
-                sub.good_number = subDicInfo[@"good_number"];
-                sub.pure = subDicInfo[@"pure"];
-                sub.norms = subDicInfo[@"morms"];
-                sub.pro_address = subDicInfo[@"pro_address"];
-                sub.good_price = subDicInfo[@"good_price"];
-                sub.stock = subDicInfo[@"stock"];
-                sub.quantity = subDicInfo[@"quantity"];
-                
-                [mutItemsArr addObject:sub];
+            if (dicInfo[@"detail"] != [NSNull null]) {
+                model.name = dicInfo[@"detail"][@"name"];
+                NSArray *arrItems = dicInfo[@"detail"][@"product_items"];
+                NSMutableArray *mutItemsArr = [NSMutableArray array];
+                for (int i = 0; i < arrItems.count; i++) {
+                    NSDictionary *subDicInfo = arrItems[i];
+                    subCarList *sub = [[subCarList alloc] init];
+                    sub.good_number = subDicInfo[@"good_number"];
+                    sub.pure = subDicInfo[@"pure"];
+                    sub.norms = subDicInfo[@"morms"];
+                    sub.pro_address = subDicInfo[@"pro_address"];
+                    sub.good_price = subDicInfo[@"good_price"];
+                    sub.stock = subDicInfo[@"stock"];
+                    sub.quantity = subDicInfo[@"quantity"];
+                    
+                    [mutItemsArr addObject:sub];
+                }
+                model.product_items = [NSArray arrayWithArray:mutItemsArr];
             }
-            model.product_items = [NSArray arrayWithArray:mutItemsArr];
-            NSLog(@"model.product_items:%@", model.product_items);
+            
+            
             [self.mutCarList addObject:model];
         }
         
@@ -321,16 +345,38 @@
 	[self.payButton setTitle:[NSString stringWithFormat:@"结算(%ld)", (unsigned long)self.selectedSet.count] forState:UIControlStateNormal];
 	[self.finishButton setTitle:[NSString stringWithFormat:@"删除(%ld)", (unsigned long)self.selectedSet.count] forState:UIControlStateNormal];
 	__block CGFloat price = 0;
-	@weakify(self);
-	[self.selectedSet enumerateObjectsUsingBlock: ^(NSNumber *obj, BOOL *stop) {
-	    @strongify(self);
-	    OrderModel *model = self.products[obj.integerValue];
-	    CGFloat singlePrice = model.detail.saleprice.floatValue;
-	    price += (singlePrice * model.quantity.integerValue);
-	}];
+//	@weakify(self);
+//	[self.selectedSet enumerateObjectsUsingBlock: ^(NSNumber *obj, BOOL *stop) {
+//	    @strongify(self);
+//	    CarlistCellModel *model = self.mutCarList[obj.integerValue];
+//        NSArray *arrItems = model.product_items;
+//        for (subCarList *subCar in arrItems) {
+//            CGFloat singlePrice = [subCar.good_price floatValue];
+//            price += singlePrice*[subCar.quantity integerValue];
+//        }
+////	    CGFloat singlePrice = model.detail.saleprice.floatValue;
+////	    price += (singlePrice * model.quantity.integerValue);
+//	}];
+    
+    for (int i = 0; i < self.selectedSet.count; i++) {
+        CarlistCellModel *model = self.mutCarList[i];
+        NSArray *arrItems = model.product_items;
+        for (subCarList *subCar in arrItems) {
+            CGFloat singlePrice = [subCar.good_price floatValue];
+            price += singlePrice*[subCar.quantity integerValue];
+        }
+    }
+//    CGFloat price = 0;
+//    for (int i = 0; i < self.selectedSet.count; i++) {
+//        NSString *strSection = (NSString *)[self.selectedSet obje]];
+//        CarlistCellModel *model = self.mutCarList[indexPath.section];
+//        subCarList *subCar = model.product_items[indexPath.row];
+//    }
+    
+    
 	self.allPriceLabel.text = [NSString stringWithFormat:@"总计：￥%.2f", price *[self.vipDiscount floatValue]];
 	self.oldAllPriceLabel.text = [NSString stringWithFormat:@"商品原价：￥%.2f", price];
-	if (self.selectedSet.count != self.products.count) {
+	if (self.selectedSet.count != self.mutCarList.count) {
 		[self.allSelectButton setSelected:NO];
 	}
 	else {
