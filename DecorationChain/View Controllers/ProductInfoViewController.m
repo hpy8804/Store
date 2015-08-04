@@ -383,18 +383,23 @@
 }
 
 - (void)addToCart {
-    NSInteger productAttrCount = self.infoModel.product_attrs.count;
+    NSInteger productAttrCount = self.infoModel.product_items.count;
 
 	NSMutableArray *attribute = [NSMutableArray array];
 
 	{// 提取选择属性项
 		if (productAttrCount > 0) {
 			for (NSInteger i = 0; i < productAttrCount; i++) {
-				ProductInfoAttributeTableViewCell *cell = (ProductInfoAttributeTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i + 1]];
-				if (!cell.set || !cell.set.count) {
-					continue;
-				}
-				[attribute addObject:cell.set];
+				ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 + i inSection:0]];
+//				if (!cell.set || !cell.set.count) {
+//					continue;
+//				}
+//				[attribute addObject:cell.set];
+                if (cell.number != 0) {
+                    NSDictionary *dicInfo = [NSDictionary dictionaryWithObjectsAndKeys:cell.strId, @"id", [NSNumber numberWithInteger:cell.number], @"quantity" ,nil];
+                    [attribute addObject:dicInfo];
+                }
+                
 			}
 		}
 	}
@@ -406,7 +411,7 @@
 
 	[XPProgressHUD showWithStatus:@"加载中"];
 	@weakify(self);
-	ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1 + productAttrCount]];
+	ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 + productAttrCount inSection:0]];
 	[[self.viewModel addProductToCartWithID:[ProfileModel singleton].model.id productID:self.model.identifier quantity:cell.number attribute:attribute]
 	 subscribeNext: ^(id x) {
 	    @strongify(self);

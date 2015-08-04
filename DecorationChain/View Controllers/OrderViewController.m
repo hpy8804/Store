@@ -17,6 +17,10 @@
 #import "XPProgressHUD.h"
 #import "ProductInfoModel.h"
 #import "ProductOrderViewController.h"
+#import "GoodsCarTableViewCell.h"
+#import "Model.h"
+
+
 
 @interface OrderViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -36,6 +40,9 @@
 
 @property (nonatomic, strong) NSNumber *vipDiscount; // vip折扣
 
+@property (nonatomic, strong) NSMutableArray *mutCarList;
+
+
 @end
 
 @implementation OrderViewController
@@ -46,6 +53,7 @@
 	[self.orderTabelView hideEmptySeparators];
 	self.selectedSet = [NSMutableSet set];
 
+    NSLog(@"self.navigationItem:%@",self.navigationItem.rightBarButtonItem);
 	@weakify(self);
 	[[self.editButton rac_signalForControlEvents:UIControlEventTouchUpInside]
 	 subscribeNext: ^(UIButton *x) {
@@ -80,7 +88,7 @@
 	        infoModel.id = model.productId;
 	        infoModel.quantity = model.quantity;
 	        infoModel.saleprice = model.detail.saleprice;
-	        infoModel.images = model.detail.images;
+//	        infoModel.images = model.detail.images;
 	        infoModel.name = model.detail.name;
 	        [orderList addObject:infoModel];
 		}];
@@ -120,11 +128,11 @@
 	    [self.selectedSet removeAllObjects];
 	    [self cartListWithPage:self.page];
 	}];
-	[self.orderTabelView addFooterWithCallback: ^{
-	    @strongify(self);
-	    self.page += 1;
-	    [self cartListWithPage:self.page];
-	}];
+//	[self.orderTabelView addFooterWithCallback: ^{
+//	    @strongify(self);
+//	    self.page += 1;
+//	    [self cartListWithPage:self.page];
+//	}];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -144,54 +152,69 @@
 }
 
 #pragma mark - tableview
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.mutCarList.count;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return self.products.count;
+    CarlistCellModel *model = self.mutCarList[section];
+	return model.product_items.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 106.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    UIButton *btnSelected = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnSelected setFrame:CGRectMake(7, 7, 30, 30)];
+    [btnSelected setImage:[UIImage imageNamed:@"common_checkbox_normal"] forState:UIControlStateNormal];
+    [btnSelected setImage:[UIImage imageNamed:@"common_checkbox_checked"] forState:UIControlStateSelected];
+    [backView addSubview:btnSelected];
+    
+    UILabel *labelName = [[UILabel alloc] initWithFrame:CGRectMake(44, 7, self.view.frame.size.width-44, 30)];
+    if (self.mutCarList.count != 0) {
+        CarlistCellModel *model = self.mutCarList[section];
+        labelName.text = model.name;
+    }
+    [backView addSubview:labelName];
+    return backView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSString *identifier = @"Cell_edit";
-	CartEditTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-	OrderModel *model = self.products[indexPath.row];
-	[cell updateWithModel:model];
-	cell.selectedButton.tag = indexPath.row;
-	@weakify(self);
-	[[cell.selectedButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-	 subscribeNext: ^(UIButton *x) {
-	    @strongify(self);
-	    if (x.selected) {
-	        [self.selectedSet addObject:@(x.tag)];
-		}
-	    else {
-	        [self.selectedSet removeObject:@(x.tag)];
-		}
-	    [self updateUIWithSelected];
-	}];
-	[RACObserve(cell, number)
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    [self updateUIWithSelected];
-	}];
-
-	return cell;
+    GoodsCarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell_car_list"];
+    CarlistCellModel *model = self.mutCarList[indexPath.section];
+    subCarList *subCar = model.product_items[indexPath.row];
+    [cell updateUIWithModel:subCar];
+    
+    return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	CartEditTableViewCell *_cell = (CartEditTableViewCell *)cell;
-	[_cell.selectedButton setSelected:NO];
-	[self.selectedSet enumerateObjectsUsingBlock: ^(NSNumber *obj, BOOL *stop) {
-	    if (indexPath.row == obj.integerValue) {
-	        [_cell.selectedButton setSelected:YES];
-		}
-	}];
-}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//	CartEditTableViewCell *_cell = (CartEditTableViewCell *)cell;
+//	[_cell.selectedButton setSelected:NO];
+//	[self.selectedSet enumerateObjectsUsingBlock: ^(NSNumber *obj, BOOL *stop) {
+//	    if (indexPath.row == obj.integerValue) {
+//	        [_cell.selectedButton setSelected:YES];
+//		}
+//	}];
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	OrderModel *model = self.products[indexPath.row];
-	BaseViewController *viewController = (BaseViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductInfo"];
-	viewController.model = [BaseObject new];
-	viewController.model.identifier = model.productId;
-	[self.navigationController pushViewController:viewController animated:YES];
+//	OrderModel *model = self.products[indexPath.row];
+//	BaseViewController *viewController = (BaseViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductInfo"];
+//	viewController.model = [BaseObject new];
+//	viewController.model.identifier = model.productId;
+//	[self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -211,29 +234,86 @@
 
 #pragma mark - request
 - (void)cartListWithPage:(NSInteger)page {
-	[XPProgressHUD showWithStatus:@"加载中"];
-	[[self.viewModel cartListWithID:[ProfileModel singleton].model.id page:page]
-	 subscribeNext: ^(id x) {
-	    if (x) {
-	        if (1 == page) {
-	            self.products = x;
-			}
-	        else {
-	            NSMutableArray *buffer = [NSMutableArray arrayWithArray:self.products];
-	            [buffer addObjectsFromArray:x];
-	            self.products = buffer;
-			}
-		}
-	    else {
-	        if (1 == page) {
-	            self.products = nil;
-			}
-		}
-	    [self.orderTabelView headerEndRefreshing];
-	    [self.orderTabelView footerEndRefreshing];
-	    [self.orderTabelView reloadData];
-	    [XPProgressHUD dismiss];
-	}];
+//	[XPProgressHUD showWithStatus:@"加载中"];
+//	[[self.viewModel cartListWithID:[ProfileModel singleton].model.id page:page]
+//	 subscribeNext: ^(id x) {
+//	    if (x) {
+//	        if (1 == page) {
+//	            self.products = x;
+//			}
+//	        else {
+//	            NSMutableArray *buffer = [NSMutableArray arrayWithArray:self.products];
+//	            [buffer addObjectsFromArray:x];
+//	            self.products = buffer;
+//			}
+//		}
+//	    else {
+//	        if (1 == page) {
+//	            self.products = nil;
+//			}
+//		}
+//	    [self.orderTabelView headerEndRefreshing];
+//	    [self.orderTabelView footerEndRefreshing];
+//	    [self.orderTabelView reloadData];
+//	    [XPProgressHUD dismiss];
+//	}];
+    
+    
+    
+    self.mutCarList = [NSMutableArray array];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSString *strReq = [NSString stringWithFormat:@"http://122.114.61.234/app/api/cart_lists?id=%@&page=%d", [ProfileModel singleton].model.id, page];
+    [manager GET:strReq parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 3
+        //[self.view setAnimatingWithStateOfOperation:operation];
+        
+        NSArray *carsList = responseObject[@"data"];
+        for (int i = 0; i < carsList.count; i++) {
+            NSDictionary *dicInfo = carsList[i];
+            CarlistCellModel *model = [[CarlistCellModel alloc] init];
+            model.account_id = dicInfo[@"account_id"];
+            model.name = dicInfo[@"detail"][@"name"];
+            NSArray *arrItems = dicInfo[@"detail"][@"product_items"];
+            NSMutableArray *mutItemsArr = [NSMutableArray array];
+            for (int i = 0; i < arrItems.count; i++) {
+                NSDictionary *subDicInfo = arrItems[i];
+                subCarList *sub = [[subCarList alloc] init];
+                sub.good_number = subDicInfo[@"good_number"];
+                sub.pure = subDicInfo[@"pure"];
+                sub.norms = subDicInfo[@"morms"];
+                sub.pro_address = subDicInfo[@"pro_address"];
+                sub.good_price = subDicInfo[@"good_price"];
+                sub.stock = subDicInfo[@"stock"];
+                sub.quantity = subDicInfo[@"quantity"];
+                
+                [mutItemsArr addObject:sub];
+            }
+            model.product_items = [NSArray arrayWithArray:mutItemsArr];
+            NSLog(@"model.product_items:%@", model.product_items);
+            [self.mutCarList addObject:model];
+        }
+        
+        [self.orderTabelView headerEndRefreshing];
+        [self.orderTabelView footerEndRefreshing];
+        [self.orderTabelView reloadData];
+        [XPProgressHUD dismiss];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // 4
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
 }
 
 #pragma mark - update

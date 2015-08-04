@@ -1,16 +1,15 @@
 //
-//  ProductInfoNumberTableViewCell.h
+//  GoodsCarTableViewCell.h
 //  DecorationChain
 //
-//  Created by huangxinping on 15/3/19.
-//  Copyright (c) 2015年 ShareMerge. All rights reserved.
+//  Created by sven on 8/4/15.
+//  Copyright (c) 2015 ShareMerge. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "ProductInfoModel.h"
+#import "Model.h"
 
-@interface ProductInfoNumberTableViewCell : UITableViewCell
-@property (strong, nonatomic) NSString *strId;
+@interface GoodsCarTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labelProductNO;
 @property (weak, nonatomic) IBOutlet UILabel *labelPurity;
 @property (weak, nonatomic) IBOutlet UILabel *labelOrigin;
@@ -23,6 +22,5 @@
 
 @property (nonatomic, assign) NSInteger number;
 
-- (void)updateUIWithModel:(NSDictionary *)infoDic;
-
+- (void)updateUIWithModel:(subCarList *)carlist;
 @end

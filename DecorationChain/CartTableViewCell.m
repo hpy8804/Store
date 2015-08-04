@@ -34,7 +34,7 @@
 }
 
 - (void)updateWithModel:(OrderModel *)model {
-	[self.logoImageView setImageUrl:[model.detail.images fullImageURL]];
+//	[self.logoImageView setImageUrl:[model.detail.images fullImageURL]];
 	self.nameLabel.text = model.detail.name;
 	self.numberLabel.text = model.quantity;
 	self.priceLabel.text = [NSString stringWithFormat:@"￥%@", model.detail.saleprice];

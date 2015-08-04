@@ -49,20 +49,23 @@
 	__block NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 	[parameters setObject:identifier forKey:@"account_id"];
 	[parameters setObject:productID forKey:@"product_id"];
-	[parameters setObject:@(quantity) forKey:@"quantity"];
+//	[parameters setObject:@(quantity) forKey:@"quantity"];
+    [parameters setObject:attribute forKey:@"product_items"];
 
-	for (NSInteger i = 0; i < attribute.count; i++) {
-		NSArray *itemAttribute = attribute[i]; // 每一行
-		[itemAttribute each: ^(NSDictionary *item) { // 每一列
-		    NSString *key1 = [NSString stringWithFormat:@"attr[%ld][key]", (long)i+1];
-		    [parameters setObject:item[@"attribute_id"] forKey:key1];
-		    NSString *key2 = [NSString stringWithFormat:@"attr[%ld][val]", (long)i+1];
-		    [parameters setObject:item[@"detail_price"] forKey:key2];
-		}];
-	}
+//	for (NSInteger i = 0; i < attribute.count; i++) {
+//		NSArray *itemAttribute = attribute[i]; // 每一行
+//		[itemAttribute each: ^(NSDictionary *item) { // 每一列
+//		    NSString *key1 = [NSString stringWithFormat:@"attr[%ld][key]", (long)i+1];
+//		    [parameters setObject:item[@"attribute_id"] forKey:key1];
+//		    NSString *key2 = [NSString stringWithFormat:@"attr[%ld][val]", (long)i+1];
+//		    [parameters setObject:item[@"detail_price"] forKey:key2];
+//		}];
+//	}
+    NSDictionary *dicParameters = [parameters fillDeviceInfo];
+    NSLog(@"dicParameters:%@", dicParameters);
 
-	return [[[self rac_POST:@"http://122.114.61.234/app/api/add_to_cart"
-	             parameters :[parameters fillDeviceInfo]] map: ^id (id value) {
+	return [[[self rac_POST:@"http://122.114.61.234/app/api/add_to_cartlist"
+	             parameters :dicParameters] map: ^id (id value) {
 	    return [self analysisRequest:value];
 	}] map: ^id (id value) {
 	    return value;

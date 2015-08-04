@@ -18,6 +18,7 @@
 - (void)awakeFromNib {
 	@weakify(self);
 	self.number = 0;
+    self.labelCount.text = [NSString stringWithFormat:@"%ld件", (long)self.number];
 
 	[[self.reduceButton rac_signalForControlEvents:UIControlEventTouchUpInside]
 	 subscribeNext: ^(id x) {
@@ -53,6 +54,7 @@
     self.labelInventory.text = infoDic[@"stock"];
     self.labelSpecifications.text = infoDic[@"norms"];
     self.labelPrice.text = [NSString stringWithFormat:@"¥%@", infoDic[@"good_price"]];
+    self.strId = infoDic[@"id"];
 }
 
 @end
