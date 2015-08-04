@@ -382,6 +382,8 @@
 		267B5DF51B66657E009F3964 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267B5DF31B66657E009F3964 /* ResultViewController.xib */; };
 		26C4C0B71B7041EE00766526 /* GoodsCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4C0B61B7041EE00766526 /* GoodsCarTableViewCell.m */; };
 		26C4C0BA1B706BD500766526 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4C0B91B706BD500766526 /* Model.m */; };
+		26C4C0BE1B709A3700766526 /* RegUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4C0BC1B709A3700766526 /* RegUserViewController.m */; };
+		26C4C0BF1B709A3700766526 /* RegUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4C0BD1B709A3700766526 /* RegUserViewController.xib */; };
 		9787CB7DA7964666882CF3F2 /* libPods-DecorationChainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */; };
 /* End PBXBuildFile section */
 
@@ -821,6 +823,9 @@
 		26C4C0B61B7041EE00766526 /* GoodsCarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsCarTableViewCell.m; sourceTree = "<group>"; };
 		26C4C0B81B706BD500766526 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		26C4C0B91B706BD500766526 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		26C4C0BB1B709A3700766526 /* RegUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegUserViewController.h; sourceTree = "<group>"; };
+		26C4C0BC1B709A3700766526 /* RegUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegUserViewController.m; sourceTree = "<group>"; };
+		26C4C0BD1B709A3700766526 /* RegUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegUserViewController.xib; sourceTree = "<group>"; };
 		3587A87CA8B6B760F6B2D8CC /* Pods-DecorationChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A659B62D0DE3663FF6CA552 /* Pods-DecorationChainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DecorationChainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1545,6 +1550,9 @@
 				1EE7DC0E1AB039BA002DE434 /* RegisterCodeViewController.m */,
 				1EE7DC101AB039C7002DE434 /* RegisterFinalViewController.h */,
 				1EE7DC111AB039C7002DE434 /* RegisterFinalViewController.m */,
+				26C4C0BB1B709A3700766526 /* RegUserViewController.h */,
+				26C4C0BC1B709A3700766526 /* RegUserViewController.m */,
+				26C4C0BD1B709A3700766526 /* RegUserViewController.xib */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -1804,6 +1812,7 @@
 			files = (
 				1EBF212F1ABC7E2A00347EA9 /* AreaPicker.bundle in Resources */,
 				1EE174591AB33679000BDD04 /* AddressCellBottom.xib in Resources */,
+				26C4C0BF1B709A3700766526 /* RegUserViewController.xib in Resources */,
 				1E78803B1B1715870052566B /* Report.storyboard in Resources */,
 				1E404EE71A6600B100DDEF23 /* Images.xcassets in Resources */,
 				1EE16AF21ABD5E4700FE95B8 /* ProductOrder.storyboard in Resources */,
@@ -2076,6 +2085,7 @@
 				1E19ACC71AB413500080C3EB /* EditAddressViewController.m in Sources */,
 				1E608E4A1AD3A56700839F29 /* NSDictionary+fill_deviceinfo.m in Sources */,
 				1EF86DD81B174DB400986CDF /* ReportCategoriesModel.m in Sources */,
+				26C4C0BE1B709A3700766526 /* RegUserViewController.m in Sources */,
 				1EFC423F1AFF7DE3005B21C8 /* MD5DataSigner.m in Sources */,
 				1EE174521AB31194000BDD04 /* HelpViewController.m in Sources */,
 				26C4C0B71B7041EE00766526 /* GoodsCarTableViewCell.m in Sources */,
@@ -2406,8 +2416,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Above Link Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Above Link Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: he yan (FCB5EK6H9Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: he yan (FCB5EK6H9Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DecorationChain/alipay",
@@ -2482,7 +2492,7 @@
 					"$(PROJECT_DIR)/DecorationChain/alipay",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5285ecdb-2e0d-40df-82c1-f03f7bc2416e";
+				PROVISIONING_PROFILE = "17386915-4b67-4479-8ee1-77cfc7d179c0";
 			};
 			name = Debug;
 		};
@@ -2492,8 +2502,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Above Link Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiangsu Above Link Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: he yan (FCB5EK6H9Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: he yan (FCB5EK6H9Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DecorationChain/alipay",
@@ -2568,7 +2578,7 @@
 					"$(PROJECT_DIR)/DecorationChain/alipay",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5285ecdb-2e0d-40df-82c1-f03f7bc2416e";
+				PROVISIONING_PROFILE = "17386915-4b67-4479-8ee1-77cfc7d179c0";
 			};
 			name = Release;
 		};

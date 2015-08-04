@@ -85,7 +85,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XJn-NV-av8" kind="push" id="kR8-SU-JdQ"/>
+                                    <action selector="registerAction:" destination="FR1-Me-j07" eventType="touchUpInside" id="ofe-DB-8M6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQU-r5-BtY">

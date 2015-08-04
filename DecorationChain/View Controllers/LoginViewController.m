@@ -11,6 +11,7 @@
 #import "ProfileModel.h"
 #import "LoginModel.h"
 #import "XPProgressHUD.h"
+#import "RegUserViewController.h"
 
 @interface LoginViewController ()
 
@@ -65,6 +66,10 @@
 	        [XPProgressHUD dismiss];
 		}];
 	}];
+}
+- (IBAction)registerAction:(id)sender {
+    RegUserViewController *vcRegUser = [[RegUserViewController alloc] initWithNibName:@"RegUserViewController" bundle:nil];
+    [self.navigationController pushViewController:vcRegUser animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
