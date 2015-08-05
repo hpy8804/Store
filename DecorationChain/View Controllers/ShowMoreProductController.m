@@ -9,7 +9,7 @@
 #import "ShowMoreProductController.h"
 
 @interface ShowMoreProductController ()
-
+@property (assign, nonatomic) NSInteger page;
 @end
 
 @implementation ShowMoreProductController
@@ -21,6 +21,9 @@
     [self.tableView addHeaderWithCallback:^{
         [self obtainMoreProducts];
     }];
+    [self.tableView addFooterWithCallback:^{
+        [self obtainOtherProducts];
+    }];
     
     [self.tableView headerBeginRefreshing];
 }
@@ -28,12 +31,13 @@
 - (void)obtainMoreProducts
 {
     self.mutListMore = [NSMutableArray array];
+    self.page = 1;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager GET:@"http://122.114.61.234/app/api/more_special" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://122.114.61.234/app/api/more_special" parameters:@{@"page":@(self.page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         // 3
         //[self.view setAnimatingWithStateOfOperation:operation];
@@ -50,6 +54,44 @@
         }
         
         [self.tableView headerEndRefreshing];
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // 4
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+}
+
+- (void)obtainOtherProducts
+{
+    self.page++;
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager GET:@"http://122.114.61.234/app/api/more_special" parameters:@{@"page":@(self.page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 3
+        //[self.view setAnimatingWithStateOfOperation:operation];
+        
+        NSArray *carsList = responseObject[@"data"];
+        for (int i = 0; i < carsList.count; i++) {
+            ProductModel *model = [[ProductModel alloc] init];
+            model.proId = carsList[i][@"id"];
+            model.en_name = carsList[i][@"en_name"];
+            model.cas = carsList[i][@"cas"];
+            model.formula = carsList[i][@"formula"];
+            model.name = carsList[i][@"name"];
+            [self.mutListMore addObject:model];
+        }
+        
+        [self.tableView footerEndRefreshing];
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

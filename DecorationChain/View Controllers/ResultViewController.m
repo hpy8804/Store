@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *strCategory;
 @property (nonatomic, copy) NSString *strKeyWord;
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
-
+@property (assign, nonatomic) NSInteger page;
 @end
 
 @implementation ResultViewController
@@ -42,6 +42,9 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"搜索";
     [self obtainMoreProducts];
+    [self.searchListTableView addFooterWithCallback:^{
+        [self obtainMoreSearchResult];
+    }];
 }
 
 - (void)obtainMoreProducts
@@ -49,12 +52,29 @@
     [XPProgressHUD showWithStatus:@"加载中"];
     self.searchListTableView.hidden = YES;
     self.mutList = [NSMutableArray array];
+    self.page = 1;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager GET:@"http://122.114.61.234/app/api/more_special" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSInteger type = 1;
+    if ([self.strCategory isEqualToString:@"CAS"]) {
+        type = 1;
+    }else if ([self.strCategory isEqualToString:@"中文"]){
+        type = 2;
+        
+    }else if ([self.strCategory isEqualToString:@"英文"]){
+        type = 3;
+        
+    }else if ([self.strCategory isEqualToString:@"分子式"]){
+        type = 4;
+        
+    }
+    [manager GET:@"http://122.114.61.234/app/api/more_special" parameters:@{@"type":@(type),
+                                                                            @"page":@(self.page),
+                                                                            @"title":self.strKeyWord}
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         // 3
         //[self.view setAnimatingWithStateOfOperation:operation];
@@ -67,27 +87,7 @@
             model.cas = carsList[i][@"cas"];
             model.formula = carsList[i][@"formula"];
             model.name = carsList[i][@"name"];
-            
-            if ([self.strCategory isEqualToString:@"CAS"]) {
-                if ([model.cas rangeOfString:self.strKeyWord].length != 0) {
-                    [self.mutList addObject:model];
-                }
-            }else if ([self.strCategory isEqualToString:@"中文"]){
-                if ([model.name rangeOfString:self.strKeyWord].length != 0) {
-                    [self.mutList addObject:model];
-                }
-                
-            }else if ([self.strCategory isEqualToString:@"英文"]){
-                if ([model.en_name rangeOfString:self.strKeyWord].length != 0) {
-                    [self.mutList addObject:model];
-                }
-                
-            }else if ([self.strCategory isEqualToString:@"分子式"]){
-                if ([model.formula rangeOfString:self.strKeyWord].length != 0) {
-                    [self.mutList addObject:model];
-                }
-                
-            }
+            [self.mutList addObject:model];
         }
         
         [XPProgressHUD dismiss];
@@ -109,6 +109,63 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }];
+}
+
+- (void)obtainMoreSearchResult
+{
+    self.page++;
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSInteger type = 1;
+    if ([self.strCategory isEqualToString:@"CAS"]) {
+        type = 1;
+    }else if ([self.strCategory isEqualToString:@"中文"]){
+        type = 2;
+        
+    }else if ([self.strCategory isEqualToString:@"英文"]){
+        type = 3;
+        
+    }else if ([self.strCategory isEqualToString:@"分子式"]){
+        type = 4;
+        
+    }
+    [manager GET:@"http://122.114.61.234/app/api/more_special" parameters:@{@"type":@(type),
+                                                                            @"page":@(self.page),
+                                                                            @"title":self.strKeyWord}
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             
+             // 3
+             //[self.view setAnimatingWithStateOfOperation:operation];
+             
+             NSArray *carsList = responseObject[@"data"];
+             for (int i = 0; i < carsList.count; i++) {
+                 ProductModel *model = [[ProductModel alloc] init];
+                 model.proId = carsList[i][@"id"];
+                 model.en_name = carsList[i][@"en_name"];
+                 model.cas = carsList[i][@"cas"];
+                 model.formula = carsList[i][@"formula"];
+                 model.name = carsList[i][@"name"];
+                 [self.mutList addObject:model];
+             }
+             
+             [self.searchListTableView footerEndRefreshing];
+             [self.searchListTableView reloadData];
+             
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             
+             // 4
+             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                 message:[error localizedDescription]
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"Ok"
+                                                       otherButtonTitles:nil];
+             [alertView show];
+         }];
+    
 }
 
 

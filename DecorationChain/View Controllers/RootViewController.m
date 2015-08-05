@@ -29,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
 @property (strong, nonatomic) IBOutlet ProductModel *productModel;
 @property (strong, nonatomic) NSMutableArray *mutArrProducts;
-
+@property (assign, nonatomic) NSInteger page;
 
 
 #if TEST
@@ -84,11 +84,16 @@
         [self obtainProducts];
     }];
     
+    [self.listTableView addFooterWithCallback:^{
+        [self obtainMoreProducts];
+    }];
+    
 }
 
 - (void)obtainProducts
 {
     self.mutArrProducts = [NSMutableArray array];
+    self.page = 1;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -112,6 +117,47 @@
         
         [XPProgressHUD dismiss];
         [self.listTableView headerEndRefreshing];
+        [self.listTableView reloadData];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [XPProgressHUD dismiss];
+        // 4
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+}
+
+- (void)obtainMoreProducts
+{
+    self.page++;
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager GET:@"http://122.114.61.234/app/api/home" parameters:@{@"page":@(self.page)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 3
+        //[self.view setAnimatingWithStateOfOperation:operation];
+        
+        NSArray *carsList = responseObject[@"data"];
+        for (int i = 0; i < carsList.count; i++) {
+            ProductModel *model = [[ProductModel alloc] init];
+            model.proId = carsList[i][@"id"];
+            model.en_name = carsList[i][@"en_name"];
+            model.cas = carsList[i][@"cas"];
+            model.formula = carsList[i][@"formula"];
+            model.name = carsList[i][@"name"];
+            [self.mutArrProducts addObject:model];
+        }
+        
+        [XPProgressHUD dismiss];
+        [self.listTableView footerEndRefreshing];
         [self.listTableView reloadData];
         
         
