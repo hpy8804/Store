@@ -27,8 +27,12 @@
 #import "UIAlertView+XPKit.h"
 #import "XPProgressHUD.h"
 #import <XPKit/XPKit.h>
+#import "OrderDetailNew.h"
 
 @interface OrderInfoViewController () <UITextViewDelegate, UITableViewDataSource>
+{
+    OrderDetailNew *orderDetailnew;
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *controlButton;
 @property (strong, nonatomic) IBOutlet MyOrderViewModel *viewModel;
@@ -42,58 +46,111 @@
 	[super viewDidLoad];
 
 	[self.tableView hideEmptySeparators];
+    self.tableView.hidden = YES;
 
-	@weakify(self);
-	[[[[[self.controlButton rac_signalForControlEvents:UIControlEventTouchUpInside] doNext: ^(id x) {
-	    [XPProgressHUD showWithStatus:@"加载中"];
-	}] map: ^id (id value) {
-	    @strongify(self);
-	    if ([self.controlButton.currentTitle isEqualToString:@"立即支付"]) {
-	        return @(1);
-		}
-	    else if ([self.controlButton.currentTitle isEqualToString:@"已支付，等待商家发货中"]) {
-	        return @(2);
-		}
-	    else if ([self.controlButton.currentTitle isEqualToString:@"确认收货"]) {
-	        return @(3);
-		}
-	    else if ([self.controlButton.currentTitle isEqualToString:@"待评价"]) {
-	        return @(4);
-		}
-	    else if ([self.controlButton.currentTitle isEqualToString:@"本次交易已完成"]) {
-	        return @(5);
-		}
-	    return value;
-	}] ignore:@(0)]
-	 subscribeNext: ^(NSNumber *x) {
-	    @strongify(self);
-	    if (x.integerValue == 1) { // 立即支付
-	        [[self.viewModel alipayInfoWithOrderID:self.infoModel.id]
-	         subscribeNext: ^(id x) {
-	            [XPProgressHUD dismiss];
-	            @strongify(self);
-	            [self wakeAlipay:x];
-			}];
-		}
-	    else if (x.integerValue == 3) { // 确认收货
-	        [[self.viewModel orderConfirmFinishWithOrderID:self.infoModel.id]
-	         subscribeNext: ^(id x) {
-	            [XPProgressHUD dismiss];
-	            [UIAlertView alertViewWithTitle:nil message:@"确认收货成功" block: ^(NSInteger buttonIndex) {
-	                [self.navigationController popViewControllerAnimated:YES];
-				} buttonTitle:@"确定"];
-			}];
-		}
-	    else if (x.integerValue == 4) { // 待评价
-	        [XPProgressHUD dismiss];
-	        [self performSegueWithIdentifier:@"embed_score" sender:self.infoModel];
-		}
-	}];
+//	@weakify(self);
+//	[[[[[self.controlButton rac_signalForControlEvents:UIControlEventTouchUpInside] doNext: ^(id x) {
+//	    [XPProgressHUD showWithStatus:@"加载中"];
+//	}] map: ^id (id value) {
+//	    @strongify(self);
+//	    if ([self.controlButton.currentTitle isEqualToString:@"立即支付"]) {
+//	        return @(1);
+//		}
+//	    else if ([self.controlButton.currentTitle isEqualToString:@"已支付，等待商家发货中"]) {
+//	        return @(2);
+//		}
+//	    else if ([self.controlButton.currentTitle isEqualToString:@"确认收货"]) {
+//	        return @(3);
+//		}
+//	    else if ([self.controlButton.currentTitle isEqualToString:@"待评价"]) {
+//	        return @(4);
+//		}
+//	    else if ([self.controlButton.currentTitle isEqualToString:@"本次交易已完成"]) {
+//	        return @(5);
+//		}
+//	    return value;
+//	}] ignore:@(0)]
+//	 subscribeNext: ^(NSNumber *x) {
+//	    @strongify(self);
+//	    if (x.integerValue == 1) { // 立即支付
+//	        [[self.viewModel alipayInfoWithOrderID:self.infoModel.id]
+//	         subscribeNext: ^(id x) {
+//	            [XPProgressHUD dismiss];
+//	            @strongify(self);
+//	            [self wakeAlipay:x];
+//			}];
+//		}
+//	    else if (x.integerValue == 3) { // 确认收货
+//	        [[self.viewModel orderConfirmFinishWithOrderID:self.infoModel.id]
+//	         subscribeNext: ^(id x) {
+//	            [XPProgressHUD dismiss];
+//	            [UIAlertView alertViewWithTitle:nil message:@"确认收货成功" block: ^(NSInteger buttonIndex) {
+//	                [self.navigationController popViewControllerAnimated:YES];
+//				} buttonTitle:@"确定"];
+//			}];
+//		}
+//	    else if (x.integerValue == 4) { // 待评价
+//	        [XPProgressHUD dismiss];
+//	        [self performSegueWithIdentifier:@"embed_score" sender:self.infoModel];
+//		}
+//	}];
+    
 }
+- (IBAction)enterOrderCenter:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	[XPProgressHUD showWithStatus:@"加载中"];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager GET:@"http://122.114.61.234/app/api/order_detail" parameters:@{@"order_id":self.model.baseTransfer} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 3
+        //[self.view setAnimatingWithStateOfOperation:operation];
+        
+        NSDictionary *carsList = responseObject[@"data"];
+        orderDetailnew = [[OrderDetailNew alloc] init];
+        orderDetailnew.name = carsList[@"name"];
+        orderDetailnew.phone = carsList[@"phone"];
+        orderDetailnew.ship_province = carsList[@"ship_province"];
+        orderDetailnew.ship_city = carsList[@"ship_city"];
+        orderDetailnew.ship_district = carsList[@"ship_district"];
+        orderDetailnew.ship_address = carsList[@"ship_address"];
+        orderDetailnew.ship_notes = carsList[@"ship_notes"];
+        orderDetailnew.total = carsList[@"total"];
+//        for (int i = 0; i < carsList.count; i++) {
+//            ProductModel *model = [[ProductModel alloc] init];
+//            model.proId = carsList[i][@"id"];
+//            model.en_name = carsList[i][@"en_name"];
+//            model.cas = carsList[i][@"cas"];
+//            model.formula = carsList[i][@"formula"];
+//            model.name = carsList[i][@"name"];
+//            [self.mutListMore addObject:model];
+//        }
+//        
+//        [self.tableView footerEndRefreshing];
+        self.tableView.hidden = NO;
+        [XPProgressHUD dismiss];
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // 4
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    /*
 	@weakify(self);
 	[[self.viewModel orderInfoWithOrderID:self.model.baseTransfer]
 	 subscribeNext: ^(OrderInfoModel *x) {
@@ -132,7 +189,7 @@
 				break;
 		}
 	    [XPProgressHUD dismiss];
-	}];
+	}];    */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,27 +198,23 @@
 
 #pragma mark - tableview delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return section == 0 ? self.infoModel.contents.count : 1;
+    if (section == 0) {
+        return 4;
+    }else if (section == 1){
+        return 1;
+    }else if (section == 2){
+        return 1;
+    }else{
+        return 1;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 2;
+	return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	switch (indexPath.section) {
-		case 0:
-			return 70;
-			break;
-
-		case 1:
-			return 140;
-			break;
-
-		default:
-			break;
-	}
-	return 0;
+    return 44;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -169,49 +222,56 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell_%ld", (long)indexPath.section] forIndexPath:indexPath];
-	switch (indexPath.section) {
-		case 0: // 购物清单
-		{
-			OrderInfoContentModel *infoModel = (OrderInfoContentModel *)[self.infoModel.contents objectAtIndex:indexPath.row];
-			UIView *subView = [cell.contentView viewWithTag:100];
-			{
-				LASIImageView *logoImageView = (LASIImageView *)[subView viewWithTag:0];
-				[logoImageView setImageUrl:[infoModel.images fullImageURL]];
-			}
-			{
-				UILabel *titleLabel = (UILabel *)[subView viewWithTag:1];
-				titleLabel.text = infoModel.name;
-			}
-			{
-				UILabel *priceLabel = (UILabel *)[subView viewWithTag:2];
-				priceLabel.text = [NSString stringWithFormat:@"￥%@", infoModel.saleprice];
-			}
-			{
-				UILabel *numberLabel = (UILabel *)[subView viewWithTag:3];
-				numberLabel.text = [NSString stringWithFormat:@"数量 %@", infoModel.quantity];
-			}
-			break;
-		}
-
-		case 1: // 收货地址
-		{
-			ProductOrderAddressView *addressView = (ProductOrderAddressView *)[cell.contentView viewWithTag:100];
-			AddressModel *model = [[AddressModel alloc] init];
-			model.accountId = self.infoModel.accountId;
-			model.recipientsName = self.infoModel.shipCompany;
-			model.telephone = self.infoModel.shipPhone;
-			model.province = self.infoModel.shipProvince;
-			model.city = self.infoModel.shipCity;
-			model.district = self.infoModel.shipDistrict;
-			model.address = self.infoModel.shipAddress;
-			[addressView updateWithModel:model];
-			break;
-		}
-
-		default:
-			break;
-	}
+    static NSString *cellIdentifier = @"orderInfocell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+    }
+    
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                cell.textLabel.text = @"收货人";
+                cell.detailTextLabel.text = orderDetailnew.name;
+            }
+                break;
+            case 1:
+            {
+                cell.textLabel.text = @"联系方式";
+                cell.detailTextLabel.text = orderDetailnew.phone;
+            }
+                break;
+            case 2:
+            {
+                cell.textLabel.text = @"所在区域";
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@ %@", orderDetailnew.ship_province, orderDetailnew.ship_city, orderDetailnew.ship_district];
+                cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
+            }
+                break;
+            case 3:
+            {
+                cell.textLabel.text = @"详细地址";
+                cell.detailTextLabel.text = orderDetailnew.ship_address;
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section == 1){
+        cell.textLabel.text = @"发票信息";
+        cell.detailTextLabel.text = @"个人发票";
+    }else if (indexPath.section == 2){
+        cell.textLabel.text = @"订单备注";
+        cell.detailTextLabel.text = orderDetailnew.ship_notes;
+    }else if (indexPath.section == 3){
+        cell.textLabel.text = @"商品金额";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"¥%@", orderDetailnew.total];
+    }else{
+        cell.textLabel.text = @"管理员备注";
+        cell.detailTextLabel.text = @"无";
+    }
 	return cell;
 }
 

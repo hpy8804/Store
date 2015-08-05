@@ -372,6 +372,7 @@
 		1EFC42411AFF7DE3005B21C8 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC42321AFF7DE3005B21C8 /* openssl_wrapper.m */; };
 		1EFC42421AFF7DE3005B21C8 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC42341AFF7DE3005B21C8 /* RSADataSigner.m */; };
 		1EFC42431AFF7DE3005B21C8 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC42361AFF7DE3005B21C8 /* RSADataVerifier.m */; };
+		2610CFEB1B7249F6006189E5 /* OrderDetailNew.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610CFEA1B7249F6006189E5 /* OrderDetailNew.m */; };
 		264A75C81B628F8500A35697 /* RootTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75C71B628F8500A35697 /* RootTopTableViewCell.m */; };
 		264A75CB1B6294DC00A35697 /* ProductProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75CA1B6294DC00A35697 /* ProductProfileTableViewCell.m */; };
 		264A75CE1B62983E00A35697 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 264A75CD1B62983E00A35697 /* ProductModel.m */; };
@@ -806,6 +807,8 @@
 		1EFC42341AFF7DE3005B21C8 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		1EFC42351AFF7DE3005B21C8 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		1EFC42361AFF7DE3005B21C8 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		2610CFE91B7249F6006189E5 /* OrderDetailNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailNew.h; sourceTree = "<group>"; };
+		2610CFEA1B7249F6006189E5 /* OrderDetailNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailNew.m; sourceTree = "<group>"; };
 		264A75C61B628F8500A35697 /* RootTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTopTableViewCell.h; sourceTree = "<group>"; };
 		264A75C71B628F8500A35697 /* RootTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTopTableViewCell.m; sourceTree = "<group>"; };
 		264A75C91B6294DC00A35697 /* ProductProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductProfileTableViewCell.h; sourceTree = "<group>"; };
@@ -1473,6 +1476,8 @@
 				1EE16AE51ABD554000FE95B8 /* OrderInfoViewController.m */,
 				1ECA71631B5FE0FA00D63E3D /* OrderScoreViewController.h */,
 				1ECA71641B5FE0FA00D63E3D /* OrderScoreViewController.m */,
+				2610CFE91B7249F6006189E5 /* OrderDetailNew.h */,
+				2610CFEA1B7249F6006189E5 /* OrderDetailNew.m */,
 			);
 			name = MyOrder;
 			sourceTree = "<group>";
@@ -2035,6 +2040,7 @@
 				1E608E5B1AD3CF5300839F29 /* DistrictPickViewController.m in Sources */,
 				1E7435BE1AD4066C00666D0B /* ProductOrderViewModel.m in Sources */,
 				1E96D9771ABC641700562ED3 /* MyAddressViewModel.m in Sources */,
+				2610CFEB1B7249F6006189E5 /* OrderDetailNew.m in Sources */,
 				1E67609D1AB9B82900127246 /* MainGroupViewController.m in Sources */,
 				1EE1742D1AB2C92D000BDD04 /* SearchViewController.m in Sources */,
 				1EFC423C1AFF7DE3005B21C8 /* base64.m in Sources */,

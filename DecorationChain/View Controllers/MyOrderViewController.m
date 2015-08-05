@@ -33,14 +33,14 @@
 
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
-	return 5;
+	return 4;
 }
 
 - (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index {
-	NSArray *buffer = @[@"未付款", @"已付款", @"发货中", @"待评价", @"已完成"];
+	NSArray *buffer = @[@"未付款", @"已付款", @"发货中"/*, @"待评价"*/, @"已完成"];
 	UILabel *label = [UILabel new];
 	label.backgroundColor = [UIColor clearColor];
-	label.font = [UIFont systemFontOfSize:12.0];
+	label.font = [UIFont systemFontOfSize:14.0];
 	label.text = buffer[index];
 	label.textAlignment = NSTextAlignmentCenter;
 	label.textColor = [UIColor blackColor];
@@ -51,6 +51,9 @@
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
 	OrderListViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"list"];
 	viewController.model = [BaseObject new];
+    if (index == 3) {
+        index = 4;
+    }
 	viewController.model.baseTransfer = [NSString stringWithFormat:@"%lu", (unsigned long)index + 1];
 	return viewController;
 }

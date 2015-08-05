@@ -405,7 +405,7 @@
 	}
 
 	if (productAttrCount && !attribute.count) {
-		[XPToast showWithText:@"请选择属性!"];
+		[XPToast showWithText:@"提交不成功，所选的货号不能全为0"];
 		return;
 	}
 
