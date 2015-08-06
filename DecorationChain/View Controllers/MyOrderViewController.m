@@ -77,7 +77,7 @@
 			return 44.0;
 
 		case ViewPagerOptionTabWidth:
-			return 64.0;
+			return 80.0;
 
 		case ViewPagerOptionFixFormerTabsPositions:
 			return 0.0;

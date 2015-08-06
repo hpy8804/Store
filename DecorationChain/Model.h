@@ -13,6 +13,7 @@
 @end
 
 @interface subCarList : NSObject
+@property (nonatomic, strong) NSString *strId;
 @property (nonatomic, strong) NSString *good_number;
 @property (nonatomic, strong) NSString *pure;
 @property (nonatomic, strong) NSString *norms;

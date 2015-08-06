@@ -54,22 +54,23 @@
 	self.selectedSet = [NSMutableArray array];
 
 	@weakify(self);
-	[[self.editButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-	 subscribeNext: ^(UIButton *x) {
-	    @strongify(self);
-	    x.selected = !x.selected;
-	    if (x.selected) {
-	        self.finishButton.hidden = NO;
-	        self.payButton.hidden = YES;
-	        [self.editButton setTitle:@"取消" forState:UIControlStateNormal];
-		}
-	    else {
-	        self.finishButton.hidden = YES;
-	        self.payButton.hidden = NO;
-	        [self.editButton setTitle:@"编辑" forState:UIControlStateNormal];
-		}
-	    [self.orderTabelView reloadData];
-	}];
+//	[[self.editButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+//	 subscribeNext: ^(UIButton *x) {
+//	    @strongify(self);
+//	    x.selected = !x.selected;
+//	    if (x.selected) {
+//	        self.finishButton.hidden = NO;
+//	        self.payButton.hidden = YES;
+//	        [self.editButton setTitle:@"取消" forState:UIControlStateNormal];
+//		}
+//	    else {
+//	        self.finishButton.hidden = YES;
+//	        self.payButton.hidden = NO;
+//	        [self.editButton setTitle:@"编辑" forState:UIControlStateNormal];
+//		}
+//	    [self.orderTabelView reloadData];
+//	}];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(handleEditOrNot:)];
 
 	[[[[self.payButton rac_signalForControlEvents:UIControlEventTouchUpInside] map: ^id (id value) {
 	    if (self.selectedSet.count == 0) {
@@ -132,6 +133,17 @@
 //	    self.page += 1;
 //	    [self cartListWithPage:self.page];
 //	}];
+}
+
+- (void)handleEditOrNot:(UIBarButtonItem *)item
+{
+    if ([item.title isEqualToString:@"编辑"]) {
+        [self.orderTabelView setEditing:YES];
+        item.title =  @"取消";
+    }else{
+        [self.orderTabelView setEditing:NO];
+        item.title = @"编辑";
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -248,8 +260,9 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (editingStyle == UITableViewCellEditingStyleDelete) {
-		OrderModel *model = self.products[indexPath.row];
-		[self deleteCartList:model];
+        CarlistCellModel *model = self.mutCarList[indexPath.section];
+        subCarList *subCar = model.product_items[indexPath.row];
+		[self deleteCartListWithID:model.account_id productID:subCar.strId];
 	}
 }
 
@@ -305,6 +318,7 @@
                 for (int i = 0; i < arrItems.count; i++) {
                     NSDictionary *subDicInfo = arrItems[i];
                     subCarList *sub = [[subCarList alloc] init];
+                    sub.strId = subDicInfo[@"id"];
                     sub.good_number = subDicInfo[@"good_number"];
                     sub.pure = subDicInfo[@"pure"];
                     sub.norms = subDicInfo[@"morms"];
@@ -384,10 +398,10 @@
 	}
 }
 
-- (void)deleteCartList:(OrderModel *)model {
+- (void)deleteCartListWithID:(NSString *)account productID:(NSString *)proID {
 	@weakify(self);
 	[XPProgressHUD showWithStatus:@"加载中"];
-	[[self.viewModel deledateCartListWithID:[ProfileModel singleton].model.id productID:model.id]
+	[[self.viewModel deledateCartListWithID:account productID:proID]
 	 subscribeNext: ^(id x) {
 	    @strongify(self);
 	    [XPToast showWithText:@"删除成功"];
