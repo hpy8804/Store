@@ -50,7 +50,11 @@
 	[parameters setObject:identifier forKey:@"account_id"];
 	[parameters setObject:productID forKey:@"product_id"];
 //	[parameters setObject:@(quantity) forKey:@"quantity"];
-    [parameters setObject:attribute forKey:@"product_items"];
+    for ( int i = 0; i < attribute.count; i++) {
+        NSString *strKey = [NSString stringWithFormat:@"product_items[%d]", i+1];
+        [parameters setObject:attribute[i] forKey:strKey];
+    }
+//    [parameters setObject:attribute forKey:@"product_items"];
 
 //	for (NSInteger i = 0; i < attribute.count; i++) {
 //		NSArray *itemAttribute = attribute[i]; // 每一行
@@ -97,7 +101,7 @@
 }
 
 - (RACSignal *)cartDataNumberWithID:(NSString *)identifier {
-	return [[[self rac_GET:@"http://27.54.252.32/zjb/api/cart_products_nums"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/cart_products_nums"
 	            parameters  :[@{
 	                              @"account_id":identifier
 							  } fillDeviceInfo]] map: ^id (id value) {

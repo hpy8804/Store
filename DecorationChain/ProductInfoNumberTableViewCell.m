@@ -24,7 +24,7 @@
 	 subscribeNext: ^(id x) {
 	    @strongify(self);
 	    self.number--;
-	    self.number = self.number <= 0 ? 1 : self.number;
+	    self.number = self.number <= 0 ? 0 : self.number;
 	    self.labelCount.text = [NSString stringWithFormat:@"%ld件", (long)self.number];
 	}];
 	[[self.increaseButton rac_signalForControlEvents:UIControlEventTouchUpInside]

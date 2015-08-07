@@ -82,6 +82,31 @@
 	    return [RACSignal return :value];
 	}] subscribeNext: ^(id value) {
 	    @strongify(self);
+        NSInteger productAttrCountOne = self.infoModel.product_items.count;
+        
+        NSMutableArray *attributeOne = [NSMutableArray array];
+        
+        {// 提取选择属性项
+            if (productAttrCountOne > 0) {
+                for (NSInteger i = 0; i < productAttrCountOne; i++) {
+                    ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 + i inSection:0]];
+                    //				if (!cell.set || !cell.set.count) {
+                    //					continue;
+                    //				}
+                    //				[attribute addObject:cell.set];
+                    if (cell.number != 0) {
+                        NSDictionary *dicInfo = [NSDictionary dictionaryWithObjectsAndKeys:cell.strId, @"id", [NSNumber numberWithInteger:cell.number], @"quantity" ,nil];
+                        [attributeOne addObject:dicInfo];
+                    }
+                    
+                }
+            }
+        }
+        
+        if (productAttrCountOne && !attributeOne.count) {
+            [XPToast showWithText:@"提交不成功，所选的货号不能全为0"];
+            return;
+        }
 	    NSInteger productAttrCount = self.infoModel.product_attrs.count;
 	    ProductOrderViewController *viewController = (ProductOrderViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductOrder"];
 	    ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1 + productAttrCount]];
@@ -396,7 +421,11 @@
 //				}
 //				[attribute addObject:cell.set];
                 if (cell.number != 0) {
+//                    NSMutableArray *arrDates = [NSMutableArray array];
+//                    [arrDates addObject:@{@"id":cell.strId}];
+//                    [arrDates addObject:@{@"quantity":@(cell.number)}];
                     NSDictionary *dicInfo = [NSDictionary dictionaryWithObjectsAndKeys:cell.strId, @"id", [NSNumber numberWithInteger:cell.number], @"quantity" ,nil];
+//                    [arrDates addObject:dicInfo];
                     [attribute addObject:dicInfo];
                 }
                 

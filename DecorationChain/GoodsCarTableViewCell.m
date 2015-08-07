@@ -41,6 +41,7 @@
     self.labelInventory.text = carlist.stock;
     self.labelSpecifications.text = carlist.norms;
     self.labelPrice.text = [NSString stringWithFormat:@"¥%@", carlist.good_price];
+    self.labelCount.text = [NSString stringWithFormat:@"%@件", carlist.quantity];
 }
 
 @end

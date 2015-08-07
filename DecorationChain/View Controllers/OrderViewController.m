@@ -128,11 +128,11 @@
 	    [self.selectedSet removeAllObjects];
 	    [self cartListWithPage:self.page];
 	}];
-//	[self.orderTabelView addFooterWithCallback: ^{
-//	    @strongify(self);
-//	    self.page += 1;
-//	    [self cartListWithPage:self.page];
-//	}];
+	[self.orderTabelView addFooterWithCallback: ^{
+	    @strongify(self);
+	    self.page += 1;
+	    [self cartListWithPage:self.page];
+	}];
 }
 
 - (void)handleEditOrNot:(UIBarButtonItem *)item
@@ -261,8 +261,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (editingStyle == UITableViewCellEditingStyleDelete) {
         CarlistCellModel *model = self.mutCarList[indexPath.section];
-        subCarList *subCar = model.product_items[indexPath.row];
-		[self deleteCartListWithID:model.account_id productID:subCar.strId];
+		[self deleteCartListWithID:model.account_id productID:model.proID];
 	}
 }
 
@@ -293,8 +292,9 @@
 //	}];
     
     
-    
-    self.mutCarList = [NSMutableArray array];
+    if (page == 1) {
+        self.mutCarList = [NSMutableArray array];
+    }
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -311,6 +311,7 @@
             NSDictionary *dicInfo = carsList[i];
             CarlistCellModel *model = [[CarlistCellModel alloc] init];
             model.account_id = dicInfo[@"account_id"];
+            model.proID = dicInfo[@"id"];
             if (dicInfo[@"detail"] != [NSNull null]) {
                 model.name = dicInfo[@"detail"][@"name"];
                 NSArray *arrItems = dicInfo[@"detail"][@"product_items"];
@@ -321,7 +322,7 @@
                     sub.strId = subDicInfo[@"id"];
                     sub.good_number = subDicInfo[@"good_number"];
                     sub.pure = subDicInfo[@"pure"];
-                    sub.norms = subDicInfo[@"morms"];
+                    sub.norms = subDicInfo[@"norms"];
                     sub.pro_address = subDicInfo[@"pro_address"];
                     sub.good_price = subDicInfo[@"good_price"];
                     sub.stock = subDicInfo[@"stock"];
@@ -373,7 +374,8 @@
 //	}];
     
     for (int i = 0; i < self.selectedSet.count; i++) {
-        CarlistCellModel *model = self.mutCarList[i];
+        int index = [self.selectedSet[i] intValue];
+        CarlistCellModel *model = self.mutCarList[index];
         NSArray *arrItems = model.product_items;
         for (subCarList *subCar in arrItems) {
             CGFloat singlePrice = [subCar.good_price floatValue];

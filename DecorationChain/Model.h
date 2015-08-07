@@ -26,5 +26,6 @@
 @interface CarlistCellModel : NSObject
 @property (nonatomic, strong) NSString *account_id;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *proID;
 @property (nonatomic, strong) NSArray *product_items;
 @end
