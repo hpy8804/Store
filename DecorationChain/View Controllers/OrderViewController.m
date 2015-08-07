@@ -155,6 +155,7 @@
 	    @strongify(self);
 	    self.vipDiscount = x;
 	    [self.orderTabelView headerBeginRefreshing];
+         [self updateUIWithSelected];
 	}];
 }
 
@@ -392,7 +393,7 @@
     
 	self.allPriceLabel.text = [NSString stringWithFormat:@"总计：￥%.2f", price *[self.vipDiscount floatValue]];
 	self.oldAllPriceLabel.text = [NSString stringWithFormat:@"商品原价：￥%.2f", price];
-	if (self.selectedSet.count != self.mutCarList.count) {
+	if (self.selectedSet.count != self.mutCarList.count || self.selectedSet.count == 0) {
 		[self.allSelectButton setSelected:NO];
 	}
 	else {
