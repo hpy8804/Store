@@ -33,7 +33,7 @@
 #import "ProductInfoMoreTableViewCell.h"
 #import "ProductOrderViewController.h"
 #import "XPProgressHUD.h"
-#import "ProductInfoAttributeTableViewCell.h"
+#import "ProductInfoModelSV.h"
 
 @interface ProductInfoViewController () <UITableViewDelegate, UITableViewDataSource, AFDynamicTableHelperDelegate>
 
@@ -107,39 +107,58 @@
             [XPToast showWithText:@"提交不成功，所选的货号不能全为0"];
             return;
         }
-	    NSInteger productAttrCount = self.infoModel.product_attrs.count;
+	    NSInteger productAttrCount = self.infoModel.product_items.count;
 	    ProductOrderViewController *viewController = (ProductOrderViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductOrder"];
-	    ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1 + productAttrCount]];
-	    ProductInfoModel *infoModel = [self.infoModel copy];
-	    if (cell) {
-	        infoModel.quantity = [NSString stringWithFormat:@"%ld", (long)cell.number];
-		}
-	    else {
-	        infoModel.quantity = @"1";
-		}
+        
+        
+        NSMutableArray *arrViews = [NSMutableArray array];
+        
+        for (int i = 0;  i < productAttrCount; i++) {
+            ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i+1 inSection:0]];
+            if (cell.number != 0 ) {
+                ProductInfoModelSV *model = [[ProductInfoModelSV alloc] init];
+                model.good_brand_id = self.infoModel.product_items[i][@"good_brand_id"];
+                model.good_number = self.infoModel.product_items[i][@"good_number"];
+                model.good_price = self.infoModel.product_items[i][@"good_price"];
+                model.strID = self.infoModel.product_items[i][@"id"];
+                model.norms = self.infoModel.product_items[i][@"norms"];
+                model.pro_address = self.infoModel.product_items[i][@"pro_address"];
+                model.product_id = self.infoModel.product_items[i][@"product_id"];
+                model.pure = self.infoModel.product_items[i][@"pure"];
+                model.refractive = self.infoModel.product_items[i][@"refractive"];
+                model.stock = self.infoModel.product_items[i][@"stock"];
+                model.quantity = [NSString stringWithFormat:@"%d", cell.number];
+                [arrViews addObject:model];
+            }
+        }
+        NSDictionary *dicInfo = @{self.infoModel.name:arrViews};
+//
+        viewController.orderStyle = 1;
+        [viewController updateUIWithOrders:dicInfo];
+        [self.navigationController pushViewController:viewController animated:YES];
 
 
-	    NSMutableArray *attribute = [NSMutableArray array];
-	    {// 提取选择属性项
-	        if (productAttrCount > 0) {
-	            for (NSInteger i = 0; i < productAttrCount; i++) {
-	                ProductInfoAttributeTableViewCell *cell = (ProductInfoAttributeTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i + 1]];
-	                if (!cell.set || !cell.set.count) {
-	                    [attribute removeAllObjects]; // 强制清理一次，保证第一行有选中，但是第二行有未选中的
-	                    break;
-					}
-	                [attribute addObject:cell.set];
-				}
-			}
-		}
-	    if (productAttrCount && !attribute.count) {
-	        [XPToast showWithText:@"请选择属性!"];
-		}
-	    else {
-	        viewController.orderStyle = 1;
-	        [viewController updateUIWithOrders:@[infoModel] andAttribute:attribute];
-	        [self.navigationController pushViewController:viewController animated:YES];
-		}
+//	    NSMutableArray *attribute = [NSMutableArray array];
+//	    {// 提取选择属性项
+//	        if (productAttrCount > 0) {
+//	            for (NSInteger i = 0; i < productAttrCount; i++) {
+//	                ProductInfoAttributeTableViewCell *cell = (ProductInfoAttributeTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i + 1]];
+//	                if (!cell.set || !cell.set.count) {
+//	                    [attribute removeAllObjects]; // 强制清理一次，保证第一行有选中，但是第二行有未选中的
+//	                    break;
+//					}
+//	                [attribute addObject:cell.set];
+//				}
+//			}
+//		}
+//	    if (productAttrCount && !attribute.count) {
+//	        [XPToast showWithText:@"请选择属性!"];
+//		}
+//	    else {
+//	        viewController.orderStyle = 1;
+//	        [viewController updateUIWithOrders:@[infoModel] andAttribute:attribute];
+//	        [self.navigationController pushViewController:viewController animated:YES];
+//		}
 	}];
 
 	[[[[[self.addCarButton rac_signalForControlEvents:UIControlEventTouchUpInside] doNext: ^(id x) {
@@ -166,6 +185,7 @@
 	    @strongify(self);
 	    UIViewController *viewController = [self instantiateViewControllerWithStoryboardName:@"Main" identifier:@"cart_list"];
 	    [self.navigationController pushViewController:viewController animated:YES];
+        
 	}];
 
 	[[[[[self.collectionButton rac_signalForControlEvents:UIControlEventTouchUpInside] doNext: ^(id x) {

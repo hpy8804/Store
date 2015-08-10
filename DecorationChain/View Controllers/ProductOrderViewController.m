@@ -23,6 +23,9 @@
 #import "XPProgressHUD.h"
 #import "ProfileModel.h"
 #import "AddressModel.h"
+#import "ProductInfoNumberTableViewCell.h"
+#import "ProInfoTableViewCell.h"
+#import "ProductInfoModelSV.h"
 
 @interface ProductOrderViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -45,6 +48,8 @@
  *  属性列表
  */
 @property (nonatomic, strong) NSArray *willBuyAttribute;
+@property (nonatomic, strong) NSDictionary *dicInfo;
+@property (nonatomic, strong) NSArray *arrInfo;
 @end
 
 @implementation ProductOrderViewController
@@ -55,17 +60,17 @@
 	[self.tableView hideEmptySeparators];
 	self.extend = NO;
 
-	__block CGFloat totalMoney = 0;
-	[self.willBuyOrders each: ^(ProductInfoModel *item) {
-	    totalMoney += (item.saleprice.floatValue * item.quantity.integerValue);
-	}];
-	for (NSInteger i = 0; i < self.willBuyAttribute.count; i++) {
-		NSArray *itemAttribute = self.willBuyAttribute[i]; // 每一行
-		[itemAttribute each: ^(NSDictionary *item) { // 每一列
-		    totalMoney += [item[@"detail_price"] floatValue];
-		}];
-	}
-	self.truePriceLabel.text = [NSString stringWithFormat:@"￥%.2f", totalMoney];
+//	__block CGFloat totalMoney = 0;
+//	[self.willBuyOrders each: ^(ProductInfoModel *item) {
+//	    totalMoney += (item.saleprice.floatValue * item.quantity.integerValue);
+//	}];
+//	for (NSInteger i = 0; i < self.willBuyAttribute.count; i++) {
+//		NSArray *itemAttribute = self.willBuyAttribute[i]; // 每一行
+//		[itemAttribute each: ^(NSDictionary *item) { // 每一列
+//		    totalMoney += [item[@"detail_price"] floatValue];
+//		}];
+//	}
+//	self.truePriceLabel.text = [NSString stringWithFormat:@"￥%.2f", totalMoney];
 
 	@weakify(self);
 	[[[[[self.submitOrderButton rac_signalForControlEvents:UIControlEventTouchUpInside] doNext: ^(id x) {
@@ -87,14 +92,14 @@
 	[[self.viewModel vipDiscountWithID:[ProfileModel singleton].model.id]
 	 subscribeNext: ^(id x) {
 	    @strongify(self);
-	    self.truePriceLabel.text = [NSString stringWithFormat:@"￥%.2f", totalMoney *[x floatValue]];
+//	    self.truePriceLabel.text = [NSString stringWithFormat:@"￥%.2f", totalMoney *[x floatValue]];
 	    [XPProgressHUD dismiss];
 	}];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:2], [NSIndexPath indexPathForRow:0 inSection:3]] withRowAnimation:UITableViewRowAnimationAutomatic];
+//	[self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:2], [NSIndexPath indexPathForRow:0 inSection:3]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,7 +129,11 @@
 			break;
 
 		case 1:
-			return 70;
+            if (indexPath.row == 0) {
+                return 34;
+            }else{
+                return 106;
+            }
 			break;
 
 		case 2:
@@ -151,7 +160,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if (section == 1) {
-		return self.willBuyOrders.count;
+		return self.arrInfo.count+1;
 	}
 	return 1;
 }
@@ -184,24 +193,16 @@
 
 		case 1: // 购物清单
 		{
-			ProductInfoModel *infoModel = (ProductInfoModel *)[self.willBuyOrders objectAtIndex:indexPath.row];
-			UIView *subView = [cell.contentView viewWithTag:100];
-			{
-				LASIImageView *logoImageView = (LASIImageView *)[subView viewWithTag:0];
-				[logoImageView setImageUrl:[infoModel.images fullImageURL]];
-			}
-			{
-				UILabel *titleLabel = (UILabel *)[subView viewWithTag:1];
-				titleLabel.text = infoModel.name;
-			}
-			{
-				UILabel *priceLabel = (UILabel *)[subView viewWithTag:2];
-				priceLabel.text = [NSString stringWithFormat:@"￥%@", infoModel.saleprice];
-			}
-			{
-				UILabel *numberLabel = (UILabel *)[subView viewWithTag:3];
-				numberLabel.text = [NSString stringWithFormat:@"数量 %@", infoModel.quantity];
-			}
+            if (indexPath.row ==0) {
+                for (UIView *subview in cell.contentView.subviews) {
+                    [subview removeFromSuperview];
+                }
+                
+                cell.textLabel.text = [self.dicInfo allKeys][0];
+            }else{
+                ProInfoTableViewCell *cellself = (ProInfoTableViewCell *)cell;
+                [cellself updateCellWithInfo:self.arrInfo[indexPath.row-1]];
+            }
 			break;
 		}
 
@@ -266,23 +267,36 @@
 
 		case 5: // 商品总额
 		{
-			__block CGFloat totalMoney = 0;
-			[self.willBuyOrders each: ^(ProductInfoModel *item) {
-			    totalMoney += (item.saleprice.floatValue * item.quantity.integerValue);
-			}];
-			for (NSInteger i = 0; i < self.willBuyAttribute.count; i++) {
-				NSArray *itemAttribute = self.willBuyAttribute[i]; // 每一行
-				[itemAttribute each: ^(NSDictionary *item) { // 每一列
-				    totalMoney += [item[@"detail_price"] floatValue];
-				}];
-			}
-
+//			__block CGFloat totalMoney = 0;
+//			[self.willBuyOrders each: ^(ProductInfoModel *item) {
+//			    totalMoney += (item.saleprice.floatValue * item.quantity.integerValue);
+//			}];
+//			for (NSInteger i = 0; i < self.willBuyAttribute.count; i++) {
+//				NSArray *itemAttribute = self.willBuyAttribute[i]; // 每一行
+//				[itemAttribute each: ^(NSDictionary *item) { // 每一列
+//				    totalMoney += [item[@"detail_price"] floatValue];
+//				}];
+//			}
+//
+            CGFloat totalMoney = 0;
+            
+            for (int i = 0; i < self.arrInfo.count; i++) {
+                ProductInfoModelSV *model = self.arrInfo[i];
+                NSString *price = model.good_price;
+                NSString *number = model.quantity;
+                totalMoney += [price floatValue]*[number integerValue];
+            }
+            
+            
 			UIView *subView = [cell.contentView viewWithTag:100];
 			{
 				UILabel *priceLabel = (UILabel *)[subView viewWithTag:1];
 				NSString *totalPrice = [NSString stringWithFormat:@"￥%.2f", totalMoney];
 				[priceLabel setText:totalPrice];
 			}
+            
+            self.truePriceLabel.text = [NSString stringWithFormat:@"￥%.2f", totalMoney];
+            
 
 			break;
 		}
@@ -333,14 +347,35 @@
 	[self.tableView reloadData];
 }
 
+- (void)updateUIWithOrders:(NSDictionary *)dicInfo
+{
+    self.dicInfo = dicInfo;
+    self.arrInfo = [dicInfo allValues][0];
+    
+    CGFloat totalMoney = 0;
+    
+    for (int i = 0; i < self.arrInfo.count; i++) {
+        ProductInfoModelSV *model = self.arrInfo[i];
+        NSString *price = model.good_price;
+        NSString *number = model.quantity;
+        totalMoney += [price floatValue]*[number integerValue];
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.truePriceLabel.text = [NSString stringWithFormat:@"￥%.2f", totalMoney];
+        [self.truePriceLabel setNeedsDisplay];
+    });
+    
+}
+
 #pragma mark - submit order
 - (void)submitOrder {
 	[XPProgressHUD showWithStatus:@"加载中"];
-	NSMutableArray *products = [NSMutableArray array];
-	for (NSInteger i = 0; i < self.willBuyOrders.count; i++) {
-		ProductInfoModel *infoModel = self.willBuyOrders[i];
-		[products addObject:@[infoModel.id, infoModel.quantity]];
-	}
+	NSMutableArray *products = [NSMutableArray arrayWithArray:self.arrInfo];
+//	for (NSInteger i = 0; i < self.willBuyOrders.count; i++) {
+//		ProductInfoModel *infoModel = self.willBuyOrders[i];
+//		[products addObject:@[infoModel.id, infoModel.quantity]];
+//	}
 	@weakify(self);
 	// 检查是否有选择“支付方式”、“快递方式”、“发票名称”，否则使用默认值
 	NSString *payment = [RuntimeCacheModel singleton].payment ? [RuntimeCacheModel singleton].payment : @"1";

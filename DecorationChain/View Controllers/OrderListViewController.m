@@ -24,7 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet MyOrderViewModel *viewModel;
-@property (nonatomic, strong) NSArray *orders;
+@property (nonatomic, strong) NSMutableArray *orders;
 @property (nonatomic, assign) NSInteger page;
 
 @end
@@ -77,40 +77,87 @@
 	if (!cell) {
 		cell = [[[NSBundle mainBundle] loadNibNamed:@"OrderListTableViewCell" owner:self options:nil] lastObject];
 	}
-	OrderListModel *model = self.orders[indexPath.row];
-	[cell updateWithModel:model];
+    if (self.orders.count > 0) {
+        OrderListModel *model = self.orders[indexPath.row];
+        [cell updateWithModel:model];
+    }
+	
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-	OrderListModel *model = self.orders[indexPath.row];
-	[self performSegueWithIdentifier:@"embed_order_info" sender:model];
+//	OrderListModel *model = self.orders[indexPath.row];
+//	[self performSegueWithIdentifier:@"embed_order_info" sender:model];
 }
 
 #pragma mark - function
 - (void)orderListWithPage:(NSInteger)page {
 	@weakify(self);
 	[XPProgressHUD showWithStatus:@"加载中"];
-	self.viewModel = [[MyOrderViewModel alloc] init];
-	[[self.viewModel orderListWithID:[ProfileModel singleton].model.id orderType:self.model.baseTransfer.integerValue page:self.page]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    if (1 == page) {
-	        self.orders = x;
-		}
-	    else {
-	        NSMutableArray *buffer = [NSMutableArray arrayWithArray:self.orders];
-	        [buffer addObjectsFromArray:x];
-	        self.orders = buffer;
-		}
-
-	    [self.tableView headerEndRefreshing];
-	    [self.tableView footerEndRefreshing];
-	    [self.tableView reloadData];
-	    [XPProgressHUD dismiss];
-	}];
+    if (page == 1) {
+        self.orders = [NSMutableArray array];
+    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager GET:@"http://122.114.61.234/app/api/my_order" parameters:@{
+                                                                        @"account_id":[ProfileModel singleton].model.id,
+                                                                        @"order_type":@(self.model.baseTransfer.integerValue),
+                                                                        @"page":@(page)
+                                                                        }  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 3
+        //[self.view setAnimatingWithStateOfOperation:operation];
+        
+        NSArray *carsList = responseObject[@"data"];
+        for (int i = 0; i < carsList.count; i++) {
+            OrderListModel *model = [[OrderListModel alloc] init];
+            model.accountId = carsList[i][@"account_id"];
+            model.items = carsList[i][@"items"];
+            model.orderNumber = carsList[i][@"order_number"];
+            model.orderedOn = carsList[i][@"ordered_on"];
+            model.payStatus = carsList[i][@"pay_status"];
+            model.total = carsList[i][@"total"];
+            [self.orders addObject:model];
+        }
+        
+                                                                            
+        [self.tableView headerEndRefreshing];
+                                                                            [XPProgressHUD dismiss];
+        [self.tableView footerEndRefreshing];
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // 4
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+//	self.viewModel = [[MyOrderViewModel alloc] init];
+//	[[self.viewModel orderListWithID:[ProfileModel singleton].model.id orderType:self.model.baseTransfer.integerValue page:self.page]
+//	 subscribeNext: ^(id x) {
+//	    @strongify(self);
+//	    if (1 == page) {
+//	        self.orders = x;
+//		}
+//	    else {
+//	        NSMutableArray *buffer = [NSMutableArray arrayWithArray:self.orders];
+//	        [buffer addObjectsFromArray:x];
+//	        self.orders = buffer;
+//		}
+//
+//	    [self.tableView headerEndRefreshing];
+//	    [self.tableView footerEndRefreshing];
+//	    [self.tableView reloadData];
+//	    [XPProgressHUD dismiss];
+//	}];
 }
 
 @end

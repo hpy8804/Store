@@ -13,6 +13,7 @@
 #import "OrderCreateModel.h"
 
 #import <ASIHTTPRequest/ASIFormDataRequest.h>
+#import "ProductInfoModelSV.h"
 
 @implementation ProductOrderViewModel
 
@@ -21,9 +22,10 @@
 	[parameters setObject:identifier forKey:@"account_id"];
 	[parameters setObject:addressID forKey:@"address_id"];
 	for (NSInteger i = 0; i < products.count; i++) {
-		NSArray *itemProduct = products[i];
-		NSString *productID = itemProduct[0];
-		NSString *number = itemProduct[1];
+        ProductInfoModelSV *model = (ProductInfoModelSV *)products[i];
+//		NSArray *itemProduct = products[i];
+		NSString *productID = model.strID;
+		NSString *number = model.quantity;
 		[parameters setObject:productID forKey:[NSString stringWithFormat:@"product[%ld][id]", (long)i]];
 		[parameters setObject:number forKey:[NSString stringWithFormat:@"product[%ld][quantity]", (long)i]];
 	}

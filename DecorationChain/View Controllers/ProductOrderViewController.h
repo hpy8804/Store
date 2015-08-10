@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "ProductInfoModel.h"
 
 @interface ProductOrderViewController : BaseViewController
 
@@ -14,6 +15,7 @@
  *  标示订单来源（1-直接下单，2-从购物车下单）
  */
 @property (nonatomic, assign) NSInteger orderStyle;
+@property (strong, nonatomic) ProductInfoModel *infoModel;
 
 /**
  *  设置订单数组
@@ -23,6 +25,6 @@
  *              //infoModel.quantity = [NSString stringWithFormat:@"%ld", (long)cell.number];
  *
  */
-- (void)updateUIWithOrders:(NSArray *)orders andAttribute:(NSArray *)attribute;
+- (void)updateUIWithOrders:(NSDictionary *)dicInfo;
 
 @end

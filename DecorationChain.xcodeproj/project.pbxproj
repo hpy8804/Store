@@ -385,6 +385,8 @@
 		26C4C0BA1B706BD500766526 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4C0B91B706BD500766526 /* Model.m */; };
 		26C4C0BE1B709A3700766526 /* RegUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4C0BC1B709A3700766526 /* RegUserViewController.m */; };
 		26C4C0BF1B709A3700766526 /* RegUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4C0BD1B709A3700766526 /* RegUserViewController.xib */; };
+		26D9DFF01B784DA20089B73F /* ProductInfoModelSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D9DFEF1B784DA20089B73F /* ProductInfoModelSV.m */; };
+		26D9DFF31B786B570089B73F /* ProInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D9DFF21B786B570089B73F /* ProInfoTableViewCell.m */; };
 		9787CB7DA7964666882CF3F2 /* libPods-DecorationChainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */; };
 /* End PBXBuildFile section */
 
@@ -829,6 +831,10 @@
 		26C4C0BB1B709A3700766526 /* RegUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegUserViewController.h; sourceTree = "<group>"; };
 		26C4C0BC1B709A3700766526 /* RegUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegUserViewController.m; sourceTree = "<group>"; };
 		26C4C0BD1B709A3700766526 /* RegUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegUserViewController.xib; sourceTree = "<group>"; };
+		26D9DFEE1B784DA20089B73F /* ProductInfoModelSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfoModelSV.h; sourceTree = "<group>"; };
+		26D9DFEF1B784DA20089B73F /* ProductInfoModelSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInfoModelSV.m; sourceTree = "<group>"; };
+		26D9DFF11B786B570089B73F /* ProInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProInfoTableViewCell.h; sourceTree = "<group>"; };
+		26D9DFF21B786B570089B73F /* ProInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProInfoTableViewCell.m; sourceTree = "<group>"; };
 		3587A87CA8B6B760F6B2D8CC /* Pods-DecorationChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A659B62D0DE3663FF6CA552 /* Pods-DecorationChainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DecorationChainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1216,6 +1222,8 @@
 				267B5DE51B662F04009F3964 /* ProductProfileTableViewCell.xib */,
 				26C4C0B51B7041EE00766526 /* GoodsCarTableViewCell.h */,
 				26C4C0B61B7041EE00766526 /* GoodsCarTableViewCell.m */,
+				26D9DFF11B786B570089B73F /* ProInfoTableViewCell.h */,
+				26D9DFF21B786B570089B73F /* ProInfoTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1346,6 +1354,8 @@
 				1ECF47C81ABA722A006E6B80 /* ProductInfoViewController.m */,
 				1EE16AEC1ABD5E1200FE95B8 /* ProductOrder */,
 				1E42685C1ABAAC460069F954 /* comment */,
+				26D9DFEE1B784DA20089B73F /* ProductInfoModelSV.h */,
+				26D9DFEF1B784DA20089B73F /* ProductInfoModelSV.m */,
 			);
 			name = ProductInfo;
 			sourceTree = "<group>";
@@ -1993,6 +2003,7 @@
 				1EF86DD31B173C0C00986CDF /* ReportStoreViewController.m in Sources */,
 				1E663B0C1ABA8CA700243AFE /* ProductInfoNumberTableViewCell.m in Sources */,
 				264A75C81B628F8500A35697 /* RootTopTableViewCell.m in Sources */,
+				26D9DFF01B784DA20089B73F /* ProductInfoModelSV.m in Sources */,
 				1E02B14E1ABB092C008369AC /* NickTableViewCell.m in Sources */,
 				1E02B15B1ABB0C26008369AC /* PasswordTableViewCell.m in Sources */,
 				1E451E5B1AD4F7AC006BF1BC /* ProductOrderInfoViewModel.m in Sources */,
@@ -2005,6 +2016,7 @@
 				1E87B37E1AB01C3A00D6F242 /* ProfileViewModel.m in Sources */,
 				1EFC423E1AFF7DE3005B21C8 /* DataVerifier.m in Sources */,
 				267B5DF41B66657E009F3964 /* ResultViewController.m in Sources */,
+				26D9DFF31B786B570089B73F /* ProInfoTableViewCell.m in Sources */,
 				1E3F85861ABC0B2C00566CBB /* CartTableViewCell.m in Sources */,
 				1E451E5E1AD4F9D2006BF1BC /* AlipayInfoModel.m in Sources */,
 				1E3F857D1ABC059700566CBB /* OrderModel.m in Sources */,

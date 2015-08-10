@@ -31,7 +31,7 @@
 	self.serialTextField.text = model.orderNumber;
 	self.dateLabel.text = model.orderedOn;
 	self.stateLabel.text = model.payStatusName;
-	self.moneyLabel.text = [NSString stringWithFormat:@"￥%@", model.total ? model.total : @"0"];
+	self.moneyLabel.text = [NSString stringWithFormat:@"￥%@", model.total!=[NSNull null] ? model.total : @"0"];
 	self.countLabel.text = model.items;
 }
 

@@ -21,6 +21,7 @@
 #import "base64.h"
 #import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "MyOrderViewController.h"
 
 @interface ProductOrderInfoViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -91,7 +92,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 5;
+	return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -171,55 +172,59 @@
 
 #pragma mark - alipay
 - (void)wakeAlipay:(NSDictionary *)alipayInfoModel {
-	Order *order = [[Order alloc] init];
-	order.partner = alipayInfoModel[@"partner"];
-	order.seller = alipayInfoModel[@"userID"];
-	order.tradeNO = self.orderModel.id; //订单ID（由商家自行制定）
-	order.productName = @"ZJB"; //商品标题
-	order.productDescription = @"ZJB"; //商品描述
-	order.amount = self.orderModel.total; //商品价格
-	order.notifyURL = alipayInfoModel[@"notify_url"]; //回调URL
-
-	order.service = @"mobile.securitypay.pay";
-	order.paymentType = @"1";
-	order.inputCharset = @"utf-8";
-	order.itBPay = [NSString stringWithFormat:@"%@m", alipayInfoModel[@"time_out"]];
-	order.showUrl = @"m.alipay.com";
-
-	NSString *appScheme = @"DecorationChain";
-
-	//将商品信息拼接成字符串
-	NSString *orderSpec = [order description];
-	NSLog(@"orderSpec = %@", orderSpec);
-
-	//获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
-	id <DataSigner> signer = CreateRSADataSigner(alipayInfoModel[@"private_key"]);
-	NSString *signedString = [signer signString:orderSpec];
-	//将签名成功字符串格式化为订单字符串,请严格按照该格式
-	NSString *orderString = nil;
-	if (signedString != nil) {
-		orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"", orderSpec, signedString, @"RSA"];
-		[RuntimeCacheModel singleton].tradeNO = self.orderModel.id;
-		[RuntimeCacheModel singleton].payTimes = @"second";
-		[[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback: ^(NSDictionary *resultDic) {
-		    NSString *statues = resultDic[@"resultStatus"];
-		    if ([statues isEqualToString:@"9000"]) {
-		        [UIAlertView alertViewWithTitle:nil message:@"支付成功" block: ^(NSInteger buttonIndex) {
-		            [self.navigationController popViewControllerAnimated:YES];
-				} buttonTitle:@"确定"];
-			}
-		    else {
-		        [UIAlertView alertViewWithTitle:nil message:@"支付失败" block: ^(NSInteger buttonIndex) {
-		            [self.navigationController popViewControllerAnimated:YES];
-				} buttonTitle:@"确定"];
-			}
-		}];
-	}
-	else {
-		[UIAlertView alertViewWithTitle:nil message:@"支付失败" block: ^(NSInteger buttonIndex) {
-		    [self.navigationController popViewControllerAnimated:YES];
-		} buttonTitle:@"确定"];
-	}
+    
+    UIViewController *viewController = [self instantiateInitialViewControllerWithStoryboardName:@"MyOrder"];
+    [self.navigationController pushViewController:viewController animated:YES];
+    
+//	Order *order = [[Order alloc] init];
+//	order.partner = alipayInfoModel[@"partner"];
+//	order.seller = alipayInfoModel[@"userID"];
+//	order.tradeNO = self.orderModel.id; //订单ID（由商家自行制定）
+//	order.productName = @"ZJB"; //商品标题
+//	order.productDescription = @"ZJB"; //商品描述
+//	order.amount = self.orderModel.total; //商品价格
+//	order.notifyURL = alipayInfoModel[@"notify_url"]; //回调URL
+//
+//	order.service = @"mobile.securitypay.pay";
+//	order.paymentType = @"1";
+//	order.inputCharset = @"utf-8";
+//	order.itBPay = [NSString stringWithFormat:@"%@m", alipayInfoModel[@"time_out"]];
+//	order.showUrl = @"m.alipay.com";
+//
+//	NSString *appScheme = @"DecorationChain";
+//
+//	//将商品信息拼接成字符串
+//	NSString *orderSpec = [order description];
+//	NSLog(@"orderSpec = %@", orderSpec);
+//
+//	//获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
+//	id <DataSigner> signer = CreateRSADataSigner(alipayInfoModel[@"private_key"]);
+//	NSString *signedString = [signer signString:orderSpec];
+//	//将签名成功字符串格式化为订单字符串,请严格按照该格式
+//	NSString *orderString = nil;
+//	if (signedString != nil) {
+//		orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"", orderSpec, signedString, @"RSA"];
+//		[RuntimeCacheModel singleton].tradeNO = self.orderModel.id;
+//		[RuntimeCacheModel singleton].payTimes = @"second";
+//		[[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback: ^(NSDictionary *resultDic) {
+//		    NSString *statues = resultDic[@"resultStatus"];
+//		    if ([statues isEqualToString:@"9000"]) {
+//		        [UIAlertView alertViewWithTitle:nil message:@"支付成功" block: ^(NSInteger buttonIndex) {
+//		            [self.navigationController popViewControllerAnimated:YES];
+//				} buttonTitle:@"确定"];
+//			}
+//		    else {
+//		        [UIAlertView alertViewWithTitle:nil message:@"支付失败" block: ^(NSInteger buttonIndex) {
+//		            [self.navigationController popViewControllerAnimated:YES];
+//				} buttonTitle:@"确定"];
+//			}
+//		}];
+//	}
+//	else {
+//		[UIAlertView alertViewWithTitle:nil message:@"支付失败" block: ^(NSInteger buttonIndex) {
+//		    [self.navigationController popViewControllerAnimated:YES];
+//		} buttonTitle:@"确定"];
+//	}
 }
 
 @end
