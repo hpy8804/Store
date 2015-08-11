@@ -716,7 +716,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_qd" width="273" height="484"/>
+        <image name="bg_qd" width="720" height="1280"/>
         <image name="common_arrow_right" width="18" height="32"/>
         <image name="common_checkbox_checked" width="18" height="18"/>
         <image name="common_checkbox_normal" width="18" height="18"/>
