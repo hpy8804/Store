@@ -23,19 +23,19 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-	NSString *localPath = [[NSFileManager documentsDirectory] stringByAppendingPathComponent:@"/welcome.jpg"];
-	if ([NSFileManager fileExistsAtPath:localPath]) {
-		self.welcomImageView.image = [UIImage imageWithContentsOfFile:localPath];
-	}
+//	NSString *localPath = [[NSFileManager documentsDirectory] stringByAppendingPathComponent:@"/welcome.jpg"];
+//	if ([NSFileManager fileExistsAtPath:localPath]) {
+//		self.welcomImageView.image = [UIImage imageWithContentsOfFile:localPath];
+//	}
 
 	@weakify(self);
-	[[self.viewModel welcome]
-	 subscribeNext: ^(id x) {
-         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[x fullImageURL]]];
-             [data writeToFile:localPath atomically:YES];
-         });
-	}];
+//	[[self.viewModel welcome]
+//	 subscribeNext: ^(id x) {
+//         dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[x fullImageURL]]];
+//             [data writeToFile:localPath atomically:YES];
+//         });
+//	}];
 
 	[NSTimer scheduledTimerWithTimeInterval:1 block: ^{
 	    @strongify(self);

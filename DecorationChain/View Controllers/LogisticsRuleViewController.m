@@ -22,7 +22,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[XPProgressHUD showWithStatus:@"加载中"];
-	[self.webView loadWebsite:@"http://27.54.252.32/zjb/admin/news/shipment"];
+    self.webView.scalesPageToFit = YES;
+	[self.webView loadWebsite:@"http://122.114.61.234/app/info/index"];
 	[self.webView bk_setDidFinishLoadBlock: ^(UIWebView *webView) {
 	    [XPProgressHUD dismiss];
 	}];

@@ -13,7 +13,7 @@
 #import "XPProgressHUD.h"
 #import "RegUserViewController.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -67,9 +67,26 @@
 		}];
 	}];
 }
+- (IBAction)forgetPasswordAction:(id)sender {
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"mqq://"]])
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"立刻联系QQ客服号：123456" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }else{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"请先安装QQ，方便与我们取得联系，或者使用其他方式联系我们（QQ客服号：123456）" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+}
 - (IBAction)registerAction:(id)sender {
     RegUserViewController *vcRegUser = [[RegUserViewController alloc] initWithNibName:@"RegUserViewController" bundle:nil];
     [self.navigationController pushViewController:vcRegUser animated:YES];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mqq://"]];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

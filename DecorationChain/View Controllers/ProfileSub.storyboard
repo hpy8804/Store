@@ -112,7 +112,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Gdq-9v-ZIB" kind="push" id="eq6-I9-nvO"/>
+                                    <action selector="forgetPasswordAction:" destination="FR1-Me-j07" eventType="touchUpInside" id="ZNf-Si-ahb"/>
                                 </connections>
                             </button>
                         </subviews>
