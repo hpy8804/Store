@@ -150,6 +150,8 @@
 			break;
 
 		case 2:
+            return 0;
+            break;
 		case 3:
 			return 34;
 			break;
@@ -293,7 +295,7 @@
 
 				[[subView subviews] each: ^(id item) {
 				    if ([item isKindOfClass:[UILabel class]]) {
-				        [(UILabel *)item setText:[NSString stringWithFormat:@"%@ %@", pay, ship]];
+				        [(UILabel *)item setText:[NSString stringWithFormat:@"%@ %@", @"发票信息", ship]];
 					}
 				}];
 			}
@@ -454,7 +456,6 @@
         for (UIView *subview in self.submitView.subviews) {
             [subview removeFromSuperview];
         }
-        
         UIButton *btnOrder = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnOrder setBackgroundColor:[UIColor redColor]];
         [btnOrder setTitle:@"订单中心" forState:UIControlStateNormal];
