@@ -35,6 +35,6 @@
  *
  *  @return 信号
  */
-- (RACSignal *)orderCreateWithID:(NSString *)identifier addressID:(NSString *)addressID products:(NSArray *)products fpType:(NSString *)fpType fpKind:(NSString *)fpKind fpName:(NSString *)fpName payment:(NSString *)payment shipment:(NSString *)shipment attribute:(NSArray *)attribute orderStyle:(NSInteger)orderStyle;
+- (RACSignal *)orderCreateWithID:(NSString *)identifier addressID:(NSString *)addressID products:(NSArray *)products fpType:(NSString *)fpType fpKind:(NSString *)fpKind fpName:(NSString *)fpName payment:(NSString *)payment shipment:(NSString *)shipment attribute:(NSArray *)attribute orderStyle:(NSInteger)orderStyle comment:(NSString *)comment;
 
 @end

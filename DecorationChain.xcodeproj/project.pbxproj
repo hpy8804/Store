@@ -385,6 +385,7 @@
 		26C4C0BA1B706BD500766526 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4C0B91B706BD500766526 /* Model.m */; };
 		26C4C0BE1B709A3700766526 /* RegUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4C0BC1B709A3700766526 /* RegUserViewController.m */; };
 		26C4C0BF1B709A3700766526 /* RegUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4C0BD1B709A3700766526 /* RegUserViewController.xib */; };
+		26D6AE631B7B78BD009A57F3 /* OrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6AE621B7B78BD009A57F3 /* OrderDetailCell.m */; };
 		26D9DFF01B784DA20089B73F /* ProductInfoModelSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D9DFEF1B784DA20089B73F /* ProductInfoModelSV.m */; };
 		26D9DFF31B786B570089B73F /* ProInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D9DFF21B786B570089B73F /* ProInfoTableViewCell.m */; };
 		9787CB7DA7964666882CF3F2 /* libPods-DecorationChainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */; };
@@ -831,6 +832,8 @@
 		26C4C0BB1B709A3700766526 /* RegUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegUserViewController.h; sourceTree = "<group>"; };
 		26C4C0BC1B709A3700766526 /* RegUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegUserViewController.m; sourceTree = "<group>"; };
 		26C4C0BD1B709A3700766526 /* RegUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegUserViewController.xib; sourceTree = "<group>"; };
+		26D6AE611B7B78BD009A57F3 /* OrderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailCell.h; sourceTree = "<group>"; };
+		26D6AE621B7B78BD009A57F3 /* OrderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailCell.m; sourceTree = "<group>"; };
 		26D9DFEE1B784DA20089B73F /* ProductInfoModelSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfoModelSV.h; sourceTree = "<group>"; };
 		26D9DFEF1B784DA20089B73F /* ProductInfoModelSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInfoModelSV.m; sourceTree = "<group>"; };
 		26D9DFF11B786B570089B73F /* ProInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProInfoTableViewCell.h; sourceTree = "<group>"; };
@@ -1224,6 +1227,8 @@
 				26C4C0B61B7041EE00766526 /* GoodsCarTableViewCell.m */,
 				26D9DFF11B786B570089B73F /* ProInfoTableViewCell.h */,
 				26D9DFF21B786B570089B73F /* ProInfoTableViewCell.m */,
+				26D6AE611B7B78BD009A57F3 /* OrderDetailCell.h */,
+				26D6AE621B7B78BD009A57F3 /* OrderDetailCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -2093,6 +2098,7 @@
 				1E3F85811ABC079100566CBB /* BaseTabBarController.m in Sources */,
 				1E3F858A1ABC2A0200566CBB /* MyCollectionViewModel.m in Sources */,
 				1E663B1D1ABA8D3E00243AFE /* ProductInfoRatingTableViewCell.m in Sources */,
+				26D6AE631B7B78BD009A57F3 /* OrderDetailCell.m in Sources */,
 				1E02B15F1ABB0EBF008369AC /* ChangePasswordViewModel.m in Sources */,
 				1EF604131AC19CB50065EDB1 /* ProductOrderAddressView.m in Sources */,
 				1E663B151ABA8CE800243AFE /* ProductInfoPromptTableViewCell.m in Sources */,

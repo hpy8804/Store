@@ -17,7 +17,7 @@
 
 @implementation ProductOrderViewModel
 
-- (RACSignal *)orderCreateWithID:(NSString *)identifier addressID:(NSString *)addressID products:(NSArray *)products fpType:(NSString *)fpType fpKind:(NSString *)fpKind fpName:(NSString *)fpName payment:(NSString *)payment shipment:(NSString *)shipment attribute:(NSArray *)attribute orderStyle:(NSInteger)orderStyle {
+- (RACSignal *)orderCreateWithID:(NSString *)identifier addressID:(NSString *)addressID products:(NSArray *)products fpType:(NSString *)fpType fpKind:(NSString *)fpKind fpName:(NSString *)fpName payment:(NSString *)payment shipment:(NSString *)shipment attribute:(NSArray *)attribute orderStyle:(NSInteger)orderStyle comment:(NSString *)comment{
 	__block NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 	[parameters setObject:identifier forKey:@"account_id"];
 	[parameters setObject:addressID forKey:@"address_id"];
@@ -81,7 +81,7 @@
 	[parameters setObject:payment forKey:@"payment"];
 	[parameters setObject:shipment forKey:@"shipment"];
 	[parameters setObject:@"1" forKey:@"bill_type"];
-	[parameters setObject:@"" forKey:@"more"];
+    [parameters setObject:([comment length]>0?comment:@"") forKey:@"more"];
 	[parameters setObject:@(orderStyle) forKey:@"order_style"];
 	return [[[self rac_POST:@"http://122.114.61.234/app/api/place_order"
 	             parameters :[parameters fillDeviceInfo]] map: ^id (id value) {

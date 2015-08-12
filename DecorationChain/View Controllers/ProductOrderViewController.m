@@ -28,6 +28,9 @@
 #import "ProductInfoModelSV.h"
 
 @interface ProductOrderViewController () <UITableViewDelegate, UITableViewDataSource>
+{
+    IQTextView *remarkTextView;
+}
 
 @property (strong, nonatomic) IBOutlet ProductOrderViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UIView *submitView;
@@ -271,7 +274,7 @@
 				NSString *ship = nil;
 
 				if ([RuntimeCacheModel singleton].payment.integerValue == 1) {
-					pay = @"在线支付";
+					pay = @"发票信息";
 				}
 				else {
 					pay = @"货到付款";
@@ -314,7 +317,7 @@
 		{
 			UIView *subView = [cell.contentView viewWithTag:100];
 			{
-				IQTextView *remarkTextView = (IQTextView *)[subView viewWithTag:2];
+				remarkTextView = (IQTextView *)[subView viewWithTag:2];
 				[remarkTextView setPlaceholder:@"请输入备注信息"];
 			}
 
@@ -445,7 +448,7 @@
 	NSString *payment = [RuntimeCacheModel singleton].payment ? [RuntimeCacheModel singleton].payment : @"1";
 	NSString *shipment = [RuntimeCacheModel singleton].shipment ? [RuntimeCacheModel singleton].shipment : @"1";
 	NSString *fpName = [RuntimeCacheModel singleton].invoiceName ? [RuntimeCacheModel singleton].invoiceName : @"个人发票";
-	[[self.viewModel orderCreateWithID:[ProfileModel singleton].model.id addressID:self.orderAddressModel.id products:products fpType:@"1" fpKind:@"1" fpName:fpName payment:payment shipment:shipment attribute:self.willBuyAttribute orderStyle:self.orderStyle] subscribeNext: ^(id x) {
+	[[self.viewModel orderCreateWithID:[ProfileModel singleton].model.id addressID:self.orderAddressModel.id products:products fpType:@"1" fpKind:@"1" fpName:fpName payment:payment shipment:shipment attribute:self.willBuyAttribute orderStyle:self.orderStyle comment:remarkTextView.text] subscribeNext: ^(id x) {
 	    @strongify(self);
 //	    [self performSegueWithIdentifier:@"embed_order_info" sender:x];
         for (UIView *subview in self.submitView.subviews) {

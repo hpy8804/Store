@@ -28,10 +28,12 @@
 #import "XPProgressHUD.h"
 #import <XPKit/XPKit.h>
 #import "OrderDetailNew.h"
+#import "OrderDetailCell.h"
 
 @interface OrderInfoViewController () <UITextViewDelegate, UITableViewDataSource>
 {
     OrderDetailNew *orderDetailnew;
+    NSMutableArray *mutProducts;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *controlButton;
@@ -123,8 +125,9 @@
         orderDetailnew.ship_city = carsList[@"ship_city"];
         orderDetailnew.ship_district = carsList[@"ship_district"];
         orderDetailnew.ship_address = carsList[@"ship_address"];
-        orderDetailnew.ship_notes = carsList[@"ship_notes"];
+        orderDetailnew.ship_notes = carsList[@"shipping_notes"];
         orderDetailnew.total = carsList[@"total"];
+                                                                                
 //        for (int i = 0; i < carsList.count; i++) {
 //            ProductModel *model = [[ProductModel alloc] init];
 //            model.proId = carsList[i][@"id"];
@@ -135,7 +138,22 @@
 //            [self.mutListMore addObject:model];
 //        }
 //        
-//        [self.tableView footerEndRefreshing];
+//
+        NSArray *contentsArr = carsList[@"contents"];
+        mutProducts = [NSMutableArray array];
+        for (NSDictionary *subDic in contentsArr) {
+            OrderDetailModel *model = [[OrderDetailModel alloc] init];
+            model.mingcheng = subDic[@"product_name"];
+            model.huohao = subDic[@"good_number"];
+            model.cundu = subDic[@"pure"];
+            model.jiage = subDic[@"good_price"];
+            model.chandi = subDic[@"pro_address"];
+            model.guige = subDic[@"norms"];
+            model.kucun = subDic[@"stock"];
+            model.shuliang = subDic[@"quantity"];
+            
+            [mutProducts addObject:model];
+        }
         self.tableView.hidden = NO;
         [XPProgressHUD dismiss];
         [self.tableView reloadData];
@@ -202,20 +220,22 @@
     if (section == 0) {
         return 4;
     }else if (section == 1){
-        return 1;
-    }else if (section == 2){
-        return 1;
+        return mutProducts.count;
     }else{
         return 1;
     }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 5;
+	return 6;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    if (indexPath.section == 1) {
+        return 115;
+    }else{
+        return 44;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -261,12 +281,15 @@
                 break;
         }
     }else if (indexPath.section == 1){
+        OrderDetailCell *cell = (OrderDetailCell *)[self.tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
+        [cell updateWithModel:mutProducts[indexPath.row]];
+    } else if (indexPath.section == 2){
         cell.textLabel.text = @"发票信息";
         cell.detailTextLabel.text = @"个人发票";
-    }else if (indexPath.section == 2){
+    }else if (indexPath.section == 3){
         cell.textLabel.text = @"订单备注";
         cell.detailTextLabel.text = orderDetailnew.ship_notes;
-    }else if (indexPath.section == 3){
+    }else if (indexPath.section == 4){
         cell.textLabel.text = @"商品金额";
         cell.detailTextLabel.text = [NSString stringWithFormat:@"¥%@", orderDetailnew.total];
     }else{
