@@ -108,24 +108,24 @@
             for (int j = 0; j < model.product_items.count; j++) {
                 subCarList *subCar = model.product_items[j];
                 
-                ProductInfoModelSV *model = [[ProductInfoModelSV alloc] init];
-                model.good_brand_id = subCar.strId;
-                model.good_number = subCar.good_number;
-                model.good_price = subCar.good_price;
-                model.strID = subCar.strId;
-                model.norms = subCar.norms;
-                model.pro_address = subCar.pro_address;
-                model.product_id = subCar.strId;
-                model.pure = subCar.pure;
-                model.refractive = @"";
-                model.stock = subCar.stock;
-                model.quantity = subCar.quantity;
+                ProductInfoModelSV *modelSub = [[ProductInfoModelSV alloc] init];
+                modelSub.good_brand_id = subCar.strId;
+                modelSub.good_number = subCar.good_number;
+                modelSub.good_price = subCar.good_price;
+                modelSub.strID = subCar.strId;
+                modelSub.norms = subCar.norms;
+                modelSub.pro_address = subCar.pro_address;
+                modelSub.product_id = subCar.strId;
+                modelSub.pure = subCar.pure;
+                modelSub.refractive = @"";
+                modelSub.stock = subCar.stock;
+                modelSub.quantity = subCar.quantity;
                 
-                [mutDataArr addObject:model];
+                [mutDataArr addObject:modelSub];
             }
             
             if (mutDataArr.count != 0) {
-                NSDictionary *dic = @{model.name:mutDataArr};
+                NSDictionary *dic = @{[NSString stringWithFormat:@"%@@%@", model.name,self.model.identifier]:mutDataArr};
                 [supArr addObject:dic];
             }
             

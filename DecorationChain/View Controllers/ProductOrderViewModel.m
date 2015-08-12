@@ -23,14 +23,18 @@
 	[parameters setObject:addressID forKey:@"address_id"];
 	for (NSInteger i = 0; i < products.count; i++) {
         NSDictionary *subDic = products[i];
+        NSString *strKey = [subDic allKeys][0];
+        NSInteger index = [strKey rangeOfString:@"@" options:NSBackwardsSearch].location;
+        NSString *proID = [strKey substringFromIndex:(index + 1)];
         NSArray *subArr = [subDic allValues][0];
+        [parameters setObject:proID forKey:@"product_id"];
         for (int j = 0; j < subArr.count; j++) {
-            ProductInfoModelSV *model = (ProductInfoModelSV *)subArr[i];
+            ProductInfoModelSV *model = (ProductInfoModelSV *)subArr[j];
             //		NSArray *itemProduct = products[i];
             NSString *productID = model.strID;
             NSString *number = model.quantity;
-            [parameters setObject:productID forKey:[NSString stringWithFormat:@"product[%ld][id]", (long)i]];
-            [parameters setObject:number forKey:[NSString stringWithFormat:@"product[%ld][quantity]", (long)i]];
+            [parameters setObject:productID forKey:[NSString stringWithFormat:@"product_items[%ld][id]", (long)j]];
+            [parameters setObject:number forKey:[NSString stringWithFormat:@"product_items[%ld][quantity]", (long)j]];
         }
         
 	}

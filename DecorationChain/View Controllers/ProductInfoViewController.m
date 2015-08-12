@@ -134,7 +134,7 @@
             }
         }
         if (arrViews.count != 0) {
-            dicInfo = @{self.infoModel.name:arrViews};
+            dicInfo = @{[NSString stringWithFormat:@"%@@%@", self.infoModel.name, self.model.identifier]:arrViews};
             
             [arrAll addObject:dicInfo];
         }

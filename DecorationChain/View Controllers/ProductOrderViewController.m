@@ -253,7 +253,8 @@
                 for (UIView *subView in cell.contentView.subviews) {
                     [subView removeFromSuperview];
                 }
-                cell.textLabel.text = supArr[indexPath.row];
+                NSInteger indexNew = [supArr[indexPath.row] rangeOfString:@"@"].location;
+                cell.textLabel.text = [supArr[indexPath.row] substringToIndex:indexNew];
             }else{
                 ProInfoTableViewCell *cellself = (ProInfoTableViewCell *)cell;
                 [cellself updateCellWithInfo:supArr[indexPath.row]];

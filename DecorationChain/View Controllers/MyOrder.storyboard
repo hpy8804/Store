@@ -73,7 +73,7 @@
         <!--订单详情-->
         <scene sceneID="Yo3-AK-iwA">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="yrO-cR-Asq" customClass="OrderInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dingdanxiangqing" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="yrO-cR-Asq" customClass="OrderInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zJb-HS-JN9"/>
                         <viewControllerLayoutGuide type="bottom" id="xw2-ME-WeD"/>

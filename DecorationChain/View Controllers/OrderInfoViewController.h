@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "OrderListModel.h"
 
 @interface OrderInfoViewController : BaseViewController
-
+@property (strong, nonatomic) OrderListModel *orderListModel;
 @end

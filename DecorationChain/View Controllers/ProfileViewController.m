@@ -100,7 +100,14 @@
 
 #pragma mark - tableview
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return (section == 0 || section == 1) ? 3 : 1;
+//	return (section == 0 || section == 1) ? 3 : 1;
+    if (section == 0) {
+        return 0;
+    }else if (section == 1){
+        return 3;
+    }else{
+        return 1;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

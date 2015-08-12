@@ -16,6 +16,7 @@
 #import "XPProgressHUD.h"
 #import <Masonry/Masonry.h>
 #import <MJRefresh/MJRefresh.h>
+#import "OrderInfoViewController.h"
 
 #ifndef REUSE_CELL_IDENTIFIER
 #define REUSE_CELL_IDENTIFIER  @"Cell"
@@ -62,8 +63,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"embed_order_info"]) {
 		BaseViewController *viewController = (BaseViewController *)segue.destinationViewController;
-		viewController.model = [BaseObject new];
-		viewController.model.baseTransfer = [(OrderListModel *)sender id];
+//		viewController.model = [BaseObject new];
+		viewController.model = (OrderListModel *)sender;
 	}
 }
 
@@ -88,8 +89,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-//	OrderListModel *model = self.orders[indexPath.row];
+	OrderListModel *model = self.orders[indexPath.row];
 //	[self performSegueWithIdentifier:@"embed_order_info" sender:model];
+    OrderInfoViewController *viewController = (OrderInfoViewController *)[self instantiateViewControllerWithStoryboardName:@"MyOrder" identifier:@"dingdanxiangqing"];
+    viewController.orderListModel = model;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark - function
@@ -121,6 +125,8 @@
             model.orderedOn = carsList[i][@"ordered_on"];
             model.payStatus = carsList[i][@"pay_status"];
             model.total = carsList[i][@"total"];
+            model.id = carsList[i][@"id"];
+            model.order_type = carsList[i][@"order_type"];
             [self.orders addObject:model];
         }
         

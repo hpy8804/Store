@@ -109,7 +109,8 @@
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager GET:@"http://122.114.61.234/app/api/order_detail" parameters:@{@"order_id":self.model.baseTransfer} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://122.114.61.234/app/api/order_detail" parameters:@{@"order_id":self.orderListModel.id,
+                                                                            @"order_type":self.orderListModel.order_type} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         // 3
         //[self.view setAnimatingWithStateOfOperation:operation];
