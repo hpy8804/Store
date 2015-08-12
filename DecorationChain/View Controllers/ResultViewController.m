@@ -71,7 +71,7 @@
         type = 4;
         
     }
-    [manager GET:@"http://122.114.61.234/app/api/more_special" parameters:@{@"type":@(type),
+    [manager GET:@"http://122.114.61.234/app/api/home" parameters:@{@"type":@(type),
                                                                             @"page":@(self.page),
                                                                             @"title":self.strKeyWord}
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -79,24 +79,30 @@
         // 3
         //[self.view setAnimatingWithStateOfOperation:operation];
         
-        NSArray *carsList = responseObject[@"data"];
-        for (int i = 0; i < carsList.count; i++) {
-            ProductModel *model = [[ProductModel alloc] init];
-            model.proId = carsList[i][@"id"];
-            model.en_name = carsList[i][@"en_name"];
-            model.cas = carsList[i][@"cas"];
-            model.formula = carsList[i][@"formula"];
-            model.name = carsList[i][@"name"];
-            [self.mutList addObject:model];
-        }
+             id carsListModel = responseObject[@"data"];
+             if ([carsListModel isKindOfClass:[NSArray class]]) {
+                 NSArray *carsList = (NSArray *)carsListModel;
+                 for (int i = 0; i < carsList.count; i++) {
+                     ProductModel *model = [[ProductModel alloc] init];
+                     model.proId = carsList[i][@"id"];
+                     model.en_name = carsList[i][@"en_name"];
+                     model.cas = carsList[i][@"cas"];
+                     model.formula = carsList[i][@"formula"];
+                     model.name = carsList[i][@"name"];
+                     [self.mutList addObject:model];
+                 }
+                 
+                 [XPProgressHUD dismiss];
+                 if (self.mutList.count == 0) {
+                     self.tipLabel.hidden = NO;
+                 }else{
+                     self.searchListTableView.hidden = NO;
+                     [self.searchListTableView reloadData];
+                 }
+             }else{
+                 self.tipLabel.hidden = NO;
+             }
         
-        [XPProgressHUD dismiss];
-        if (self.mutList.count == 0) {
-            self.tipLabel.hidden = NO;
-        }else{
-            self.searchListTableView.hidden = NO;
-            [self.searchListTableView reloadData];
-        }
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
