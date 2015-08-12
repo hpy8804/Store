@@ -25,6 +25,6 @@
  *              //infoModel.quantity = [NSString stringWithFormat:@"%ld", (long)cell.number];
  *
  */
-- (void)updateUIWithOrders:(NSDictionary *)dicInfo;
+- (void)updateUIWithOrders:(NSArray *)arrInfo;
 
 @end

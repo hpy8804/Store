@@ -19,7 +19,7 @@
 #import "ProductOrderViewController.h"
 #import "GoodsCarTableViewCell.h"
 #import "Model.h"
-
+#import "ProductInfoModelSV.h"
 
 
 @interface OrderViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -94,8 +94,45 @@
 //		}];
 	    ProductOrderViewController *viewController = (ProductOrderViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductOrder"];
 	    //TODO: 未考虑购物车的属性，应该是对方没有考虑到这个点
-//	    viewController.orderStyle = 2;
+        NSMutableArray *mutRelaty = [NSMutableArray array];
+        for (int m = 0; m < self.selectedSet.count; m++) {
+            [mutRelaty addObject:self.mutCarList[[self.selectedSet[m] integerValue]]];
+        }
+        NSMutableArray *supArr = [NSMutableArray array];
+        for (int i = 0; i < mutRelaty.count; i++) {
+            CarlistCellModel *model = mutRelaty[i];
+//            [supArr addObject:model.name];
+            NSLog(@"modelName:%@, count:%d", model.name, model.product_items.count);
+            
+            NSMutableArray *mutDataArr = [NSMutableArray array];
+            for (int j = 0; j < model.product_items.count; j++) {
+                subCarList *subCar = model.product_items[j];
+                
+                ProductInfoModelSV *model = [[ProductInfoModelSV alloc] init];
+                model.good_brand_id = subCar.strId;
+                model.good_number = subCar.good_number;
+                model.good_price = subCar.good_price;
+                model.strID = subCar.strId;
+                model.norms = subCar.norms;
+                model.pro_address = subCar.pro_address;
+                model.product_id = subCar.strId;
+                model.pure = subCar.pure;
+                model.refractive = @"";
+                model.stock = subCar.stock;
+                model.quantity = subCar.quantity;
+                
+                [mutDataArr addObject:model];
+            }
+            
+            if (mutDataArr.count != 0) {
+                NSDictionary *dic = @{model.name:mutDataArr};
+                [supArr addObject:dic];
+            }
+            
+        }
+	    viewController.orderStyle = 2;
 //	    [viewController updateUIWithOrders:orderList andAttribute:[NSArray array]];
+        [viewController updateUIWithOrders:supArr];
 	    [self.navigationController pushViewController:viewController animated:YES];
 	}];
 

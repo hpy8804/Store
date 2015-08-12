@@ -111,8 +111,9 @@
 	    ProductOrderViewController *viewController = (ProductOrderViewController *)[self instantiateInitialViewControllerWithStoryboardName:@"ProductOrder"];
         
         
+        NSMutableArray *arrAll = [NSMutableArray array];
         NSMutableArray *arrViews = [NSMutableArray array];
-        
+        NSDictionary *dicInfo = nil;
         for (int i = 0;  i < productAttrCount; i++) {
             ProductInfoNumberTableViewCell *cell = (ProductInfoNumberTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i+1 inSection:0]];
             if (cell.number != 0 ) {
@@ -129,12 +130,18 @@
                 model.stock = self.infoModel.product_items[i][@"stock"];
                 model.quantity = [NSString stringWithFormat:@"%d", cell.number];
                 [arrViews addObject:model];
+                
             }
         }
-        NSDictionary *dicInfo = @{self.infoModel.name:arrViews};
+        if (arrViews.count != 0) {
+            dicInfo = @{self.infoModel.name:arrViews};
+            
+            [arrAll addObject:dicInfo];
+        }
+        
 //
         viewController.orderStyle = 1;
-        [viewController updateUIWithOrders:dicInfo];
+        [viewController updateUIWithOrders:arrAll];
         [self.navigationController pushViewController:viewController animated:YES];
 
 

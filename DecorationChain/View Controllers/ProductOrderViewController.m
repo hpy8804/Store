@@ -48,7 +48,6 @@
  *  属性列表
  */
 @property (nonatomic, strong) NSArray *willBuyAttribute;
-@property (nonatomic, strong) NSDictionary *dicInfo;
 @property (nonatomic, strong) NSArray *arrInfo;
 @end
 
@@ -129,11 +128,22 @@
 			break;
 
 		case 1:
-            if (indexPath.row == 0) {
+        {
+            NSMutableArray *supArr = [NSMutableArray array];
+            for (int i = 0; i < self.arrInfo.count; i++) {
+                NSString *strName = [[self.arrInfo objectAtIndex:i] allKeys][0];
+                [supArr addObject:strName];
+                NSArray *subArr = [[self.arrInfo objectAtIndex:i] allValues][0];
+                for (int j = 0; j < subArr.count; j++) {
+                    [supArr addObject:subArr[j]];
+                }
+            }
+            if ([[supArr objectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
                 return 34;
             }else{
                 return 106;
             }
+        }
 			break;
 
 		case 2:
@@ -160,7 +170,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if (section == 1) {
-		return self.arrInfo.count+1;
+        NSMutableArray *supArr = [NSMutableArray array];
+        for (int i = 0; i < self.arrInfo.count; i++) {
+            NSString *strName = [[self.arrInfo objectAtIndex:i] allKeys][0];
+            [supArr addObject:strName];
+            NSArray *subArr = [[self.arrInfo objectAtIndex:i] allValues][0];
+            for (int j = 0; j < subArr.count; j++) {
+                [supArr addObject:subArr[j]];
+            }
+        }
+        return supArr.count;
 	}
 	return 1;
 }
@@ -193,15 +212,51 @@
 
 		case 1: // 购物清单
 		{
-            if (indexPath.row ==0) {
-                for (UIView *subview in cell.contentView.subviews) {
-                    [subview removeFromSuperview];
+//            NSMutableArray *arrTitles = [NSMutableArray array];
+//            for (int i = 0; i < self.arrInfo.count; i++) {
+//                NSDictionary *dic = self.arrInfo[i];
+//                [arrTitles addObject:[dic allKeys][0]];
+//                
+//                NSArray *subArr = [dic allValues];
+//                
+//                if (indexPath.row == 0 || indexPath.row == 1) {
+//                    
+//                }
+//            }
+//            int count1 = 0;
+//            NSDictionary *dic = self.arrInfo[indexPath.row];
+//            NSArray *subArr = [dic allValues];
+//            count1 += subArr.count;
+//            
+//            
+//            if (indexPath.row ==0) {
+//                for (UIView *subview in cell.contentView.subviews) {
+//                    [subview removeFromSuperview];
+//                }
+//                
+//                cell.textLabel.text = [dic allKeys][0];
+//            }else{
+//                ProInfoTableViewCell *cellself = (ProInfoTableViewCell *)cell;
+//                [cellself updateCellWithInfo:subArr[indexPath.row]];
+//            }
+            
+            NSMutableArray *supArr = [NSMutableArray array];
+            for (int i = 0; i < self.arrInfo.count; i++) {
+                NSString *strName = [[self.arrInfo objectAtIndex:i] allKeys][0];
+                [supArr addObject:strName];
+                NSArray *subArr = [[self.arrInfo objectAtIndex:i] allValues][0];
+                for (int j = 0; j < subArr.count; j++) {
+                    [supArr addObject:subArr[j]];
                 }
-                
-                cell.textLabel.text = [self.dicInfo allKeys][0];
+            }
+            if ([[supArr objectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
+                for (UIView *subView in cell.contentView.subviews) {
+                    [subView removeFromSuperview];
+                }
+                cell.textLabel.text = supArr[indexPath.row];
             }else{
                 ProInfoTableViewCell *cellself = (ProInfoTableViewCell *)cell;
-                [cellself updateCellWithInfo:self.arrInfo[indexPath.row-1]];
+                [cellself updateCellWithInfo:supArr[indexPath.row]];
             }
 			break;
 		}
@@ -281,12 +336,16 @@
             CGFloat totalMoney = 0;
             
             for (int i = 0; i < self.arrInfo.count; i++) {
-                ProductInfoModelSV *model = self.arrInfo[i];
-                NSString *price = model.good_price;
-                NSString *number = model.quantity;
-                totalMoney += [price floatValue]*[number integerValue];
+                NSDictionary *dic = self.arrInfo[i];
+                NSArray *arrValues = [dic allValues][0];
+                for (int j = 0; j < arrValues.count; j++) {
+                    ProductInfoModelSV *model = arrValues[j];
+                    NSString *price = model.good_price;
+                    NSString *number = model.quantity;
+                    totalMoney += [price floatValue]*[number integerValue];
+                }
+                
             }
-            
             
 			UIView *subView = [cell.contentView viewWithTag:100];
 			{
@@ -347,18 +406,22 @@
 	[self.tableView reloadData];
 }
 
-- (void)updateUIWithOrders:(NSDictionary *)dicInfo
+- (void)updateUIWithOrders:(NSArray *)arrInfo
 {
-    self.dicInfo = dicInfo;
-    self.arrInfo = [dicInfo allValues][0];
+    self.arrInfo = arrInfo;
     
     CGFloat totalMoney = 0;
     
     for (int i = 0; i < self.arrInfo.count; i++) {
-        ProductInfoModelSV *model = self.arrInfo[i];
-        NSString *price = model.good_price;
-        NSString *number = model.quantity;
-        totalMoney += [price floatValue]*[number integerValue];
+        NSDictionary *dic = self.arrInfo[i];
+        NSArray *arrValues = [dic allValues][0];
+        for (int j = 0; j < arrValues.count; j++) {
+            ProductInfoModelSV *model = arrValues[j];
+            NSString *price = model.good_price;
+            NSString *number = model.quantity;
+            totalMoney += [price floatValue]*[number integerValue];
+        }
+        
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -383,12 +446,31 @@
 	NSString *fpName = [RuntimeCacheModel singleton].invoiceName ? [RuntimeCacheModel singleton].invoiceName : @"个人发票";
 	[[self.viewModel orderCreateWithID:[ProfileModel singleton].model.id addressID:self.orderAddressModel.id products:products fpType:@"1" fpKind:@"1" fpName:fpName payment:payment shipment:shipment attribute:self.willBuyAttribute orderStyle:self.orderStyle] subscribeNext: ^(id x) {
 	    @strongify(self);
-	    [self performSegueWithIdentifier:@"embed_order_info" sender:x];
+//	    [self performSegueWithIdentifier:@"embed_order_info" sender:x];
+        for (UIView *subview in self.submitView.subviews) {
+            [subview removeFromSuperview];
+        }
+        
+        UIButton *btnOrder = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btnOrder setBackgroundColor:[UIColor redColor]];
+        [btnOrder setTitle:@"订单中心" forState:UIControlStateNormal];
+        [btnOrder setFrame:CGRectMake(10, 5, self.submitView.frame.size.width-20, self.submitView.frame.size.height-10)];
+        [self.submitView addSubview:btnOrder];
+        [btnOrder addTarget:self action:@selector(handleShowOrder) forControlEvents:UIControlEventTouchUpInside];
+        
+        
 	    [XPProgressHUD dismiss];
 	} error: ^(NSError *error) {
 	    NSLog(@"%@", error);
 	}];
 }
+
+- (void)handleShowOrder
+{
+    UIViewController *viewController = [self instantiateInitialViewControllerWithStoryboardName:@"MyOrder"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 
 #pragma mark - perform
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

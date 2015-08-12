@@ -268,7 +268,10 @@
             nibsRegistered = YES;
         }
         ProductProfileTableViewCell *cell = (ProductProfileTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        cell.productModel = self.mutArrProducts[indexPath.row];
+        if (self.mutArrProducts.count > 0) {
+            cell.productModel = self.mutArrProducts[indexPath.row];
+        }
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
