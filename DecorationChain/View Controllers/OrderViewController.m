@@ -99,10 +99,13 @@
             [mutRelaty addObject:self.mutCarList[[self.selectedSet[m] integerValue]]];
         }
         NSMutableArray *supArr = [NSMutableArray array];
+//        NSMutableString *proIDAll = [NSMutableString string];
         for (int i = 0; i < mutRelaty.count; i++) {
             CarlistCellModel *model = mutRelaty[i];
 //            [supArr addObject:model.name];
-            NSLog(@"modelName:%@, count:%d", model.name, model.product_items.count);
+//            NSLog(@"modelName:%@, count:%d", model.name, model.product_items.count);
+//            [proIDAll appendString:model.proID];
+//            [proIDAll appendString:@"@"];
             
             NSMutableArray *mutDataArr = [NSMutableArray array];
             for (int j = 0; j < model.product_items.count; j++) {
@@ -125,7 +128,7 @@
             }
             
             if (mutDataArr.count != 0) {
-                NSDictionary *dic = @{[NSString stringWithFormat:@"%@@%@", model.name,self.model.identifier]:mutDataArr};
+                NSDictionary *dic = @{[NSString stringWithFormat:@"%@@%@", model.name,model.proID]:mutDataArr};
                 [supArr addObject:dic];
             }
             

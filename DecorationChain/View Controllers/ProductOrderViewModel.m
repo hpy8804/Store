@@ -24,19 +24,25 @@
 	for (NSInteger i = 0; i < products.count; i++) {
         NSDictionary *subDic = products[i];
         NSString *strKey = [subDic allKeys][0];
-        NSInteger index = [strKey rangeOfString:@"@" options:NSBackwardsSearch].location;
-        NSString *proID = [strKey substringFromIndex:(index + 1)];
-        NSArray *subArr = [subDic allValues][0];
-        [parameters setObject:proID forKey:@"product_id"];
-        for (int j = 0; j < subArr.count; j++) {
-            ProductInfoModelSV *model = (ProductInfoModelSV *)subArr[j];
-            //		NSArray *itemProduct = products[i];
-            NSString *productID = model.strID;
-            NSString *number = model.quantity;
-            [parameters setObject:productID forKey:[NSString stringWithFormat:@"product_items[%ld][id]", (long)j]];
-            [parameters setObject:number forKey:[NSString stringWithFormat:@"product_items[%ld][quantity]", (long)j]];
+        if (orderStyle == 1) {
+            NSInteger index = [strKey rangeOfString:@"@" options:NSBackwardsSearch].location;
+            NSString *proID = [strKey substringFromIndex:(index + 1)];
+            NSArray *subArr = [subDic allValues][0];
+            [parameters setObject:proID forKey:@"product_id"];
+            
+            for (int j = 0; j < subArr.count; j++) {
+                ProductInfoModelSV *model = (ProductInfoModelSV *)subArr[j];
+                //		NSArray *itemProduct = products[i];
+                NSString *productID = model.strID;
+                NSString *number = model.quantity;
+                [parameters setObject:productID forKey:[NSString stringWithFormat:@"product_items[%ld][id]", (long)j]];
+                [parameters setObject:number forKey:[NSString stringWithFormat:@"product_items[%ld][quantity]", (long)j]];
+            }
+        }else if (orderStyle == 2){
+//            NSLog(@"strKey:%@", strKey);
+            NSString *carId = [strKey substringFromIndex:[strKey rangeOfString:@"@"].location+1];
+            [parameters setObject:carId forKey:[NSString stringWithFormat:@"cart[%d]", i]];
         }
-        
 	}
 
 //    attribute -- 属性数组，多行、多列
