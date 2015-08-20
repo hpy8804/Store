@@ -28,10 +28,10 @@
 }
 
 - (RACSignal *)deleteCollection:(NSString *)identifier ids:(NSString *)ids {
-	return [[[self rac_GET:@"http://122.114.61.234/app/api/multi_delete_collection"
+	return [[[self rac_GET:@" http://122.114.61.234/app/api/delete_collection"
                 parameters:[@{
                              @"account_id":identifier,
-                             @"ids":ids } fillDeviceInfo]]
+                             @"id":ids } fillDeviceInfo]]
              map: ^id (id value) {
 	    return [self analysisRequest:value];
 	}] map: ^id (id value) {

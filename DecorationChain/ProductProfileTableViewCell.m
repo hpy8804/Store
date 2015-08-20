@@ -20,6 +20,22 @@
     // Configure the view for the selected state
 }
 
+//- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+//{
+//    [super setEditing:editing animated:animated];
+//    if (editing) {
+//        self.name.frame = CGRectMake(self.name.frame.origin.x+20, self.name.frame.origin.y, self.name.frame.size.width, self.name.frame.size.height);
+//        self.en_name.frame = CGRectMake(self.en_name.frame.origin.x+20, self.en_name.frame.origin.y, self.en_name.frame.size.width, self.en_name.frame.size.height);
+//        self.formula.frame = CGRectMake(self.formula.frame.origin.x+20, self.formula.frame.origin.y, self.formula.frame.size.width, self.formula.frame.size.height);
+//        self.cas.frame = CGRectMake(self.cas.frame.origin.x+20, self.cas.frame.origin.y, self.cas.frame.size.width, self.cas.frame.size.height);
+//    }else {
+//        self.name.frame = CGRectMake(self.name.frame.origin.x-20, self.name.frame.origin.y, self.name.frame.size.width, self.name.frame.size.height);
+//        self.en_name.frame = CGRectMake(self.en_name.frame.origin.x-20, self.en_name.frame.origin.y, self.en_name.frame.size.width, self.en_name.frame.size.height);
+//        self.formula.frame = CGRectMake(self.formula.frame.origin.x-20, self.formula.frame.origin.y, self.formula.frame.size.width, self.formula.frame.size.height);
+//        self.cas.frame = CGRectMake(self.cas.frame.origin.x-20, self.cas.frame.origin.y, self.cas.frame.size.width, self.cas.frame.size.height);
+//    }
+//}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];

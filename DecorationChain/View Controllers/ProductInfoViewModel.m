@@ -89,7 +89,7 @@
 }
 
 - (RACSignal *)deleteCollectionProductWithID:(NSString *)identifier productID:(NSString *)productID {
-	return [[[self rac_GET:@"http://122.114.61.234/app/api/delete_collection"
+	return [[[self rac_GET:@"http://122.114.61.234/app/api/cancel_collect_product"
 	            parameters  :[@{
 	                              @"account_id":identifier,
 	                              @"product_id":productID

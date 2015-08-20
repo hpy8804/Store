@@ -127,6 +127,7 @@
         orderDetailnew.ship_address = carsList[@"ship_address"];
         orderDetailnew.ship_notes = carsList[@"shipping_notes"];
         orderDetailnew.total = carsList[@"total"];
+        orderDetailnew.fpName = carsList[@"fapiao_name"];
                                                                                 
 //        for (int i = 0; i < carsList.count; i++) {
 //            ProductModel *model = [[ProductModel alloc] init];
@@ -285,7 +286,7 @@
         [cell updateWithModel:mutProducts[indexPath.row]];
     } else if (indexPath.section == 2){
         cell.textLabel.text = @"发票信息";
-        cell.detailTextLabel.text = @"个人发票";
+        cell.detailTextLabel.text = orderDetailnew.fpName;
     }else if (indexPath.section == 3){
         cell.textLabel.text = @"订单备注";
         cell.detailTextLabel.text = orderDetailnew.ship_notes;

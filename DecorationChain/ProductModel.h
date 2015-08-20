@@ -16,3 +16,7 @@
 @property (nonatomic, strong) NSString *formula;
 
 @end
+
+@interface ProductModel2 : ProductModel
+@property (nonatomic, strong) NSString *collectionId;
+@end

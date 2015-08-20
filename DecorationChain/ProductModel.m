@@ -13,3 +13,8 @@
 
 
 @end
+
+@implementation ProductModel2
+
+
+@end
