@@ -8,6 +8,7 @@
 
 #import "RegUserViewController.h"
 #import "ProfileModel.h"
+#import "ProvincePickViewController.h"
 
 @interface RegUserViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNO;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *distrct;
 @property (weak, nonatomic) IBOutlet UITextField *detailAddress;
+@property (weak, nonatomic) IBOutlet UIButton *distrctBtn;
 
 @end
 
@@ -28,6 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"注册";
+    
+    [self.distrctBtn addTarget:self action:@selector(handleSelectDistrct) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,7 +109,9 @@
                            @"company":self.company.text,
                            @"name":self.name.text,
                            @"qq":self.QQ.text,
-                           @"location":self.distrct.text,
+                           @"provinceid":[[NSUserDefaults standardUserDefaults] objectForKey:@"province_id"],
+                           @"cityid":[[NSUserDefaults standardUserDefaults] objectForKey:@"city_id"],
+                           @"districtid":[[NSUserDefaults standardUserDefaults] objectForKey:@"district_id"],
                            @"address":self.detailAddress.text};
     [manager GET:@"http://122.114.61.234/app/api/account_register" parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
        
@@ -147,6 +153,23 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }];
+}
+
+- (void)handleSelectDistrct
+{
+    ProvincePickViewController *viewController = (ProvincePickViewController *)[self instantiateViewControllerWithStoryboardName:@"MyAddress" identifier:@"MyProviceID"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSString *cacheProvince = [[NSUserDefaults standardUserDefaults] objectForKey:@"province_name"];
+    NSString *cacheCity = [[NSUserDefaults standardUserDefaults] objectForKey:@"city_name"];
+    NSString *cacheDistrict = [[NSUserDefaults standardUserDefaults] objectForKey:@"district_name"];
+    if (cacheProvince && cacheCity && cacheDistrict) {
+        [self.distrct setText:[NSString stringWithFormat:@"%@%@%@", cacheProvince, cacheCity, cacheDistrict]];
+    }
 }
 
 /*
