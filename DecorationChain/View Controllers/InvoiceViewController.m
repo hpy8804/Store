@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    self.invoiceNameTextField.text = [RuntimeCacheModel singleton].invoiceName;
 
 	@weakify(self);
 	[[self.saveButton rac_signalForControlEvents:UIControlEventTouchUpInside]

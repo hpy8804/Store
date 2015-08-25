@@ -449,7 +449,7 @@
 	// 检查是否有选择“支付方式”、“快递方式”、“发票名称”，否则使用默认值
 	NSString *payment = [RuntimeCacheModel singleton].payment ? [RuntimeCacheModel singleton].payment : @"1";
 	NSString *shipment = [RuntimeCacheModel singleton].shipment ? [RuntimeCacheModel singleton].shipment : @"1";
-	NSString *fpName = [RuntimeCacheModel singleton].invoiceName ? [RuntimeCacheModel singleton].invoiceName : @"发票";
+	NSString *fpName = [RuntimeCacheModel singleton].invoiceName ? [RuntimeCacheModel singleton].invoiceName : @"";
 	[[self.viewModel orderCreateWithID:[ProfileModel singleton].model.id addressID:self.orderAddressModel.id products:products fpType:@"1" fpKind:@"1" fpName:fpName payment:payment shipment:shipment attribute:self.willBuyAttribute orderStyle:self.orderStyle comment:remarkTextView.text] subscribeNext: ^(id x) {
 	    @strongify(self);
 //	    [self performSegueWithIdentifier:@"embed_order_info" sender:x];
