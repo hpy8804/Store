@@ -388,6 +388,9 @@
 		26D6AE631B7B78BD009A57F3 /* OrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6AE621B7B78BD009A57F3 /* OrderDetailCell.m */; };
 		26D9DFF01B784DA20089B73F /* ProductInfoModelSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D9DFEF1B784DA20089B73F /* ProductInfoModelSV.m */; };
 		26D9DFF31B786B570089B73F /* ProInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D9DFF21B786B570089B73F /* ProInfoTableViewCell.m */; };
+		26DECFE01B903FC000F85134 /* 57.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DECFDD1B903FC000F85134 /* 57.png */; };
+		26DECFE11B903FC000F85134 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DECFDE1B903FC000F85134 /* 114.png */; };
+		26DECFE21B903FC000F85134 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DECFDF1B903FC000F85134 /* 120.png */; };
 		9787CB7DA7964666882CF3F2 /* libPods-DecorationChainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */; };
 /* End PBXBuildFile section */
 
@@ -838,6 +841,9 @@
 		26D9DFEF1B784DA20089B73F /* ProductInfoModelSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInfoModelSV.m; sourceTree = "<group>"; };
 		26D9DFF11B786B570089B73F /* ProInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProInfoTableViewCell.h; sourceTree = "<group>"; };
 		26D9DFF21B786B570089B73F /* ProInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProInfoTableViewCell.m; sourceTree = "<group>"; };
+		26DECFDD1B903FC000F85134 /* 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57.png; sourceTree = "<group>"; };
+		26DECFDE1B903FC000F85134 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
+		26DECFDF1B903FC000F85134 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
 		3587A87CA8B6B760F6B2D8CC /* Pods-DecorationChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A659B62D0DE3663FF6CA552 /* Pods-DecorationChainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecorationChainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecorationChainTests/Pods-DecorationChainTests.release.xcconfig"; sourceTree = "<group>"; };
 		7BC13BDB90914BBE9E6CF53B /* libPods-DecorationChainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DecorationChainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -991,6 +997,9 @@
 		1E404ED61A6600B000DDEF23 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				26DECFDD1B903FC000F85134 /* 57.png */,
+				26DECFDE1B903FC000F85134 /* 114.png */,
+				26DECFDF1B903FC000F85134 /* 120.png */,
 				1EB2A6F51A7CEB44002481BC /* AppDelegate+setup.h */,
 				1EB2A6F61A7CEB44002481BC /* AppDelegate+setup.m */,
 				1E404EDA1A6600B000DDEF23 /* AppDelegate.h */,
@@ -1840,7 +1849,10 @@
 				1EE174481AB31161000BDD04 /* Rule.storyboard in Resources */,
 				267B5DE61B662F04009F3964 /* ProductProfileTableViewCell.xib in Resources */,
 				1E02B16A1ABB212E008369AC /* KindNavigationTitleView.xib in Resources */,
+				26DECFE21B903FC000F85134 /* 120.png in Resources */,
 				1EE174421AB31141000BDD04 /* MyAddress.storyboard in Resources */,
+				26DECFE01B903FC000F85134 /* 57.png in Resources */,
+				26DECFE11B903FC000F85134 /* 114.png in Resources */,
 				1EE174391AB3110A000BDD04 /* MyOrder.storyboard in Resources */,
 				1EFC42371AFF7DE3005B21C8 /* AlipaySDK.bundle in Resources */,
 				1EE174361AB310D2000BDD04 /* Collection.storyboard in Resources */,
@@ -2438,7 +2450,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0F4E59746E31BFE08216E355 /* Pods-DecorationChain.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2524,7 +2535,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C571C62749021C3A7B0757F5 /* Pods-DecorationChain.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
