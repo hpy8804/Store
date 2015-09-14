@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E56BAC40C5C25BB30880F16D"
+               BlueprintIdentifier = "00B85569764969F66744170E"
                BuildableName = "libPods-DecorationChain-UICKeyChainStore.a"
                BlueprintName = "Pods-DecorationChain-UICKeyChainStore"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E56BAC40C5C25BB30880F16D"
-            BuildableName = "libPods-DecorationChain-UICKeyChainStore.a"
-            BlueprintName = "Pods-DecorationChain-UICKeyChainStore"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E56BAC40C5C25BB30880F16D"
-            BuildableName = "libPods-DecorationChain-UICKeyChainStore.a"
-            BlueprintName = "Pods-DecorationChain-UICKeyChainStore"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -127,6 +127,7 @@ PODS:
   - OCHamcrest (4.1.1)
   - OCMockito (1.3.1):
     - OCHamcrest (~> 4.0)
+  - Pgyer (2.3)
   - pop (1.0.7)
   - RatingBar (0.0.2)
   - Reachability (3.2)
@@ -165,17 +166,20 @@ DEPENDENCIES:
   - Canvas (~> 0.1.2)
   - CLLocationManager-blocks (~> 1.3.2)
   - CSNNotificationObserver (~> 0.9.2)
-  - DOPDropDownMenu (from `https://coding.net/huangxinping/DOPDropDownMenu.git`, tag `0.0.1`)
+  - DOPDropDownMenu (from `https://coding.net/huangxinping/DOPDropDownMenu.git`, tag
+    `0.0.1`)
   - Expecta (~> 0.3.1)
   - FastAnimationWithPOP (~> 0.0.2)
   - FCUUID (~> 1.1.4)
   - ICViewPager (~> 1.5.1)
   - INTUAnimationEngine (~> 1.2.0)
   - IQKeyboardManager (~> 3.2.1.0)
-  - JKCountDownButton (from `https://coding.net/huangxinping/JKCountDownButton.git`, tag `0.0.1`)
+  - JKCountDownButton (from `https://coding.net/huangxinping/JKCountDownButton.git`,
+    tag `0.0.1`)
   - JSONModel (~> 1.0.1)
   - Kiwi (~> 2.3.1)
-  - LASIImageView (from `https://github.com/lukagabric/LASIImageView.git`, commit `b8a6187b4bb205a01da0497c5bf414f6c163379e`)
+  - LASIImageView (from `https://github.com/lukagabric/LASIImageView.git`, commit
+    `b8a6187b4bb205a01da0497c5bf414f6c163379e`)
   - libextobjc (~> 0.4.1)
   - LMGeocoder (~> 1.0.1)
   - MagicalRecord (~> 2.2)
@@ -191,6 +195,7 @@ DEPENDENCIES:
   - NSString-HTML (~> 0.0.1)
   - OCHamcrest (~> 4.1.1)
   - OCMockito (~> 1.3.1)
+  - Pgyer
   - RatingBar (from `https://coding.net/huangxinping/RatingBar.git`, tag `0.0.2`)
   - ReactiveCocoa (~> 2.4.2)
   - ReactiveCocoaLayout (~> 0.4)
@@ -198,7 +203,8 @@ DEPENDENCIES:
   - RESideMenu (~> 4.0.7)
   - RXCollections (~> 1.0)
   - SVProgressHUD (~> 1.1.2)
-  - UIFolderTableView (from `https://coding.net/huangxinping/UIFolderTableView.git`, tag `v1.0.0`)
+  - UIFolderTableView (from `https://coding.net/huangxinping/UIFolderTableView.git`,
+    tag `v1.0.0`)
   - UITextView+Placeholder (~> 1.0.9)
   - UIView+MGBadgeView (~> 0.0.1)
   - XPKit (from `https://coding.net/huangxinping/XPKit.git`, tag `v1.0.0`)
@@ -292,6 +298,7 @@ SPEC CHECKSUMS:
   NSString-HTML: 0dc0ae9d430d20a96dda961a346fa842fffa8c1f
   OCHamcrest: 6f03ffa81d12feab872638490a44ab0a6d3aca10
   OCMockito: 958f33ee8ad03eeb62e1397ef6b60f5121214ca4
+  Pgyer: ca2cf95af6aee713162aa20bb0874822ee784301
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   RatingBar: 929994f5426e84c2d775f2c7369849bfb2399f0f
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -309,4 +316,4 @@ SPEC CHECKSUMS:
   XPToast: 161bb38e73f63866946ad3dc8808544ca2065194
   XXNibBridge: 04ce6b4f8a2e33857396f1c369581436c390cb7d
 
-COCOAPODS: 0.36.0
+COCOAPODS: 0.37.2

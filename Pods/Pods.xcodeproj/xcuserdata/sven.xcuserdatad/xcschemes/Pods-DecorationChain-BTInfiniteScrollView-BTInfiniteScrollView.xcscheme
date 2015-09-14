@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE796340DBAE7DC9CB4DF3B9"
+               BlueprintIdentifier = "0BBA6480396495D4AB2C3798"
                BuildableName = "BTInfiniteScrollView.bundle"
                BlueprintName = "Pods-DecorationChain-BTInfiniteScrollView-BTInfiniteScrollView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE796340DBAE7DC9CB4DF3B9"
-            BuildableName = "BTInfiniteScrollView.bundle"
-            BlueprintName = "Pods-DecorationChain-BTInfiniteScrollView-BTInfiniteScrollView"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE796340DBAE7DC9CB4DF3B9"
-            BuildableName = "BTInfiniteScrollView.bundle"
-            BlueprintName = "Pods-DecorationChain-BTInfiniteScrollView-BTInfiniteScrollView"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

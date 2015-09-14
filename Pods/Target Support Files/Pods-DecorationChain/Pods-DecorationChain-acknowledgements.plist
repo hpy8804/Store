@@ -42,7 +42,7 @@ THE SOFTWARE.</string>
 			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
-Copyright (c) 2014 Álvaro Franco
+Copyright (c) 2014 &#193;lvaro Franco
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -95,7 +95,7 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
+			<string>Copyright (c) 2011&#8211;2015 Alamofire Software Foundation (http://alamofire.org/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -242,7 +242,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2014 Денис Либит &lt;bteapot@me.com&gt;
+			<string>Copyright (c) 2014 &#1044;&#1077;&#1085;&#1080;&#1089; &#1051;&#1080;&#1073;&#1080;&#1090; &lt;bteapot@me.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -698,7 +698,7 @@ THE SOFTWARE.
 			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
-Copyright (c) 2013 Michał Zaborowski
+Copyright (c) 2013 Micha&#322; Zaborowski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -906,6 +906,15 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 </string>
 			<key>Title</key>
 			<string>NSString-HTML</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright 2015 pgyer.com. All rights reserved.
+</string>
+			<key>Title</key>
+			<string>Pgyer</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

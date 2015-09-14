@@ -128,6 +128,7 @@
         orderDetailnew.ship_notes = carsList[@"shipping_notes"];
         orderDetailnew.total = carsList[@"total"];
         orderDetailnew.fpName = carsList[@"fapiao_name"];
+        orderDetailnew.notes = carsList[@"notes"];
                                                                                 
 //        for (int i = 0; i < carsList.count; i++) {
 //            ProductModel *model = [[ProductModel alloc] init];
@@ -235,7 +236,7 @@
     if (indexPath.section == 1) {
         return 115;
     }else{
-        return 44;
+       return 44;
     }
 }
 
@@ -249,6 +250,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
     }
+    cell.detailTextLabel.numberOfLines = 0;
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
@@ -286,7 +288,7 @@
         [cell updateWithModel:mutProducts[indexPath.row]];
     } else if (indexPath.section == 2){
         cell.textLabel.text = @"发票信息";
-        cell.detailTextLabel.text = orderDetailnew.fpName;
+        cell.detailTextLabel.text = (orderDetailnew.fpName != (NSString *)[NSNull null])?orderDetailnew.fpName:@"";
     }else if (indexPath.section == 3){
         cell.textLabel.text = @"订单备注";
         cell.detailTextLabel.text = orderDetailnew.ship_notes;
@@ -295,7 +297,7 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"¥%@", orderDetailnew.total];
     }else{
         cell.textLabel.text = @"管理员备注";
-        cell.detailTextLabel.text = @"无";
+        cell.detailTextLabel.text = (orderDetailnew.notes != (NSString *)[NSNull null])?orderDetailnew.notes:@"";
     }
 	return cell;
 }

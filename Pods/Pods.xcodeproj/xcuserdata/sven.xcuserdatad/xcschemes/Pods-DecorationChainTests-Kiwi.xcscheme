@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C0BC7D940CD342DB72D17ECC"
+               BlueprintIdentifier = "94BFBB04EBB90C861B208B1A"
                BuildableName = "libPods-DecorationChainTests-Kiwi.a"
                BlueprintName = "Pods-DecorationChainTests-Kiwi"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0BC7D940CD342DB72D17ECC"
-            BuildableName = "libPods-DecorationChainTests-Kiwi.a"
-            BlueprintName = "Pods-DecorationChainTests-Kiwi"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0BC7D940CD342DB72D17ECC"
-            BuildableName = "libPods-DecorationChainTests-Kiwi.a"
-            BlueprintName = "Pods-DecorationChainTests-Kiwi"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

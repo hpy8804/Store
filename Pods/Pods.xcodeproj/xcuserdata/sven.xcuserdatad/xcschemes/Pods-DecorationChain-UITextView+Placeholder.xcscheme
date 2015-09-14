@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C7B6E7AC2132B9213D45A196"
+               BlueprintIdentifier = "7BF826563AF367BED51F361C"
                BuildableName = "libPods-DecorationChain-UITextView+Placeholder.a"
                BlueprintName = "Pods-DecorationChain-UITextView+Placeholder"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C7B6E7AC2132B9213D45A196"
-            BuildableName = "libPods-DecorationChain-UITextView+Placeholder.a"
-            BlueprintName = "Pods-DecorationChain-UITextView+Placeholder"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C7B6E7AC2132B9213D45A196"
-            BuildableName = "libPods-DecorationChain-UITextView+Placeholder.a"
-            BlueprintName = "Pods-DecorationChain-UITextView+Placeholder"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

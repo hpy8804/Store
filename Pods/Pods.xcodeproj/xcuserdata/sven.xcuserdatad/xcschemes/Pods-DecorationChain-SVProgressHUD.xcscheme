@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45610359872CBFAC099F29E3"
+               BlueprintIdentifier = "5787E7C9ADDA3A4C095CE4B6"
                BuildableName = "libPods-DecorationChain-SVProgressHUD.a"
                BlueprintName = "Pods-DecorationChain-SVProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45610359872CBFAC099F29E3"
-            BuildableName = "libPods-DecorationChain-SVProgressHUD.a"
-            BlueprintName = "Pods-DecorationChain-SVProgressHUD"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45610359872CBFAC099F29E3"
-            BuildableName = "libPods-DecorationChain-SVProgressHUD.a"
-            BlueprintName = "Pods-DecorationChain-SVProgressHUD"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

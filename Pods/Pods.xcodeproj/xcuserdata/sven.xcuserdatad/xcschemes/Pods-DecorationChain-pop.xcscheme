@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02E14D3A1280E63CC1F45B7A"
+               BlueprintIdentifier = "50052E270E2DF8A9E0DDFBDA"
                BuildableName = "libPods-DecorationChain-pop.a"
                BlueprintName = "Pods-DecorationChain-pop"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02E14D3A1280E63CC1F45B7A"
-            BuildableName = "libPods-DecorationChain-pop.a"
-            BlueprintName = "Pods-DecorationChain-pop"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02E14D3A1280E63CC1F45B7A"
-            BuildableName = "libPods-DecorationChain-pop.a"
-            BlueprintName = "Pods-DecorationChain-pop"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

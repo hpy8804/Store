@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "637DCA5C9F960329E72D3CBB"
+               BlueprintIdentifier = "D89C368814A116FFDFA1EC1B"
                BuildableName = "libPods-DecorationChain-CLLocationManager-blocks.a"
                BlueprintName = "Pods-DecorationChain-CLLocationManager-blocks"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "637DCA5C9F960329E72D3CBB"
-            BuildableName = "libPods-DecorationChain-CLLocationManager-blocks.a"
-            BlueprintName = "Pods-DecorationChain-CLLocationManager-blocks"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "637DCA5C9F960329E72D3CBB"
-            BuildableName = "libPods-DecorationChain-CLLocationManager-blocks.a"
-            BlueprintName = "Pods-DecorationChain-CLLocationManager-blocks"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

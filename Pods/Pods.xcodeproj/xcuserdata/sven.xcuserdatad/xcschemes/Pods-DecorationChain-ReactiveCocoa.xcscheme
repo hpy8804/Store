@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "996A83371C16DD32301DAC42"
+               BlueprintIdentifier = "AC33CFE85DC65C7BF7CF4C4F"
                BuildableName = "libPods-DecorationChain-ReactiveCocoa.a"
                BlueprintName = "Pods-DecorationChain-ReactiveCocoa"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "996A83371C16DD32301DAC42"
-            BuildableName = "libPods-DecorationChain-ReactiveCocoa.a"
-            BlueprintName = "Pods-DecorationChain-ReactiveCocoa"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "996A83371C16DD32301DAC42"
-            BuildableName = "libPods-DecorationChain-ReactiveCocoa.a"
-            BlueprintName = "Pods-DecorationChain-ReactiveCocoa"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

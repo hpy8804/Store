@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7A886F6D6559F40154A4E1F7"
+               BlueprintIdentifier = "C9B31EF2AF76A4D5AB5DEAEB"
                BuildableName = "libPods-DecorationChain-MAThemeKit.a"
                BlueprintName = "Pods-DecorationChain-MAThemeKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A886F6D6559F40154A4E1F7"
-            BuildableName = "libPods-DecorationChain-MAThemeKit.a"
-            BlueprintName = "Pods-DecorationChain-MAThemeKit"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A886F6D6559F40154A4E1F7"
-            BuildableName = "libPods-DecorationChain-MAThemeKit.a"
-            BlueprintName = "Pods-DecorationChain-MAThemeKit"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

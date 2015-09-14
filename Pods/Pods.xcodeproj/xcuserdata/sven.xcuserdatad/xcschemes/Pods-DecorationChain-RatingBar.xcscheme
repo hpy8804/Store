@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BC714D6423205A09DF581993"
+               BlueprintIdentifier = "287D689DDB571E9B49AA95EB"
                BuildableName = "libPods-DecorationChain-RatingBar.a"
                BlueprintName = "Pods-DecorationChain-RatingBar"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BC714D6423205A09DF581993"
-            BuildableName = "libPods-DecorationChain-RatingBar.a"
-            BlueprintName = "Pods-DecorationChain-RatingBar"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BC714D6423205A09DF581993"
-            BuildableName = "libPods-DecorationChain-RatingBar.a"
-            BlueprintName = "Pods-DecorationChain-RatingBar"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -188,15 +188,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+    
+    [self.orderTabelView headerBeginRefreshing];
+    [self updateUIWithSelected];
 
-	@weakify(self);
-	[[self.viewModel vipDiscountWithID:[ProfileModel singleton].model.id]
-	 subscribeNext: ^(id x) {
-	    @strongify(self);
-	    self.vipDiscount = x;
-	    [self.orderTabelView headerBeginRefreshing];
-         [self updateUIWithSelected];
-	}];
+//	@weakify(self);
+//	[[self.viewModel vipDiscountWithID:[ProfileModel singleton].model.id]
+//	 subscribeNext: ^(id x) {
+//	    @strongify(self);
+//	    self.vipDiscount = x;
+//	    [self.orderTabelView headerBeginRefreshing];
+//         [self updateUIWithSelected];
+//	}];
 }
 
 - (void)didReceiveMemoryWarning {

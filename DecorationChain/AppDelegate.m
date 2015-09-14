@@ -12,6 +12,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "base64.h"
 #import "RSADataSigner.h"
+#import <PgySDK/PgyManager.h>
 
 @interface AppDelegate ()
 {
@@ -33,6 +34,8 @@ static BOOL isRunningTests(void) {
 		return YES;
 	}
 
+    [[PgyManager sharedPgyManager] startManagerWithAppId:@"55af5d8c363fa24b10c227bc61dc220c"];
+    [[PgyManager sharedPgyManager] checkUpdate];
 	[[ProfileModel singleton] readFromLocal];
 	[self setup];
 	return YES;

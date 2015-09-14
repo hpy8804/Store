@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D51E2A9A99A83E4279BD8F6"
+               BlueprintIdentifier = "8C334ABF5A8C449602C6DD76"
                BuildableName = "libPods-DecorationChain-INTUAnimationEngine.a"
                BlueprintName = "Pods-DecorationChain-INTUAnimationEngine"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D51E2A9A99A83E4279BD8F6"
-            BuildableName = "libPods-DecorationChain-INTUAnimationEngine.a"
-            BlueprintName = "Pods-DecorationChain-INTUAnimationEngine"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D51E2A9A99A83E4279BD8F6"
-            BuildableName = "libPods-DecorationChain-INTUAnimationEngine.a"
-            BlueprintName = "Pods-DecorationChain-INTUAnimationEngine"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

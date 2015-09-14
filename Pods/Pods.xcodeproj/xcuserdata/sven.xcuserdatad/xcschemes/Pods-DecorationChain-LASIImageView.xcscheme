@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2304853C28FA930C95D269A8"
+               BlueprintIdentifier = "2ED747D279C2D11CB5DE5E0F"
                BuildableName = "libPods-DecorationChain-LASIImageView.a"
                BlueprintName = "Pods-DecorationChain-LASIImageView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2304853C28FA930C95D269A8"
-            BuildableName = "libPods-DecorationChain-LASIImageView.a"
-            BlueprintName = "Pods-DecorationChain-LASIImageView"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2304853C28FA930C95D269A8"
-            BuildableName = "libPods-DecorationChain-LASIImageView.a"
-            BlueprintName = "Pods-DecorationChain-LASIImageView"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

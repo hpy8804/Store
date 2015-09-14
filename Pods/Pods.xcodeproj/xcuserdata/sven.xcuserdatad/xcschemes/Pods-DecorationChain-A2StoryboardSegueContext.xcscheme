@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64093D9BFACC74F035FA9152"
+               BlueprintIdentifier = "8C423C1D5911008195A82A43"
                BuildableName = "libPods-DecorationChain-A2StoryboardSegueContext.a"
                BlueprintName = "Pods-DecorationChain-A2StoryboardSegueContext"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "64093D9BFACC74F035FA9152"
-            BuildableName = "libPods-DecorationChain-A2StoryboardSegueContext.a"
-            BlueprintName = "Pods-DecorationChain-A2StoryboardSegueContext"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "64093D9BFACC74F035FA9152"
-            BuildableName = "libPods-DecorationChain-A2StoryboardSegueContext.a"
-            BlueprintName = "Pods-DecorationChain-A2StoryboardSegueContext"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

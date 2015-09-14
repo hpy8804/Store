@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B9965131693CCB9C0BC228DB"
+               BlueprintIdentifier = "A3F2109C2C7CEF87F3ABCF8C"
                BuildableName = "libPods-DecorationChain-MagicalRecord.a"
                BlueprintName = "Pods-DecorationChain-MagicalRecord"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B9965131693CCB9C0BC228DB"
-            BuildableName = "libPods-DecorationChain-MagicalRecord.a"
-            BlueprintName = "Pods-DecorationChain-MagicalRecord"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B9965131693CCB9C0BC228DB"
-            BuildableName = "libPods-DecorationChain-MagicalRecord.a"
-            BlueprintName = "Pods-DecorationChain-MagicalRecord"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

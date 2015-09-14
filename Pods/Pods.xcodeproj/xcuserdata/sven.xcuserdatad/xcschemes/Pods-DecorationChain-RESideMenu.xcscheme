@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACF21F9B7D4F7E6114E53CD5"
+               BlueprintIdentifier = "308F14E705EDF15D4D3F3447"
                BuildableName = "libPods-DecorationChain-RESideMenu.a"
                BlueprintName = "Pods-DecorationChain-RESideMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACF21F9B7D4F7E6114E53CD5"
-            BuildableName = "libPods-DecorationChain-RESideMenu.a"
-            BlueprintName = "Pods-DecorationChain-RESideMenu"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACF21F9B7D4F7E6114E53CD5"
-            BuildableName = "libPods-DecorationChain-RESideMenu.a"
-            BlueprintName = "Pods-DecorationChain-RESideMenu"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

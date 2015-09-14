@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "142F948658E5CB1D964C1F18"
+               BlueprintIdentifier = "3EC5AE2A87E123B9C4D602E6"
                BuildableName = "libPods-DecorationChain-IQKeyboardManager.a"
                BlueprintName = "Pods-DecorationChain-IQKeyboardManager"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "142F948658E5CB1D964C1F18"
-            BuildableName = "libPods-DecorationChain-IQKeyboardManager.a"
-            BlueprintName = "Pods-DecorationChain-IQKeyboardManager"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "142F948658E5CB1D964C1F18"
-            BuildableName = "libPods-DecorationChain-IQKeyboardManager.a"
-            BlueprintName = "Pods-DecorationChain-IQKeyboardManager"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

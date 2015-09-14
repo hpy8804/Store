@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B6B8C0B760D450CBCCEC504"
+               BlueprintIdentifier = "5AFE660018DDCA82E91BED97"
                BuildableName = "libPods-DecorationChain-ICViewPager.a"
                BlueprintName = "Pods-DecorationChain-ICViewPager"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B6B8C0B760D450CBCCEC504"
-            BuildableName = "libPods-DecorationChain-ICViewPager.a"
-            BlueprintName = "Pods-DecorationChain-ICViewPager"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B6B8C0B760D450CBCCEC504"
-            BuildableName = "libPods-DecorationChain-ICViewPager.a"
-            BlueprintName = "Pods-DecorationChain-ICViewPager"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

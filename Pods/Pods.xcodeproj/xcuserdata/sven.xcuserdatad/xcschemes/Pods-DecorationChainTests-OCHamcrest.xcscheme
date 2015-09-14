@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CF1F10CDE9808EDB4BDF8623"
+               BlueprintIdentifier = "7E34F5EEB92DA3AAE40CDAE1"
                BuildableName = "libPods-DecorationChainTests-OCHamcrest.a"
                BlueprintName = "Pods-DecorationChainTests-OCHamcrest"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CF1F10CDE9808EDB4BDF8623"
-            BuildableName = "libPods-DecorationChainTests-OCHamcrest.a"
-            BlueprintName = "Pods-DecorationChainTests-OCHamcrest"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CF1F10CDE9808EDB4BDF8623"
-            BuildableName = "libPods-DecorationChainTests-OCHamcrest.a"
-            BlueprintName = "Pods-DecorationChainTests-OCHamcrest"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

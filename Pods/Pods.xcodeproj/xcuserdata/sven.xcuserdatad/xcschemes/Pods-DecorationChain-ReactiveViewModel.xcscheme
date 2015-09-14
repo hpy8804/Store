@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BEA35C220796E40F7936910C"
+               BlueprintIdentifier = "84B41917D89E2C0FBC4E5C2D"
                BuildableName = "libPods-DecorationChain-ReactiveViewModel.a"
                BlueprintName = "Pods-DecorationChain-ReactiveViewModel"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BEA35C220796E40F7936910C"
-            BuildableName = "libPods-DecorationChain-ReactiveViewModel.a"
-            BlueprintName = "Pods-DecorationChain-ReactiveViewModel"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BEA35C220796E40F7936910C"
-            BuildableName = "libPods-DecorationChain-ReactiveViewModel.a"
-            BlueprintName = "Pods-DecorationChain-ReactiveViewModel"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

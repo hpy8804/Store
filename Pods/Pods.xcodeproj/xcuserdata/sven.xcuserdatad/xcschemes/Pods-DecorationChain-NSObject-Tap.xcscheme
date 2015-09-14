@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E3068255BE148EC2DA0F7E49"
+               BlueprintIdentifier = "EDDFFE152B3E7592F63E4FDC"
                BuildableName = "libPods-DecorationChain-NSObject-Tap.a"
                BlueprintName = "Pods-DecorationChain-NSObject-Tap"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E3068255BE148EC2DA0F7E49"
-            BuildableName = "libPods-DecorationChain-NSObject-Tap.a"
-            BlueprintName = "Pods-DecorationChain-NSObject-Tap"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E3068255BE148EC2DA0F7E49"
-            BuildableName = "libPods-DecorationChain-NSObject-Tap.a"
-            BlueprintName = "Pods-DecorationChain-NSObject-Tap"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

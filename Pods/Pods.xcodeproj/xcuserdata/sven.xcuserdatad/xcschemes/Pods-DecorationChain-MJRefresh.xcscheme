@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "04936A4A90B158D4604ACCA8"
+               BlueprintIdentifier = "24C26B8564D26D2AEA2A3D14"
                BuildableName = "libPods-DecorationChain-MJRefresh.a"
                BlueprintName = "Pods-DecorationChain-MJRefresh"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04936A4A90B158D4604ACCA8"
-            BuildableName = "libPods-DecorationChain-MJRefresh.a"
-            BlueprintName = "Pods-DecorationChain-MJRefresh"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04936A4A90B158D4604ACCA8"
-            BuildableName = "libPods-DecorationChain-MJRefresh.a"
-            BlueprintName = "Pods-DecorationChain-MJRefresh"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

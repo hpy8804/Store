@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3987EBD1D952B68D13CD197B"
+               BlueprintIdentifier = "2D355C38C0C7502E69DE265B"
                BuildableName = "libPods-DecorationChain-CSNNotificationObserver.a"
                BlueprintName = "Pods-DecorationChain-CSNNotificationObserver"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3987EBD1D952B68D13CD197B"
-            BuildableName = "libPods-DecorationChain-CSNNotificationObserver.a"
-            BlueprintName = "Pods-DecorationChain-CSNNotificationObserver"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3987EBD1D952B68D13CD197B"
-            BuildableName = "libPods-DecorationChain-CSNNotificationObserver.a"
-            BlueprintName = "Pods-DecorationChain-CSNNotificationObserver"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

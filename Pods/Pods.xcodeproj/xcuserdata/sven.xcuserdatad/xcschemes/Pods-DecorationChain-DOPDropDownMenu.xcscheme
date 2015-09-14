@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "44A3BE35EB4C9D3B04909576"
+               BlueprintIdentifier = "CF0E161CFD0DC03FBE80F4BC"
                BuildableName = "libPods-DecorationChain-DOPDropDownMenu.a"
                BlueprintName = "Pods-DecorationChain-DOPDropDownMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44A3BE35EB4C9D3B04909576"
-            BuildableName = "libPods-DecorationChain-DOPDropDownMenu.a"
-            BlueprintName = "Pods-DecorationChain-DOPDropDownMenu"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44A3BE35EB4C9D3B04909576"
-            BuildableName = "libPods-DecorationChain-DOPDropDownMenu.a"
-            BlueprintName = "Pods-DecorationChain-DOPDropDownMenu"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "92805DE39B3A0319FDF6DC5B"
+               BlueprintIdentifier = "913BDEF698093CD4C7CD8A08"
                BuildableName = "libPods-DecorationChain-AFNetworking-RACExtensions.a"
                BlueprintName = "Pods-DecorationChain-AFNetworking-RACExtensions"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "92805DE39B3A0319FDF6DC5B"
-            BuildableName = "libPods-DecorationChain-AFNetworking-RACExtensions.a"
-            BlueprintName = "Pods-DecorationChain-AFNetworking-RACExtensions"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "92805DE39B3A0319FDF6DC5B"
-            BuildableName = "libPods-DecorationChain-AFNetworking-RACExtensions.a"
-            BlueprintName = "Pods-DecorationChain-AFNetworking-RACExtensions"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

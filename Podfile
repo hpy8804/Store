@@ -67,6 +67,7 @@ target 'DecorationChain' do
     pod 'Canvas', '~> 0.1.2'
     pod 'FastAnimationWithPOP', '~> 0.0.2'
     pod 'INTUAnimationEngine', '~> 1.2.0'
+    pod 'Pgyer'
 
 end
 

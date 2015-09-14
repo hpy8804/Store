@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA45DD82C04FF1C25E70C967"
+               BlueprintIdentifier = "A19A1EDC99D8DCD137A922E0"
                BuildableName = "libPods-DecorationChain-XPKit.a"
                BlueprintName = "Pods-DecorationChain-XPKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA45DD82C04FF1C25E70C967"
-            BuildableName = "libPods-DecorationChain-XPKit.a"
-            BlueprintName = "Pods-DecorationChain-XPKit"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA45DD82C04FF1C25E70C967"
-            BuildableName = "libPods-DecorationChain-XPKit.a"
-            BlueprintName = "Pods-DecorationChain-XPKit"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

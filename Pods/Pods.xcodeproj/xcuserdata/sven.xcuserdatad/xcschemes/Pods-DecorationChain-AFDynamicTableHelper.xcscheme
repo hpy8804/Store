@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EE2C5A3FEBF40A884A52B0B4"
+               BlueprintIdentifier = "9C7B2CA733F94CDA8ACDEFC1"
                BuildableName = "libPods-DecorationChain-AFDynamicTableHelper.a"
                BlueprintName = "Pods-DecorationChain-AFDynamicTableHelper"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EE2C5A3FEBF40A884A52B0B4"
-            BuildableName = "libPods-DecorationChain-AFDynamicTableHelper.a"
-            BlueprintName = "Pods-DecorationChain-AFDynamicTableHelper"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EE2C5A3FEBF40A884A52B0B4"
-            BuildableName = "libPods-DecorationChain-AFDynamicTableHelper.a"
-            BlueprintName = "Pods-DecorationChain-AFDynamicTableHelper"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -770,6 +770,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 
 
+## Pgyer
+
+Copyright 2015 pgyer.com. All rights reserved.
+
+
 ## RESideMenu
 
 Copyright (c) 2013 Roman Efimov (https://github.com/romaonthego).

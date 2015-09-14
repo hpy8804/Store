@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "940D04B66A7AFA183E515449"
+               BlueprintIdentifier = "D60B312158D332B0F184E7E2"
                BuildableName = "libPods-DecorationChain-ASIHTTPRequest.a"
                BlueprintName = "Pods-DecorationChain-ASIHTTPRequest"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "940D04B66A7AFA183E515449"
-            BuildableName = "libPods-DecorationChain-ASIHTTPRequest.a"
-            BlueprintName = "Pods-DecorationChain-ASIHTTPRequest"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "940D04B66A7AFA183E515449"
-            BuildableName = "libPods-DecorationChain-ASIHTTPRequest.a"
-            BlueprintName = "Pods-DecorationChain-ASIHTTPRequest"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

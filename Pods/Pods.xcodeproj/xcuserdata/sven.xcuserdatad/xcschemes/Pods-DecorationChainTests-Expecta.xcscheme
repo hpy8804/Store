@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "217D740D9EA5F5C534038FA7"
+               BlueprintIdentifier = "B856AE2E94129AAEAB6B8A9A"
                BuildableName = "libPods-DecorationChainTests-Expecta.a"
                BlueprintName = "Pods-DecorationChainTests-Expecta"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "217D740D9EA5F5C534038FA7"
-            BuildableName = "libPods-DecorationChainTests-Expecta.a"
-            BlueprintName = "Pods-DecorationChainTests-Expecta"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "217D740D9EA5F5C534038FA7"
-            BuildableName = "libPods-DecorationChainTests-Expecta.a"
-            BlueprintName = "Pods-DecorationChainTests-Expecta"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

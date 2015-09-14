@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "91F083048E0DBAFA660CDEC5"
+               BlueprintIdentifier = "FDC9CACC49BBBE494980AEF1"
                BuildableName = "libPods-DecorationChain-JKCountDownButton.a"
                BlueprintName = "Pods-DecorationChain-JKCountDownButton"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "91F083048E0DBAFA660CDEC5"
-            BuildableName = "libPods-DecorationChain-JKCountDownButton.a"
-            BlueprintName = "Pods-DecorationChain-JKCountDownButton"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "91F083048E0DBAFA660CDEC5"
-            BuildableName = "libPods-DecorationChain-JKCountDownButton.a"
-            BlueprintName = "Pods-DecorationChain-JKCountDownButton"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

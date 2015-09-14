@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D1247118C69F11F4139B5827"
+               BlueprintIdentifier = "106A55F9819A2B8200825C67"
                BuildableName = "libPods-DecorationChain-NSString-HTML.a"
                BlueprintName = "Pods-DecorationChain-NSString-HTML"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D1247118C69F11F4139B5827"
-            BuildableName = "libPods-DecorationChain-NSString-HTML.a"
-            BlueprintName = "Pods-DecorationChain-NSString-HTML"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D1247118C69F11F4139B5827"
-            BuildableName = "libPods-DecorationChain-NSString-HTML.a"
-            BlueprintName = "Pods-DecorationChain-NSString-HTML"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -18,4 +18,5 @@
 @property (strong, nonatomic) NSString *ship_notes;
 @property (strong, nonatomic) NSString *total;
 @property (strong, nonatomic) NSString *fpName;
+@property (strong, nonatomic) NSString *notes;
 @end
