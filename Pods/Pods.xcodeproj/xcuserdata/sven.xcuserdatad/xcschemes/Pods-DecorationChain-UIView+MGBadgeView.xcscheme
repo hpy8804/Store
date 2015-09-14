@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4AC4F39769800217670285E3"
+               BlueprintIdentifier = "B582567531AA379CEE9CA991"
                BuildableName = "libPods-DecorationChain-UIView+MGBadgeView.a"
                BlueprintName = "Pods-DecorationChain-UIView+MGBadgeView"
                ReferencedContainer = "container:Pods.xcodeproj">

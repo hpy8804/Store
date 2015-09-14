@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "90763FB64D9997D6BE2A761E"
+               BlueprintIdentifier = "386FEAD25A56742504AC48F4"
                BuildableName = "libPods-DecorationChain-XXNibBridge.a"
                BlueprintName = "Pods-DecorationChain-XXNibBridge"
                ReferencedContainer = "container:Pods.xcodeproj">

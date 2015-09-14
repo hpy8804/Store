@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84B41917D89E2C0FBC4E5C2D"
+               BlueprintIdentifier = "B81EFDC8E616A4BD25323615"
                BuildableName = "libPods-DecorationChain-ReactiveViewModel.a"
                BlueprintName = "Pods-DecorationChain-ReactiveViewModel"
                ReferencedContainer = "container:Pods.xcodeproj">

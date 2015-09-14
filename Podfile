@@ -11,7 +11,7 @@ target 'DecorationChain' do
     pod 'A2StoryboardSegueContext', '~> 1.0.1'
     pod 'AFBlurSegue', '~> 1.2'
     pod 'AFDynamicTableHelper', '0.1.0'
-    pod 'ACReuseQueue', '~> 0.0.1'
+    #pod 'ACReuseQueue', '~> 0.0.1'
     
     # shorthand
     pod 'XPKit', :git => 'https://coding.net/huangxinping/XPKit.git', :tag => 'v1.0.0'

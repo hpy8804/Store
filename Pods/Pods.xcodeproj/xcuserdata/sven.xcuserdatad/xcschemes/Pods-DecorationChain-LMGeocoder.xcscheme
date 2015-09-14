@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2816E08B1A53875498C88A00"
+               BlueprintIdentifier = "963818EDCD349108F98276F6"
                BuildableName = "libPods-DecorationChain-LMGeocoder.a"
                BlueprintName = "Pods-DecorationChain-LMGeocoder"
                ReferencedContainer = "container:Pods.xcodeproj">

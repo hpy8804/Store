@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D97631A60E472D03DA29B393"
+               BlueprintIdentifier = "3AD6F346A8941C233D9E65ED"
                BuildableName = "libPods-DecorationChain-AFBlurSegue.a"
                BlueprintName = "Pods-DecorationChain-AFBlurSegue"
                ReferencedContainer = "container:Pods.xcodeproj">

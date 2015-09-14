@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DBF5027150A41C58ABF0794"
+               BlueprintIdentifier = "46E075A3D2A2A3E352C689ED"
                BuildableName = "AFDynamicTableHelper.bundle"
                BlueprintName = "Pods-DecorationChain-AFDynamicTableHelper-AFDynamicTableHelper"
                ReferencedContainer = "container:Pods.xcodeproj">

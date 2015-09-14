@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "287D689DDB571E9B49AA95EB"
+               BlueprintIdentifier = "CBF562E01A203C3149E8EDEE"
                BuildableName = "libPods-DecorationChain-RatingBar.a"
                BlueprintName = "Pods-DecorationChain-RatingBar"
                ReferencedContainer = "container:Pods.xcodeproj">

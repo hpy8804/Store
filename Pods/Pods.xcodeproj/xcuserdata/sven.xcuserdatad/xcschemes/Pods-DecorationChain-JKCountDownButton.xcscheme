@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FDC9CACC49BBBE494980AEF1"
+               BlueprintIdentifier = "B793A25569D5C4CE1130154F"
                BuildableName = "libPods-DecorationChain-JKCountDownButton.a"
                BlueprintName = "Pods-DecorationChain-JKCountDownButton"
                ReferencedContainer = "container:Pods.xcodeproj">

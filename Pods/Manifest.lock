@@ -1,6 +1,5 @@
 PODS:
   - A2StoryboardSegueContext (1.0.1)
-  - ACReuseQueue (0.0.1)
   - AFBlurSegue (1.2.1)
   - AFDynamicTableHelper (0.1.0)
   - AFNetworking (2.5.4):
@@ -156,7 +155,6 @@ PODS:
 
 DEPENDENCIES:
   - A2StoryboardSegueContext (~> 1.0.1)
-  - ACReuseQueue (~> 0.0.1)
   - AFBlurSegue (~> 1.2)
   - AFDynamicTableHelper (= 0.1.0)
   - AFNetworking-RACExtensions (~> 0.1.6)
@@ -259,7 +257,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   A2StoryboardSegueContext: f7c59a413b4c4fe5920f8dbf06b0c970025ea57a
-  ACReuseQueue: 88d3845f193b9a71b5b0a230cd70821f33ed7b37
   AFBlurSegue: 27e55f015360f4e11117d2c3a959dbb5316eef78
   AFDynamicTableHelper: cf4a4c8f478dbc06a2572e870e30c7ebb9f8121c
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e

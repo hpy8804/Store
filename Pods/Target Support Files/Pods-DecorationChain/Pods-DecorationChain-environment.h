@@ -12,12 +12,6 @@
 #define COCOAPODS_VERSION_MINOR_A2StoryboardSegueContext 0
 #define COCOAPODS_VERSION_PATCH_A2StoryboardSegueContext 1
 
-// ACReuseQueue
-#define COCOAPODS_POD_AVAILABLE_ACReuseQueue
-#define COCOAPODS_VERSION_MAJOR_ACReuseQueue 0
-#define COCOAPODS_VERSION_MINOR_ACReuseQueue 0
-#define COCOAPODS_VERSION_PATCH_ACReuseQueue 1
-
 // AFBlurSegue
 #define COCOAPODS_POD_AVAILABLE_AFBlurSegue
 #define COCOAPODS_VERSION_MAJOR_AFBlurSegue 1

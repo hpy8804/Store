@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "24C26B8564D26D2AEA2A3D14"
+               BlueprintIdentifier = "E2DD9E067CD4786986016916"
                BuildableName = "libPods-DecorationChain-MJRefresh.a"
                BlueprintName = "Pods-DecorationChain-MJRefresh"
                ReferencedContainer = "container:Pods.xcodeproj">

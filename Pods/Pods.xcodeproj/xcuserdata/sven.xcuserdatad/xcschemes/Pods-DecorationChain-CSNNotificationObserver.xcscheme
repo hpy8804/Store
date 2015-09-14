@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D355C38C0C7502E69DE265B"
+               BlueprintIdentifier = "A96573B901BE6AFF9B73EDB0"
                BuildableName = "libPods-DecorationChain-CSNNotificationObserver.a"
                BlueprintName = "Pods-DecorationChain-CSNNotificationObserver"
                ReferencedContainer = "container:Pods.xcodeproj">

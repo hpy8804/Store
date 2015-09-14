@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF0B432A6875E88EA3E154AE"
+               BlueprintIdentifier = "C89FDA4E99217EC6F8408C58"
                BuildableName = "libPods-DecorationChain-BlocksKit.a"
                BlueprintName = "Pods-DecorationChain-BlocksKit"
                ReferencedContainer = "container:Pods.xcodeproj">

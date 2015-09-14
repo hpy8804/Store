@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0BBA6480396495D4AB2C3798"
+               BlueprintIdentifier = "D8277B994A0F57677D728622"
                BuildableName = "BTInfiniteScrollView.bundle"
                BlueprintName = "Pods-DecorationChain-BTInfiniteScrollView-BTInfiniteScrollView"
                ReferencedContainer = "container:Pods.xcodeproj">

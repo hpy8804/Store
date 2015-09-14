@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBCA2FF314922E6DE946C02D"
+               BlueprintIdentifier = "461D69EFAA75181738848FBF"
                BuildableName = "libPods-DecorationChain-UIFolderTableView.a"
                BlueprintName = "Pods-DecorationChain-UIFolderTableView"
                ReferencedContainer = "container:Pods.xcodeproj">

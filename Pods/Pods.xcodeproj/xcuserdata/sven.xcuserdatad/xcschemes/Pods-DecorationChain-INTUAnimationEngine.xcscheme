@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C334ABF5A8C449602C6DD76"
+               BlueprintIdentifier = "193C31886D64CB43FEE56EDC"
                BuildableName = "libPods-DecorationChain-INTUAnimationEngine.a"
                BlueprintName = "Pods-DecorationChain-INTUAnimationEngine"
                ReferencedContainer = "container:Pods.xcodeproj">

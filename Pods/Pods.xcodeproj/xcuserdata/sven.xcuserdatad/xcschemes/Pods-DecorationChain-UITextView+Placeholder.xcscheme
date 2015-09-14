@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7BF826563AF367BED51F361C"
+               BlueprintIdentifier = "F00B1E2FA6309982DC306D78"
                BuildableName = "libPods-DecorationChain-UITextView+Placeholder.a"
                BlueprintName = "Pods-DecorationChain-UITextView+Placeholder"
                ReferencedContainer = "container:Pods.xcodeproj">
