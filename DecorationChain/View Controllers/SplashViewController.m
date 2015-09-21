@@ -37,6 +37,7 @@
 //         });
 //	}];
 
+    _welcomImageView.image = [UIImage imageNamed:@"bg_qd"];
 	[NSTimer scheduledTimerWithTimeInterval:1 block: ^{
 	    @strongify(self);
 	    [self performSegueWithIdentifier:@"embed_root" sender:self];

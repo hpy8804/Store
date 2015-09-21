@@ -47,13 +47,18 @@
 
 -(BOOL) isValidateMobile:(NSString *)mobile
 {
-    NSString *regex = @"^((13[0-9])|(147)|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
-    
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    
-    BOOL isMatch = [pred evaluateWithObject:mobile];
-    
-    return isMatch;
+//    NSString *regex = @"^((13[0-9])|(147)|(15[^4,\\D])|(18[0-9]))\\d{8}$";
+//    
+//    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+//    
+//    BOOL isMatch = [pred evaluateWithObject:mobile];
+//    
+//    return isMatch;
+    if ([mobile length] == 11) {
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 - (IBAction)handleRegister:(id)sender {

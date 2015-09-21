@@ -55,7 +55,7 @@
 		}];
         
         UIButton *phoneButton2 = [UIButton buttonWithType:UIButtonTypeCustom];
-        [phoneButton2 setFrame:ccr(155, 7, 120, 30)];
+        [phoneButton2 setFrame:ccr(150, 7, 130, 30)];
         phoneButton2.tag = 999;
         [phoneButton2 setTitle:@"400-699-0298" forState:UIControlStateNormal];
         [self.navigationController.navigationBar addSubview:phoneButton2];
