@@ -35,13 +35,13 @@
 
 - (void)updateUIWithModel:(subCarList *)carlist
 {
-    self.labelProductNO.text = carlist.good_number;
-    self.labelPurity.text = carlist.pure;
-    self.labelOrigin.text = carlist.pro_address;
-    self.labelInventory.text = carlist.stock;
-    self.labelSpecifications.text = carlist.norms;
-    self.labelPrice.text = [NSString stringWithFormat:@"¥%@", carlist.good_price];
-    self.labelCount.text = [NSString stringWithFormat:@"%@件", carlist.quantity];
+    self.labelProductNO.text = (carlist.good_number != (NSString *)[NSNull null])?carlist.good_number:@"";
+    self.labelPurity.text = (carlist.pure != (NSString *)[NSNull null])?carlist.pure:@"";
+    self.labelOrigin.text = (carlist.pro_address != (NSString *)[NSNull null])?carlist.pro_address:@"";
+    self.labelInventory.text = (carlist.stock != (NSString *)[NSNull null])?carlist.stock:@"";
+    self.labelSpecifications.text = (carlist.norms != (NSString *)[NSNull null])?carlist.norms:@"";
+    self.labelPrice.text = [NSString stringWithFormat:@"¥%@", ((carlist.good_price != (NSString *)[NSNull null])?carlist.good_price:@"")];
+    self.labelCount.text = [NSString stringWithFormat:@"%@件", ((carlist.quantity != (NSString *)[NSNull null])?carlist.quantity:@"")];
 }
 
 @end
